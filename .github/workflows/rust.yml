@@ -1,0 +1,46 @@
+
+name: Rust
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "0 3,15 * * *"
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      # clone clippy
+      - name: clone rustc
+        run: git clone https://github.com/rust-lang/rust rust --depth 1
+      - name: clone icemaker
+        run: git clone https://github.com/matthiaskrgr/icemaker icemaker
+      - name: build icemaker
+        run: cargo build --release
+        working-directory: icemaker
+      - name: run icemakers
+        run: ../icemaker/target/release/icemaker -s 
+	working-directory: rust 
+      - name: check if logs are untouched
+        id: repo_untouched
+        run: git diff --exit-code errors.json
+        continue-on-error: true
+      - name: Commit files
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add errors.json || true
+          git commit -m "update logs" || true
+        if: steps.repo_untouched.outputs.exit_code == 0
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        if: steps.repo_untouched.outputs.exit_code == 0
+        with:
+          github_token: ${{ secrets.ARCTICE_SECRET }}
+          branch: ${{ github.ref }}
