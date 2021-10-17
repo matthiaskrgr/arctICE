@@ -41,6 +41,7 @@ jobs:
       - name: check if logs are untouched
         id: repo_untouched
         run: git diff --exit-code errors.json
+        working-directory: rust
         continue-on-error: true
       - name: Commit files
         run: |
@@ -48,6 +49,7 @@ jobs:
           git config --local user.name "github-actions[bot]"
           git add errors.json || true
           git commit -m "update logs" || true
+        working-directory: rust
         if: steps.repo_untouched.outputs.exit_code == 0
       - name: Push changes
         uses: ad-m/github-push-action@master
