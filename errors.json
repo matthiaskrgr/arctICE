@@ -1,123 +1,175 @@
 [
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/81270.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_codegen_ssa/src/mir/operand.rs:132:38: Deref of by-Ref operand OperandRef(Ref((%\"alloc::boxed::Box<core::mem::maybe_uninit::MaybeUninit<u8>, S<u8>>\"*:  %9 = alloca %\"alloc::boxed::Box<core::mem::maybe_uninit::MaybeUninit<u8>, S<u8>>\", align 8), None, Align { pow2: 3 }) @ TyAndLayout { ty: std::boxed::Box<std::mem::MaybeUninit<u8>, S<u8>>, layout: Layout { fields: Arbitrary { offsets: [Size { raw: 0 }, Size { raw: 8 }], memory_index: [0, 1] }, variants: Single { index: 0 }, abi: Aggregate { sized: true }, largest_niche: Some(Niche { offset: Size { raw: 0 }, scalar: Scalar { value: Pointer, valid_range: 1..=18446744073709551615 } }), align: AbiAndPrefAlign { abi: Align { pow2: 3 }, pref: Align { pow2: 3 } }, size: Size { raw: 16 } } })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/54888.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_codegen_ssa/src/mir/rvalue.rs:234:33: by-ref operand OperandRef(Ref((%\"Ptr<i32>\"*:  %1 = alloca %\"Ptr<i32>\", align 8), None, Align { pow2: 3 }) @ TyAndLayout { ty: Ptr<i32>, layout: Layout { fields: Arbitrary { offsets: [Size { raw: 0 }], memory_index: [0] }, variants: Single { index: 0 }, abi: Aggregate { sized: true }, largest_niche: Some(Niche { offset: Size { raw: 0 }, scalar: Scalar { value: Pointer, valid_range: 1..=18446744073709551615 } }), align: AbiAndPrefAlign { abi: Align { pow2: 3 }, pref: Align { pow2: 3 } }, size: Size { raw: 8 } } }) in `codegen_rvalue_operand`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/88212.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_const_eval/src/interpret/eval_context.rs:667:18: size_and_align_of::<[closure@./ices/88212.rs:15:5: 17:7]> not supported"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/68538.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_const_eval/src/interpret/place.rs:44:17: expected wide pointer extra data (e.g. slice length or trait object vtable)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/89765.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_middle/src/ty/sty.rs:2009:17: discriminant_for_variant called on zero variant enum"
-  },
-  {
-    "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./ices/86351.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_trait_selection/src/traits/util.rs:314:13: get_vtable_index_of_object_method: DefId(0:5 ~ 86351[f14e]::TestTrait::func) was not found"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/75961.rs",
-    "args": [],
+    "file": "./src/test/ui/issues/issue-37725.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir"
+    ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as std::clone::Clone>, [])` during codegen"
+    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as Foo>, [])` during codegen"
   },
   {
-    "regresses_on": "Stable",
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
+    "args": [
+      "-Zvalidate-mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[c071]::main), const_param_did: None }) (after InstCombine in phase Optimization) at bb5[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/assembly/static-relocation-model.rs",
+    "args": [
+      "-Zvalidate-mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[ead2]::orange), const_param_did: None }) (after InstCombine in phase Optimization) at bb0[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/array.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[c2e4]::{impl#6}::index), const_param_did: None }) (after InstCombine in phase Optimization) at bb1[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/closure.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[a3a3]::{impl#6}::index), const_param_did: None }) (after InstCombine in phase Optimization) at bb1[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/fun_ptr.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[7f83]::{impl#6}::index), const_param_did: None }) (after InstCombine in phase Optimization) at bb1[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/ptr_cast.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[62c9]::{impl#6}::index), const_param_did: None }) (after InstCombine in phase Optimization) at bb1[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/static.rs",
+    "args": [
+      "-Zvalidate-mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[25d0]::main), const_param_did: None }) (after InstCombine in phase Optimization) at bb4[2]:"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./fixed/62529-07.rs",
+    "file": "./src/test/ui/issues/issue-50865-private-impl-trait/auxiliary/lib.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
       "-Zmir-opt-level=3"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<F as std::ops::Fn<((),)>>, [])` during codegen"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:3 ~ lib[fb89]::bar), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb1[2]:"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/83249.rs",
-    "args": [],
+    "file": "./src/test/ui/impl-trait/equality-rpass.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3"
+    ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<^0 as Foo>, [Ty(Anon)])` during codegen"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/79590.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in DefId(0:10 ~ 79590[9efb]::main) (CanonicalUserTypeAnnotation { user_ty: Canonical { max_universe: U0, variables: [CanonicalVarInfo { kind: Region(U0) }, CanonicalVarInfo { kind: Ty(General(U0)) }, CanonicalVarInfo { kind: Region(U0) }], value: Ty(&dyn Database<Inner = ^1_1, Inner = u32>) }, span: ./ices/79590.rs:16:12: 16:32 (#0), inferred_ty: &dyn Database<Inner = u32, Inner = u32> }): bad user type (&dyn Database<Inner = _, Inner = u32> = &dyn Database<Inner = u32, Inner = u32>): NoSolution"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/67498.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE collect_error_for_expanding_node() could not find error for var '_#0r in universe U0, lower_bounds=["
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/86719.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:533:26: expected defining type for `DefId(0:10 ~ 86719[6a10]::{impl#0}::foo::{closure#0})`: `[type error]`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/74282.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:533:26: expected defining type for `DefId(0:11 ~ 74282[9a83]::test::{closure#1})`: `[type error]`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82139.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:533:26: expected defining type for `DefId(0:13 ~ 82139[8734]::{impl#0}::func::{closure#0})`: `[type error]`"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:31 ~ equality_rpass[c9b5]::main), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb0[31]:"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./fixed/75323.rs",
+    "file": "./src/test/ui/associated-type-bounds/dyn-rpit-and-let.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:34 ~ dyn_rpit_and_let[ac2a]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb7[21]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-type-bounds/dyn-impl-trait-type.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:37 ~ dyn_impl_trait_type[5815]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb7[21]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-type-bounds/rpit.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:37 ~ rpit[5e60]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb6[21]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-type-bounds/trait-alias-impl-trait.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:40 ~ trait_alias_impl_trait[3cbc]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb6[21]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
+    "args": [
+      "-Zvalidate-mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[9cd2]::main), const_param_did: None }) (after InstCombine in phase Optimization) at bb0[6]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/const-generics/const-argument-non-static-lifetime.rs",
     "args": [
       "--emit=mir",
       "-Zsave-analysis"
@@ -126,527 +178,680 @@
     "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/78174.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReErased` to a region vid"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/71546-2.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `RePlaceholder(Placeholder { universe: U2, name: BrNamed(DefId(0:6 ~ 71546_2[d91b]::serialize_as_csv::'a#1), 'a) })` to a region vid"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/76168.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `RePlaceholder(Placeholder { universe: U3, name: BrNamed(DefId(0:9 ~ 76168[e7ad]::walk::'a#1), 'a) })` to a region vid"
-  },
-  {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/86720.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_codegen_llvm/src/intrinsic.rs:367:18: unknown intrinsic 'rustc_peek'"
-  },
-  {
-    "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./ices/69487-2.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_const_eval/src/interpret/eval_context.rs:198:17: The type checker should prevent reading from a never-written local"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/83531.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_const_eval/src/interpret/eval_context.rs:198:17: The type checker should prevent reading from a never-written local"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/82926.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_const_eval/src/interpret/place.rs:413:18: `mplace_index` called on non-array type f32x3"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/80678.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_infer/src/infer/canonical/canonicalizer.rs:363:17: encountered a fresh type during canonicalization"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/83288.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_infer/src/infer/freshen.rs:255:17: unexpected const Const { ty: usize, val: Bound(DebruijnIndex(0), 1) }"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/88296.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_lint/src/types.rs:1132:32: unexpected type in foreign function: <() as Foo>::Bar"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/57404.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/layout.rs:2998:21: argument to function with \"rust-call\" ABI is not a tuple"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./fixed/66696.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/layout.rs:3004:17: argument to function with \"rust-call\" ABI is not a tuple"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/77735.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/sty.rs:1761:18: `simd_size_and_type` called on invalid type"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/86033.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/sty.rs:395:19: Unexpected representation of upvar types tuple Bound(DebruijnIndex(0), BoundTy { var: 1, kind: Anon })"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/88778.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_mir_build/src/thir/pattern/mod.rs:563:22: not a literal: Expr { hir_id: HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 18 }, kind: Call(Expr { hir_id: HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 17 }, kind: Path(TypeRelative(Ty { hir_id: HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 15 }, kind: Path(Resolved(None, Path { span: /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/library/alloc/src/macros.rs:43:36: 43:52 (#5), res: Def(Struct, DefId(5:7050 ~ alloc[9a4b]::vec::Vec)), segments: [PathSegment { ident: $crate#5, hir_id: Some(HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 12 }), res: Some(Err), args: None, infer_args: true }, PathSegment { ident: vec#5, hir_id: Some(HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 13 }), res: Some(Def(Mod, DefId(5:6268 ~ alloc[9a4b]::vec))), args: None, infer_args: true }, PathSegment { ident: Vec#5, hir_id: Some(HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 14 }), res: Some(Err), args: None, infer_args: true }] })), span: /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/library/alloc/src/macros.rs:43:36: 43:52 (#5) }, PathSegment { ident: new#5, hir_id: Some(HirId { owner: DefId(0:3 ~ 88778[2254]::main2), local_id: 16 }), res: Some(Err), args: None, infer_args: true })), span: /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/library/alloc/src/macros.rs:43:36: 43:57 (#5) }, []), span: /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/library/alloc/src/macros.rs:43:36: 43:59 (#5) }"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/81708.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_mir_transform/src/elaborate_drops.rs:315:25: drop of untracked, uninitialized value bb2, place _1[_3] (Parent(Some(mp1)))"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/74451.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_monomorphize/src/collector.rs:1062:14: find_vtable_types_for_unsizing: invalid coercion <() as Smartass>::Data -> <dyn MaybeObjectSafe as Smartass>::Data"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/83702.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:3 ~ 83702[f36f]::{misc#1}), encountered def-id DefId(0:0 ~ 83702[f36f]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./fixed/72793.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/codegen.rs:78:17: Encountered error `OutputTypeParameterMismatch(Binder(<[closure@./fixed/72793.rs:21:19: 21:25] as std::ops::Fn<(impl for<'r> T,)>>, [Region(BrAnon(0))]), Binder(<[closure@./fixed/72793.rs:21:19: 21:25] as std::ops::Fn<(&S,)>>, []), Sorts(ExpectedFound { expected: &S, found: impl T }))` selecting `Binder(<[closure@./fixed/72793.rs:21:19: 21:25] as std::ops::Fn<(&S,)>>, [])` during codegen"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/89312.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/codegen.rs:78:17: Encountered error `OutputTypeParameterMismatch(Binder(<[closure@./ices/89312.rs:21:19: 21:25] as std::ops::Fn<(impl for<'r> T,)>>, [Region(BrAnon(0))]), Binder(<[closure@./ices/89312.rs:21:19: 21:25] as std::ops::Fn<(&S,)>>, []), Sorts(ExpectedFound { expected: &S, found: impl T }))` selecting `Binder(<[closure@./ices/89312.rs:21:19: 21:25] as std::ops::Fn<(&S,)>>, [])` during codegen"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/84727.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/select/confirmation.rs:210:17: Where clause `Binder(<Cell<TopFg, TopBg> as Over<Color<BottomBg>, Cell<NewFg, NewBg>>>, [])` was applicable to `Obligation(predicate=Binder(TraitPredicate(<Cell<TopFg, TopBg> as Over<Color<_>, Cell<_, _>>>), []), depth=2)` but now is not"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/79674.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/select/mod.rs:1775:17: asked to assemble builtin bounds of unexpected type: Placeholder(Placeholder { universe: U1, name: 0 })"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/84073.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/select/mod.rs:2013:17: Impl DefId(0:12 ~ 84073[1f3c]::{impl#0}) was matchable against Obligation(predicate=Binder(TraitPredicate(<Never<_> as StatefulFuture<std::option::Option<_>>>), []), depth=0) but now is not"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/62742.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/select/mod.rs:2013:17: Impl DefId(0:18 ~ 62742[d0d8]::{impl#0}) was matchable against Obligation(predicate=Binder(TraitPredicate(<RawImpl<_> as Raw<_>>), []), depth=0) but now is not"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/79224.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/specialize/mod.rs:101:21: When translating substitutions for specialization, the expected specialization failed to hold"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/45814.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/specialize/mod.rs:165:17: failed to fully normalize <T as Trait<<T as std::iter::Iterator>::Item>>: [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<T as std::iter::Iterator>), []), depth=0),Unimplemented)]"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/43037.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_trait_selection/src/traits/specialize/mod.rs:165:17: failed to fully normalize <T as std::convert::From<<A<T> as Z>::Assoc>>: [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<T as X>), []), depth=1),Unimplemented)]"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/59324.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `&dyn ThriftService<F, Response = <Self as Service>::Response, Future = <Self as Service>::Future>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/85103.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<E as Foo>::Bar`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82335.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<I as std::iter::Iterator>::Item`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/71113.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<Recursive as std::borrow::ToOwned>::Owned`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/81199.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<T as Pointee>::Metadata`"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/72845.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `Ty(Const { ty: usize, val: Unevaluated(Unevaluated { def: WithOptConstParam { did: DefId(0:4 ~ 72845[6b52]::Depth::C), const_param_did: None }, substs_: Some([<T as Type>::AT]), promoted: None }) })`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82079.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `[closure@./ices/82079.rs:13:25: 13:46]`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82079.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `core::Relation<impl core::operator::Op>`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./fixed/83471-2.rs",
+    "file": "./src/test/ui/const-generics/min_const_generics/forbid-non-static-lifetimes.rs",
     "args": [
       "--emit=mir",
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/collect.rs:1870:13: unexpected sort of node in fn_sig(): TraitItem(TraitItem { ident: call#0, def_id: DefId(0:5 ~ 83471_2[9b65]::MyFn::call), generics: Generics { params: [], where_clause: WhereClause { predicates: [], span: no-location (#0) }, span: no-location (#0) }, kind: Const(Ty { hir_id: HirId { owner: DefId(0:5 ~ 83471_2[9b65]::MyFn::call), local_id: 1 }, kind: Path(Resolved(None, Path { span: ./fixed/83471-2.rs:7:17: 7:20 (#0), res: PrimTy(Int(I32)), segments: [PathSegment { ident: i32#0, hir_id: Some(HirId { owner: DefId(0:5 ~ 83471_2[9b65]::MyFn::call), local_id: 2 }), res: Some(Err), args: None, infer_args: false }] })), span: ./fixed/83471-2.rs:7:17: 7:20 (#0) }, Some(BodyId { hir_id: HirId { owner: DefId(0:5 ~ 83471_2[9b65]::MyFn::call), local_id: 3 } })), span: ./fixed/83471-2.rs:7:5: 7:26 (#0) })"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/83483.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/collect/type_of.rs:435:21: compute_type_of_item: unexpected item type: Trait(No, Normal, Generics { params: [], where_clause: WhereClause { predicates: [], span: ./ices/83483.rs:3:10: 3:10 (#0) }, span: ./ices/83483.rs:3:10: 3:10 (#0) }, [], [])"
-  },
-  {
-    "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./ices/82927.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/variance/constraints.rs:332:17: unexpected type encountered in variance inference: FreshTy(0)"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/79699.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/variance/mod.rs:44:9: asked to compute variance for wrong kind of item"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/74299.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE encountered ambiguity selecting `Binder(<() as Y>, [])` during codegen, presuming due to overflow or prior type error"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/57276.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE error: the type `T` has an unknown layout"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/77987.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE errors selecting obligation during MIR typeck: [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<_ as Foo<()>>), []), depth=0),Ambiguity), FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<_ as std::marker::Sized>), []), depth=0),Ambiguity), FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<_ as std::marker::Sized>), []), depth=1),Ambiguity)]"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/80409.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE unresolved inference variable in outlives: _#8t"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/83837.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Index `320440878` must be in bounds of vector type `u16`: `[0, 2)`', compiler/rustc_const_eval/src/interpret/intrinsics.rs:418:17"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/77357.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Normalizing ([&'a u32]; c_variadic: false)->_ without wrapping in a `Binder`', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_trait_selection/src/traits/project.rs:333:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/87558.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Normalizing ImplHeader { impl_def_id: DefId(0:8 ~ 87558[199e]::{impl#0}), self_ty: Error, trait_ref: Some(<Error as std::ops::Fn<(&isize,)>>), predicates: [] } without wrapping in a `Binder`', compiler/rustc_trait_selection/src/traits/project.rs:333:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/87577.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Should not have unglued last token with cfg attr', compiler/rustc_parse/src/parser/attr_wrapper.rs:371:13"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": false,
-    "file": "./ices/87793.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Stack should be empty: final_buf=FrameData { open: ./ices/87793.rs:1:12: 1:13 (#0), open_delim: Bracket, inner: [(Token(Token { kind: Ident(\"r\", false), span: ./ices/87793.rs:1:13: 1:14 (#0) }), Alone)] } stack=[FrameData { open: no-location (#0), open_delim: NoDelim, inner: [] }]', compiler/rustc_parse/src/parser/attr_wrapper.rs:501:5"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/83765.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Unknown variable: 0', compiler/rustc_ty_utils/src/instance.rs:46:17"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/86850.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'Unknown variable: 0', compiler/rustc_ty_utils/src/instance.rs:46:17"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/85907.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at '`ref_to_mplace` called on non-ptr type', compiler/rustc_const_eval/src/interpret/place.rs:276:47"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/89304.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'already borrowed: BorrowMutError', compiler/rustc_infer/src/infer/combine.rs:954:50"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/64784.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'already borrowed: BorrowMutError', compiler/rustc_resolve/src/imports.rs:584:45"
-  },
-  {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/88997.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: !arg.has_type_flags(!allowed_flags)', compiler/rustc_typeck/src/collect/type_of.rs:296:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/58355.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: !layout.is_unsized()', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_codegen_ssa/src/mir/place.rs:33:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./fixed/74713.rs",
+    "file": "./src/test/ui/const-generics/const-arg-in-const-arg.rs",
     "args": [
       "--emit=mir",
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: !value.has_escaping_bound_vars()', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_middle/src/ty/sty.rs:974:9"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
   },
   {
-    "regresses_on": "Beta",
-    "needs_feature": true,
-    "file": "./ices/83993.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: !value.has_escaping_bound_vars()', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_middle/src/ty/sty.rs:974:9"
-  },
-  {
-    "regresses_on": "Stable",
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./ices/85350.rs",
-    "args": [],
+    "file": "./src/test/ui/never_type/issue-52443.rs",
+    "args": [
+      "--emit=mir",
+      "-Zsave-analysis"
+    ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: !value.has_escaping_bound_vars()', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_middle/src/ty/sty.rs:974:9"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:361:18: unexpected res Err in variant_of_res"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/79409.rs",
+    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[7e15]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[7e15]) with no parent"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/82880.rs",
+    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/78336.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: body.yield_ty().is_some() == universal_regions.yield_ty.is_some()', compiler/rustc_borrowck/src/type_check/input_output.rs:111:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/83472.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: body.yield_ty().is_some() == universal_regions.yield_ty.is_some()', compiler/rustc_borrowck/src/type_check/input_output.rs:111:9"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d031]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d031]) with no parent"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/78459.rs",
+    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: i < this.fields.count()', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_middle/src/ty/layout.rs:2295:21"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7919]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7919]) with no parent"
   },
   {
     "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./ices/83764.rs",
-    "args": [],
+    "file": "./src/test/ui/issues/issue-36839.rs",
+    "args": [
+      "--emit=mir"
+    ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: layout.abi.is_uninhabited()', compiler/rustc_middle/src/ty/layout.rs:247:17"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-36839.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-36839.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./fixed/74761.rs",
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
+    "args": [
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/incremental/delayed_span_bug.rs",
+    "args": [],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
+    "args": [],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/codegen/no-output-asm-is-volatile.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/incremental/hashes/inline_asm.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/mir-opt/unreachable_asm.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/mir-opt/unreachable_asm_2.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/pretty/llvm-asm-clobbers.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/pretty/llvm-asm-options.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/pretty/raw-str-nonexpr.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/intrinsic-unreachable/exit-ret.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/intrinsic-unreachable/exit-unreachable.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/abi-sysv64-register-usage.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/cache/chrono-scan.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/ast-json/ast-json-ice.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/borrowck/borrowck-asm.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/issues/issue-23458.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/issues/issue-53787-inline-assembler-macro.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/lint/issue-87274-paren-parent.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/lint/lint-qualification.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/asm-src-loc-codegen-units.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/asm-src-loc.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/inline-asm-bad-constraint.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/inline-asm-bad-operand.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-14936.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-33264.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-37433.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-51431.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-54067.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-62046.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/issue-69092.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-concat-src.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-in-moved.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-in-out-operand.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-indirect-memory.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-literal-escaping.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-misplaced-option.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-out-assign-imm.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-out-assign.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/llvm-asm/llvm-asm-out-read-uninit.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/try-macro.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/out-of-stack.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/redundant_pattern_matching_result.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustfmt/tests/source/configs/use_try_shorthand/false.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustfmt/tests/source/configs/use_try_shorthand/true.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustfmt/tests/source/try-conversion.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustfmt/tests/target/configs/use_try_shorthand/false.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustfmt/tests/target/issue-1681.rs",
+    "args": [
+      "-Zunpretty=everybody_loops"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1350:48"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/type-alias-impl-trait/issue-74761-2.rs",
     "args": [
       "--emit=mir",
       "-Zsave-analysis"
@@ -655,187 +860,44 @@
     "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.is_free_or_static(r_a) && self.is_free_or_static(r_b)', compiler/rustc_infer/src/infer/free_regions.rs:77:9"
   },
   {
-    "regresses_on": "Stable",
+    "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/78561.rs",
-    "args": [],
+    "file": "./src/test/ui/type-alias-impl-trait/issue-74761.rs",
+    "args": [
+      "--emit=mir",
+      "-Zsave-analysis"
+    ],
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.is_free_or_static(r_a) && self.is_free_or_static(r_b)', compiler/rustc_infer/src/infer/free_regions.rs:77:9"
   },
   {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/87258.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.is_free_or_static(r_a) && self.is_free_or_static(r_b)', compiler/rustc_infer/src/infer/free_regions.rs:77:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/88595.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.is_free_or_static(r_a) && self.is_free_or_static(r_b)', compiler/rustc_infer/src/infer/free_regions.rs:77:9"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/83056.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'bad input type for cast', compiler/rustc_const_eval/src/transform/check_consts/check.rs:645:59"
-  },
-  {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/83461.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'call to rustc_peek should be preceded by assignment to temporary holding its argument', compiler/rustc_mir_dataflow/src/rustc_peek.rs:132:14"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/83479.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Option::unwrap()` on a `None` value', compiler/rustc_middle/src/hir/map/collector.rs:92:66"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/85447.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Option::unwrap()` on a `None` value', compiler/rustc_monomorphize/src/collector.rs:894:93"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/73663.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Option::unwrap()` on a `None` value', compiler/rustc_resolve/src/late.rs:2400:52"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/80125.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Option::unwrap()` on a `None` value', compiler/rustc_target/src/abi/call/x86_64.rs:158:47"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/83539.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: (MoveData { move_paths: [MovePath { place: _0 }, MovePath { place: _1 }, MovePath { place: _2 }, MovePath { place: _3 }], moves: [mp3@bb0[3], mp2@bb0[5]], loc_map: LocationMap { map: [[[], [], [], [mo0], [], [mo1], []]] }, path_map: [[], [], [mo1], [mo0]], rev_lookup: MovePathLookup { locals: [mp0, mp1, mp2, mp3], projections: {} }, inits: [mp1@Argument(_1) (Deep), mp3@Statement(bb0[2]) (Deep), mp0@Statement(bb0[4]) (Deep)], init_loc_map: LocationMap { map: [[[], [], [in1], [], [in2], [], []]] }, init_path_map: [[in2], [in0], [], [in1]] }, [((*_1), IllegalMove { cannot_move_out_of: IllegalMoveOrigin { location: bb0[2], kind: BorrowedContent { target_place: (*_1) } } })])', compiler/rustc_mir_dataflow/src/rustc_peek.rs:37:70"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/53092.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: ErrorReported', compiler/rustc_mir_transform/src/inline/cycle.rs:49:86"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/53092.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: ErrorReported', compiler/rustc_monomorphize/src/collector.rs:894:84"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/74299.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: ErrorReported', compiler/rustc_monomorphize/src/collector.rs:894:84"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82909.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: FallbackToConstRef(())', compiler/rustc_mir_build/src/thir/pattern/const_to_pat.rs:167:83"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82836.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: Unknown(T)', compiler/rustc_lint/src/types.rs:796:52"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/87340.rs",
-    "args": [],
+    "file": "./src/test/ui/type-alias-impl-trait/impl-with-unconstrained-param.rs",
+    "args": [
+      "--emit=mir",
+      "-Zsave-analysis"
+    ],
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:509:75"
   },
   {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/82866.rs",
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'expected `NodeId` to be lowered already for res Local("
+    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1194:52"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./ices/83697.rs",
-    "args": [],
+    "file": "./src/test/ui/inference/infer-arg-test.rs",
+    "args": [
+      "--emit=mir",
+      "-Zsave-analysis"
+    ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'index `8` is out-of-bounds of vector type `i8` with length `1`', compiler/rustc_const_eval/src/interpret/intrinsics.rs:445:17"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/89868.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 0 but the index is 0', compiler/rustc_middle/src/ty/generics.rs:164:14"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./ices/83704.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 9 but the index is 13', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/83394.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'nonscalar layout for layout_scalar_valid_range type Integer: Layout {"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./ices/53475.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'region_obligations not empty: ["
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./ices/67981.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'tried to statically allocate unsized place', /rustc/8db8f48ea8c2443e969050fe4b6c829585048d5c/compiler/rustc_codegen_ssa/src/mir/place.rs:52:9"
+    "ice_msg": "thread 'rustc' panicked at 'not yet implemented', compiler/rustc_typeck/src/astconv/mod.rs:462:29"
   }
 ]
