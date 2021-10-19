@@ -32,8 +32,8 @@ jobs:
         run: git clone https://github.com/rust-lang/rust rust --depth 1
       - name: copy logs into rustc repo
         run: cp -f errors.json rust/errors.json
-      - name copy config.toml into rustc repo
-        run cp -f config.toml rustc/config.toml
+      - name: copy config.toml into rustc repo
+        run: cp -f config.toml rustc/config.toml
       - name: check out submodules
         run: ./x.py 
         working-directory: rust
