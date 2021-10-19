@@ -33,7 +33,7 @@ jobs:
       - name: copy logs into rustc repo
         run: cp -f errors.json rust/errors.json
       - name: copy config.toml into rustc repo
-        run: cp -f config.toml rustc/config.toml
+        run: cp -f config.toml rust/config.toml
       - name: check out submodules
         run: ./x.py 
         working-directory: rust
