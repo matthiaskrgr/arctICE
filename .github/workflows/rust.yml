@@ -4,7 +4,7 @@ on:
   push:
   pull_request:
   schedule:
-    - cron: "0 3 * * *"
+    - cron: "0 1 * * *"
 
 env:
   CARGO_TERM_COLOR: always
@@ -35,7 +35,7 @@ jobs:
       - name: copy config.toml into rustc repo
         run: cp -f config.toml rust/config.toml
       - name: check out submodules
-        run: ./x.py 
+        run: ./x.py
         working-directory: rust
       - name: clone icemaker
         run: git clone https://github.com/matthiaskrgr/icemaker icemaker
