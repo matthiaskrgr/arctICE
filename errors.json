@@ -95,77 +95,6 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-50865-private-impl-trait/auxiliary/lib.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:3 ~ lib[fb89]::bar), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb1[2]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/equality-rpass.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:31 ~ equality_rpass[c9b5]::main), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb0[31]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/associated-type-bounds/dyn-rpit-and-let.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:34 ~ dyn_rpit_and_let[ac2a]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb7[21]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/associated-type-bounds/dyn-impl-trait-type.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:37 ~ dyn_impl_trait_type[5815]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb7[21]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/associated-type-bounds/rpit.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:37 ~ rpit[5e60]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb6[21]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/associated-type-bounds/trait-alias-impl-trait.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:40 ~ trait_alias_impl_trait[3cbc]::use_et3), const_param_did: None }) (after Inline in phase GeneratorLowering) at bb6[21]:"
-  },
-  {
-    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
     "args": [
@@ -235,14 +164,6 @@
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d031]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d031]) with no parent"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7919]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7919]) with no parent"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-36839.rs",
@@ -287,6 +208,16 @@
     "needs_feature": true,
     "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
     "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
@@ -308,16 +239,6 @@
     "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
     "args": [
       "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
-    "args": [
-      "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
