@@ -268,6 +268,16 @@
     "needs_feature": true,
     "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
     "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
@@ -289,16 +299,6 @@
     "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
     "args": [
       "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
-    "args": [
-      "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
@@ -788,6 +788,14 @@
     ],
     "error_reason": "`delay_span_bug`",
     "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/never_type/never-associated-type.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread '<unnamed>' panicked at 'assertion failed: `(left == right)`"
   },
   {
     "regresses_on": "Nightly",
