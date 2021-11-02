@@ -198,6 +198,16 @@
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-36839.rs",
     "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-36839.rs",
+    "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
@@ -259,6 +269,16 @@
     "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
     "args": [
       "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
