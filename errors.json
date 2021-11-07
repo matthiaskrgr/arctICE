@@ -124,7 +124,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:776:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -135,7 +135,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:776:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -146,7 +146,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:782:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:776:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -174,14 +174,6 @@
     "args": [],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d031]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d031]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7919]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7919]) with no parent"
   },
   {
     "regresses_on": "Stable",
@@ -268,6 +260,16 @@
     "needs_feature": true,
     "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
     "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
@@ -289,16 +291,6 @@
     "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
     "args": [
       "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
-    "args": [
-      "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
@@ -814,7 +806,7 @@
     "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1202:52"
+    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1203:52"
   },
   {
     "regresses_on": "Nightly",
