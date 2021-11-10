@@ -124,7 +124,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:776:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:805:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -135,7 +135,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:776:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:805:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -146,7 +146,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:776:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:805:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -816,7 +816,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:509:75"
+    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:515:75"
   },
   {
     "regresses_on": "Nightly",
