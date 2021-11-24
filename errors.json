@@ -228,16 +228,6 @@
     "needs_feature": true,
     "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
     "args": [
-      "-Zinstrument-coverage"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
-    "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
