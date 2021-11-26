@@ -308,16 +308,6 @@
     "needs_feature": true,
     "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
     "args": [
-      "-Zinstrument-coverage"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
-    "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
@@ -824,7 +814,7 @@
     "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1247:52"
+    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1393:52"
   },
   {
     "regresses_on": "Nightly",
