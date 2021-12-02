@@ -184,6 +184,76 @@
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7919]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7919]) with no parent"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-types/issue-91231.rs",
+    "args": [
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<&Extern as Trait>::Type`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-types/issue-91231.rs",
+    "args": [
+      "-Zinstrument-coverage"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<&Extern as Trait>::Type`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-types/issue-91231.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<&Extern as Trait>::Type`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-types/issue-91231.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<&Extern as Trait>::Type`"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-69398.rs",
+    "args": [
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-69398.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-69398.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-36839.rs",
@@ -191,7 +261,7 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
   },
   {
     "regresses_on": "Nightly",
@@ -201,7 +271,7 @@
       "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
   },
   {
     "regresses_on": "Nightly",
@@ -211,7 +281,7 @@
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
   },
   {
     "regresses_on": "Nightly",
@@ -221,57 +291,99 @@
       "-Zunpretty=mir-cfg"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `<() as Foo>::Bar`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-67684.rs",
     "args": [
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<impl Parser as Parser>::PartialState`"
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-67684.rs",
     "args": [
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<impl Parser as Parser>::PartialState`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-67684.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<impl Parser as Parser>::PartialState`"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-82079.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `core::Relation<impl core::operator::Op<D = (K, V), R = <Opaque(DefId(0:75 ~ issue_82079[459b]::core::operator::join::{impl#1}::join::{opaque#0}), [K, V, C, Opaque(DefId(0:22 ~ issue_82079[459b]::convenience_operators::{impl#0}::map::{opaque#0}), [C2, [closure@./src/test/ui/associated-types/issue-82079.rs:25:33: 25:44], (K, ())]), (), R3]) as core::operator::Op>::R>>`"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
     "args": [
-      "-Zunpretty=mir-cfg"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
-    "args": [
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
     "args": [
       "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zunpretty=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zunpretty=mir-cfg"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "--emit=mir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
@@ -281,7 +393,7 @@
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
@@ -291,7 +403,7 @@
       "-Zunpretty=mir-cfg"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
@@ -301,7 +413,7 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
@@ -311,7 +423,7 @@
       "-Zinstrument-coverage"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
@@ -321,7 +433,7 @@
       "-Zunpretty=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
@@ -331,7 +443,7 @@
       "-Zunpretty=mir-cfg"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:54:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
   },
   {
     "regresses_on": "Nightly",
