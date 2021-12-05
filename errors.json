@@ -157,7 +157,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:377:18: unexpected res Err in variant_of_res"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:401:18: unexpected res Err in variant_of_res"
   },
   {
     "regresses_on": "Nightly",
