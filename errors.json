@@ -178,14 +178,6 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7919]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7919]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
     "file": "./src/test/ui/associated-types/issue-91231.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
