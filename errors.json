@@ -771,16 +771,5 @@
     "args": [],
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1393:52"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/inference/infer-arg-test.rs",
-    "args": [
-      "--emit=mir",
-      "-Zsave-analysis"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'not yet implemented', compiler/rustc_typeck/src/astconv/mod.rs:461:29"
   }
 ]
