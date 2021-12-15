@@ -34,6 +34,42 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<std::string::String as std::ops::Neg>, [])` during codegen"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE Encountered errors `[FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<i32 as std::iter::Iterator>, polarity:Positive), []), depth=1),Unimplemented)]` resolving bounds after type-checking"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE Encountered errors `[FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<i32 as std::iter::Iterator>, polarity:Positive), []), depth=1),Unimplemented)]` resolving bounds after type-checking"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
     "args": [
       "-Zvalidate-mir"
@@ -184,42 +220,6 @@
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7919]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7919]) with no parent"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/associated-types/issue-91231.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<&Extern as Trait>::Type`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/test/ui/associated-types/issue-69398.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-36839.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<() as Foo>::Bar`"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/issue-67684.rs",
@@ -241,43 +241,7 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `core::Relation<impl core::operator::Op<D = (K, V), R = <Opaque(DefId(0:75 ~ issue_82079[459b]::core::operator::join::{impl#1}::join::{opaque#0}), [K, V, C, Opaque(DefId(0:22 ~ issue_82079[459b]::convenience_operators::{impl#0}::map::{opaque#0}), [C2, [closure@./src/test/ui/associated-types/issue-82079.rs:25:33: 25:44], (K, ())]), (), R3]) as core::operator::Op>::R>>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `std::option::Option<<i32 as std::iter::Iterator>::Item>`"
+    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `[closure@./src/test/ui/associated-types/issue-82079.rs:13:25: 13:46]`"
   },
   {
     "regresses_on": "Nightly",
