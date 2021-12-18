@@ -75,7 +75,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[d519]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[5fd2]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -85,7 +85,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[c940]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[dbb0]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -96,7 +96,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[a2c0]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[be88]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -107,7 +107,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[2b18]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[dfea]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -118,7 +118,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[81ac]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[b9d8]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -129,7 +129,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[ec63]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[e35c]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -139,7 +139,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[f74a]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[374c]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
   },
   {
     "regresses_on": "Nightly",
@@ -149,7 +149,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[ebc8]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[b91e]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
   },
   {
     "regresses_on": "Nightly",
@@ -196,30 +196,6 @@
     "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:401:18: unexpected res Err in variant_of_res"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[88bc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[88bc]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8ec7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8ec7]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[322d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[322d]) with no parent"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/issue-67684.rs",
@@ -229,7 +205,7 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `<impl Parser as Parser>::PartialState`"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize <impl Parser as Parser>::PartialState, maybe try to call `try_normalize_erasing_regions` instead"
   },
   {
     "regresses_on": "Stable",
@@ -241,7 +217,31 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_traits/src/normalize_erasing_regions.rs:62:32: could not fully normalize `[closure@./src/test/ui/associated-types/issue-82079.rs:13:25: 13:46]`"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize [closure@./src/test/ui/associated-types/issue-82079.rs:13:25: 13:46], maybe try to call `try_normalize_erasing_regions` instead"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[f81a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[f81a]) with no parent"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[2124]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[2124]) with no parent"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3a5f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3a5f]) with no parent"
   },
   {
     "regresses_on": "Nightly",
