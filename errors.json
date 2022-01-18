@@ -129,7 +129,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[8439]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[ddaf]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -139,7 +139,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[376f]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[b030]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -150,7 +150,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[7725]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[3523]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -161,7 +161,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[2e1c]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[857d]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -172,7 +172,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[7c7c]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[ef2d]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -183,7 +183,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[c9d1]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[cfe5]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -193,7 +193,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[2e9c]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[353d]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
   },
   {
     "regresses_on": "Nightly",
@@ -203,7 +203,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[3830]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[a748]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
   },
   {
     "regresses_on": "Nightly",
@@ -279,7 +279,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[4e1f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[4e1f]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[e318]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[e318]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -287,7 +287,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ea95]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ea95]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ac2d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ac2d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -295,7 +295,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3e76]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3e76]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[6ca7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[6ca7]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -315,128 +315,8 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/codegen/no-output-asm-is-volatile.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/incremental/hashes/inline_asm.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/mir-opt/unreachable_asm.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/mir-opt/unreachable_asm_2.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/pretty/llvm-asm-clobbers.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/pretty/llvm-asm-options.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/pretty/raw-str-nonexpr.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/run-make-fulldeps/intrinsic-unreachable/exit-ret.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/run-make-fulldeps/intrinsic-unreachable/exit-unreachable.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/abi/abi-sysv64-register-usage.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/cache/chrono-scan.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/ast-json/ast-json-ice.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/borrowck/borrowck-asm.rs",
     "args": [
       "-Zunpretty=everybody_loops"
     ],
@@ -465,238 +345,8 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/asm-src-loc-codegen-units.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/asm-src-loc.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/inline-asm-bad-constraint.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/inline-asm-bad-operand.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-14936.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-23458.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-33264.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-37433.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-51431.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-53787-inline-assembler-macro.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-54067.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-62046.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/issue-69092.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-concat-src.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-in-moved.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-in-out-operand.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-indirect-memory.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-literal-escaping.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-misplaced-option.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-out-assign-imm.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-out-assign.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/llvm-asm/llvm-asm-out-read-uninit.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/macros/try-macro.rs",
-    "args": [
-      "-Zunpretty=everybody_loops"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/runtime/out-of-stack.rs",
     "args": [
       "-Zunpretty=everybody_loops"
     ],
@@ -780,7 +430,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:515:75"
+    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:509:75"
   },
   {
     "regresses_on": "Nightly",
