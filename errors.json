@@ -99,7 +99,7 @@
     ],
     "error_reason": "LLVM ERROR",
     "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/assembly/target-feature-multiple.rs -o/tmp/rustc_testrunner_tmpdir.ZBJGs0EKBnkM/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.ZBJGs0EKBnkM -Zincremental-verify-ich=yes"
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/assembly/target-feature-multiple.rs -o/tmp/rustc_testrunner_tmpdir.9kyHimLVBuY5/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.9kyHimLVBuY5 -Zincremental-verify-ich=yes"
   },
   {
     "regresses_on": "Nightly",
@@ -111,7 +111,7 @@
     ],
     "error_reason": "LLVM ERROR",
     "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/codegen/abi-x86-interrupt.rs -o/tmp/rustc_testrunner_tmpdir.XiIDjfaQptqb/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.XiIDjfaQptqb -Zincremental-verify-ich=yes"
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/codegen/abi-x86-interrupt.rs -o/tmp/rustc_testrunner_tmpdir.NZvQPOALpmyV/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.NZvQPOALpmyV -Zincremental-verify-ich=yes"
   },
   {
     "regresses_on": "Nightly",
@@ -123,7 +123,7 @@
     ],
     "error_reason": "LLVM ERROR",
     "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/codegen/intrinsics/prefetch.rs -o/tmp/rustc_testrunner_tmpdir.ocfYBi6GG8Lm/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.ocfYBi6GG8Lm -Zincremental-verify-ich=yes"
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/codegen/intrinsics/prefetch.rs -o/tmp/rustc_testrunner_tmpdir.4mbqLCW0GmBT/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.4mbqLCW0GmBT -Zincremental-verify-ich=yes"
   },
   {
     "regresses_on": "Stable",
@@ -394,6 +394,15 @@
     "args": [],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[bed1]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[bed1]) with no parent",
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-demangling.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[bed1]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[bed1]) with no parent",
     "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-demangling.rs -Wrust-2021-incompatible-or-patterns -Wrust-2021-prefixes-incompatible-syntax -Wrust-2021-prelude-collisions -Wsingle-use-lifetimes -Wtrivial-casts -Wtrivial-numeric-casts -Wunreachable-pub -Wunsafe-code -Wunsafe-op-in-unsafe-fn -Wunstable-features -Wunused-crate-dependencies -Wunused-extern-crates -Wunused-import-braces -Wunused-lifetimes -Wunused-qualifications -Wunused-results -Wvariant-size-differences -o/dev/null -Zdump-mir-dir=/dev/null"
   },
   {
@@ -421,6 +430,24 @@
     "args": [],
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fcd4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fcd4]) with no parent",
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Wrust-2021-incompatible-or-patterns -Wrust-2021-prefixes-incompatible-syntax -Wrust-2021-prelude-collisions -Wsingle-use-lifetimes -Wtrivial-casts -Wtrivial-numeric-casts -Wunreachable-pub -Wunsafe-code -Wunsafe-op-in-unsafe-fn -Wunstable-features -Wunused-crate-dependencies -Wunused-extern-crates -Wunused-import-braces -Wunused-lifetimes -Wunused-qualifications -Wunused-results -Wvariant-size-differences -o/dev/null -Zdump-mir-dir=/dev/null"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fcd4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fcd4]) with no parent",
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Cprofile-generate=/tmp/icemaker_pgo/ -o/dev/null -Zdump-mir-dir=/dev/null"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "args": [],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fcd4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fcd4]) with no parent",
     "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Zthir-unsafeck=yes -o/dev/null -Zdump-mir-dir=/dev/null"
   },
   {
@@ -431,15 +458,6 @@
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ff20]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ff20]) with no parent",
     "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-structural-demangling.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ff20]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ff20]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-structural-demangling.rs -Wrust-2021-incompatible-or-patterns -Wrust-2021-prefixes-incompatible-syntax -Wrust-2021-prelude-collisions -Wsingle-use-lifetimes -Wtrivial-casts -Wtrivial-numeric-casts -Wunreachable-pub -Wunsafe-code -Wunsafe-op-in-unsafe-fn -Wunstable-features -Wunused-crate-dependencies -Wunused-extern-crates -Wunused-import-braces -Wunused-lifetimes -Wunused-qualifications -Wunused-results -Wvariant-size-differences -o/dev/null -Zdump-mir-dir=/dev/null"
   },
   {
     "regresses_on": "Nightly",
@@ -467,15 +485,6 @@
     "error_reason": "query stack during panic:",
     "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[70ba]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[70ba]) with no parent",
     "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/foreign-types.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/foreign-types.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[70ba]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[70ba]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/foreign-types.rs -Wrust-2021-incompatible-or-patterns -Wrust-2021-prefixes-incompatible-syntax -Wrust-2021-prelude-collisions -Wsingle-use-lifetimes -Wtrivial-casts -Wtrivial-numeric-casts -Wunreachable-pub -Wunsafe-code -Wunsafe-op-in-unsafe-fn -Wunstable-features -Wunused-crate-dependencies -Wunused-extern-crates -Wunused-import-braces -Wunused-lifetimes -Wunused-qualifications -Wunused-results -Wvariant-size-differences -o/dev/null -Zdump-mir-dir=/dev/null"
   },
   {
     "regresses_on": "Nightly",
@@ -645,7 +654,7 @@
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at 'forcing query with already existing `DepNode`",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/pattern/usefulness/slice-pattern-const.rs -o/tmp/rustc_testrunner_tmpdir.AuxFcABU6UC0/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.AuxFcABU6UC0 -Zincremental-verify-ich=yes"
+    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/pattern/usefulness/slice-pattern-const.rs -o/tmp/rustc_testrunner_tmpdir.LwRapUykQwvl/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.LwRapUykQwvl -Zincremental-verify-ich=yes"
   },
   {
     "regresses_on": "Nightly",
@@ -655,15 +664,6 @@
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52",
     "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/issues/issue-75763.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/issues/issue-75763.rs -Wrust-2021-incompatible-or-patterns -Wrust-2021-prefixes-incompatible-syntax -Wrust-2021-prelude-collisions -Wsingle-use-lifetimes -Wtrivial-casts -Wtrivial-numeric-casts -Wunreachable-pub -Wunsafe-code -Wunsafe-op-in-unsafe-fn -Wunstable-features -Wunused-crate-dependencies -Wunused-extern-crates -Wunused-import-braces -Wunused-lifetimes -Wunused-qualifications -Wunused-results -Wvariant-size-differences -o/dev/null -Zdump-mir-dir=/dev/null"
   },
   {
     "regresses_on": "Nightly",
