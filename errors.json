@@ -5,89 +5,7 @@
     "file": "./library/backtrace/src/lib.rs",
     "args": [],
     "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Wrust-2021-incompatible-or-patterns -Wrust-2021-prefixes-incompatible-syntax -Wrust-2021-prelude-collisions -Wsingle-use-lifetimes -Wtrivial-casts -Wtrivial-numeric-casts -Wunreachable-pub -Wunsafe-code -Wunsafe-op-in-unsafe-fn -Wunstable-features -Wunused-crate-dependencies -Wunused-extern-crates -Wunused-import-braces -Wunused-lifetimes -Wunused-qualifications -Wunused-results -Wvariant-size-differences -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zinstrument-coverage -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Cprofile-generate=/tmp/icemaker_pgo/ -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zunpretty=hir,typed -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zunpretty=mir -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zunpretty=mir-cfg -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zunpretty=thir-tree -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./library/backtrace/src/lib.rs -Zthir-unsafeck=yes -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": ""
   },
   {
     "regresses_on": "Nightly",
@@ -98,8 +16,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "LLVM ERROR",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/assembly/target-feature-multiple.rs -o/tmp/rustc_testrunner_tmpdir.AF362DQviLeV/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.AF362DQviLeV -Zincremental-verify-ich=yes"
+    "ice_msg": ""
   },
   {
     "regresses_on": "Nightly",
@@ -110,8 +27,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "LLVM ERROR",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/codegen/abi-x86-interrupt.rs -o/tmp/rustc_testrunner_tmpdir.vVC6T2zmdYx0/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.vVC6T2zmdYx0 -Zincremental-verify-ich=yes"
+    "ice_msg": ""
   },
   {
     "regresses_on": "Nightly",
@@ -122,8 +38,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "LLVM ERROR",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc --crate-type lib ./src/test/codegen/intrinsics/prefetch.rs -o/tmp/rustc_testrunner_tmpdir.kYFLC4kGAbIb/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.kYFLC4kGAbIb -Zincremental-verify-ich=yes"
+    "ice_msg": ""
   },
   {
     "regresses_on": "Stable",
@@ -144,8 +59,7 @@
       "-Wmissing-docs"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/consts/raw-ptr-const.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": ""
   },
   {
     "regresses_on": "Nightly",
@@ -157,8 +71,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as Foo>, [])` during codegen",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/issues/issue-37725.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as Foo>, [])` during codegen"
   },
   {
     "regresses_on": "Nightly",
@@ -170,8 +83,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as std::clone::Clone>, [])` during codegen",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/trait-bounds/issue-75961.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as std::clone::Clone>, [])` during codegen"
   },
   {
     "regresses_on": "Nightly",
@@ -183,8 +95,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<i32 as Foo>, [])` during codegen",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<i32 as Foo>, [])` during codegen"
   },
   {
     "regresses_on": "Nightly",
@@ -196,8 +107,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<std::string::String as std::ops::Neg>, [])` during codegen",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/clippy/tests/ui/crashes/ice-3969.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<std::string::String as std::ops::Neg>, [])` during codegen"
   },
   {
     "regresses_on": "Nightly",
@@ -209,8 +119,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered errors `[FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<i32 as std::iter::Iterator>, polarity:Positive), []), depth=1),Unimplemented)]` resolving bounds after type-checking",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE Encountered errors `[FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<i32 as std::iter::Iterator>, polarity:Positive), []), depth=1),Unimplemented)]` resolving bounds outside of type inference"
   },
   {
     "regresses_on": "Nightly",
@@ -220,8 +129,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[222b]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/condition.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[6278]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -231,8 +139,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[84e8]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/assembly/static-relocation-model.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null --crate-type lib"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[979f]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -243,8 +150,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[45eb]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/array.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[a639]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -255,8 +161,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[c7e3]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/closure.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[e8d9]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -267,8 +172,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[1252]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/fun_ptr.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[92dc]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -279,8 +183,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[8cad]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/ptr_cast.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[9efa]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -290,8 +193,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[3474]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/static.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[f653]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
   },
   {
     "regresses_on": "Nightly",
@@ -301,8 +203,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[46fc]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./compiler/rustc_codegen_gcc/tests/run/slice.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[38b7]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
   },
   {
     "regresses_on": "Nightly",
@@ -313,8 +214,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:814:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/const-argument-non-static-lifetime.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:814:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -325,8 +225,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:814:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/min_const_generics/forbid-non-static-lifetimes.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:814:36: cannot convert `ReEarlyBound(0, 'a)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -337,8 +236,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:814:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/const-arg-in-const-arg.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:814:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
   },
   {
     "regresses_on": "Nightly",
@@ -349,8 +247,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:400:18: unexpected res Err in variant_of_res",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/never_type/issue-52443.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:400:18: unexpected res Err in variant_of_res"
   },
   {
     "regresses_on": "Stable",
@@ -362,8 +259,7 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize <impl Parser as Parser>::PartialState, maybe try to call `try_normalize_erasing_regions` instead",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/associated-types/issue-67684.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize <impl Parser as Parser>::PartialState, maybe try to call `try_normalize_erasing_regions` instead"
   },
   {
     "regresses_on": "Stable",
@@ -375,8 +271,7 @@
       "--emit=mir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize [closure@./src/test/ui/associated-types/issue-82079.rs:13:25: 13:46], maybe try to call `try_normalize_erasing_regions` instead",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/associated-types/issue-82079.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize [closure@./src/test/ui/associated-types/issue-82079.rs:13:25: 13:46], maybe try to call `try_normalize_erasing_regions` instead"
   },
   {
     "regresses_on": "Nightly",
@@ -384,35 +279,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[a34c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[a34c]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-demangling.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[a34c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[a34c]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-demangling.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[a34c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[a34c]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-demangling.rs -Cprofile-generate=/tmp/icemaker_pgo/ -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[a34c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[a34c]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-demangling.rs -Zthir-unsafeck=yes -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[2a2e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[2a2e]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -420,35 +287,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4145]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4145]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4145]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4145]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4145]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4145]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Cprofile-generate=/tmp/icemaker_pgo/ -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4145]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4145]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-str-demangling.rs -Zthir-unsafeck=yes -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4f6a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4f6a]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -456,26 +295,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[361e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[361e]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-structural-demangling.rs -Wabsolute-paths-not-starting-with-crate -Wbox-pointers -Wdeprecated-in-future -Welided-lifetimes-in-paths -Wexplicit-outlives-requirements -Wkeyword-idents -Wmacro-use-extern-crate -Wmeta-variable-misuse -Wmissing-abi -Wmissing-copy-implementations -Wmissing-debug-implementations -Wmissing-docs -Wnon-ascii-idents -Wnoop-method-call -Wpointer-structural-match -Wrust-2021-incompatible-closure-captures -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[361e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[361e]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-structural-demangling.rs -Cprofile-generate=/tmp/icemaker_pgo/ -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[361e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[361e]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-structural-demangling.rs -Zthir-unsafeck=yes -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[13e7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[13e7]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -483,17 +303,7 @@
     "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[ecb6]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[ecb6]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/foreign-types.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/foreign-types.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[ecb6]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[ecb6]) with no parent",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/foreign-types.rs -Zthir-unsafeck=yes -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[b268]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[b268]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -501,8 +311,7 @@
     "file": "./src/test/incremental/delayed_span_bug.rs",
     "args": [],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/incremental/delayed_span_bug.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]"
   },
   {
     "regresses_on": "Nightly",
@@ -510,8 +319,7 @@
     "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
     "args": [],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/treat-err-as-bug/delay_span_bug.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]"
   },
   {
     "regresses_on": "Nightly",
@@ -521,8 +329,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/associated-types/cache/chrono-scan.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -532,8 +339,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/lint/issue-87274-paren-parent.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -543,8 +349,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/lint/lint-qualification.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -554,8 +359,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/macros/try-macro.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -565,8 +369,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/clippy/tests/ui/redundant_pattern_matching_result.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -576,8 +379,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/rustfmt/tests/source/configs/use_try_shorthand/false.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -587,8 +389,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/rustfmt/tests/source/configs/use_try_shorthand/true.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -598,8 +399,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/rustfmt/tests/source/try-conversion.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -609,8 +409,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/rustfmt/tests/target/configs/use_try_shorthand/false.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -620,8 +419,7 @@
       "-Zunpretty=everybody_loops"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/tools/rustfmt/tests/target/issue-1681.rs -Zunpretty=everybody_loops -o/dev/null -Zdump-mir-dir=/dev/null --crate-type lib"
+    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
   },
   {
     "regresses_on": "Nightly",
@@ -629,8 +427,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1356:48",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/symbol-names/const-generics-structural-demangling.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1356:48"
   },
   {
     "regresses_on": "Nightly",
@@ -641,8 +438,7 @@
       "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:509:75",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/type-alias-impl-trait/impl-with-unconstrained-param.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: UnresolvedTy(_#0t)', compiler/rustc_typeck/src/check/writeback.rs:509:75"
   },
   {
     "regresses_on": "Nightly",
@@ -653,8 +449,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'forcing query with already existing `DepNode`",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/pattern/usefulness/slice-pattern-const.rs -o/tmp/rustc_testrunner_tmpdir.WRtjqAhPIyK1/1 -Cincremental=/tmp/rustc_testrunner_tmpdir.WRtjqAhPIyK1 -Zincremental-verify-ich=yes"
+    "ice_msg": "thread 'rustc' panicked at 'forcing query with already existing `DepNode`"
   },
   {
     "regresses_on": "Nightly",
@@ -662,34 +457,6 @@
     "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/issues/issue-75763.rs -Zvalidate-mir -Zverify-llvm-ir=yes -Zincremental-verify-ich=yes -Zmir-opt-level=0 -Zmir-opt-level=1 -Zmir-opt-level=2 -Zmir-opt-level=3 -Zmir-opt-level=4 -Zdump-mir=all --emit=mir -Zsave-analysis -Zprint-mono-items=full -Zpolymorphize=on -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/issues/issue-75763.rs -Zunpretty=mir -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/issues/issue-75763.rs -Zunpretty=mir-cfg -o/dev/null -Zdump-mir-dir=/dev/null"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-generics/issues/issue-75763.rs",
-    "args": [],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52",
-    "cmd": " /home/runner/.rustup/toolchains/master/bin/rustc ./src/test/ui/const-generics/issues/issue-75763.rs -Zunpretty=thir-tree -o/dev/null -Zdump-mir-dir=/dev/null"
+    "ice_msg": "thread 'rustc' panicked at 'non utf8 str from miri: Utf8Error { valid_up_to: 0, error_len: Some(1) }', compiler/rustc_middle/src/ty/print/pretty.rs:1418:52"
   }
 ]
