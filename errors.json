@@ -11,7 +11,10 @@
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/assembly/target-feature-multiple.rs",
-    "args": [],
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>"
+    ],
     "error_reason": "LLVM ERROR",
     "ice_msg": ""
   },
@@ -19,7 +22,10 @@
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/codegen/abi-x86-interrupt.rs",
-    "args": [],
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>"
+    ],
     "error_reason": "LLVM ERROR",
     "ice_msg": ""
   },
@@ -27,7 +33,10 @@
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/codegen/intrinsics/prefetch.rs",
-    "args": [],
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>"
+    ],
     "error_reason": "LLVM ERROR",
     "ice_msg": ""
   },
@@ -120,7 +129,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[a95e]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[9acb]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -130,7 +139,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[b726]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[5dd2]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -141,7 +150,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[d2c3]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[a232]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -152,7 +161,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[363f]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[fd88]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -163,7 +172,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[a268]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[5e0b]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -174,7 +183,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[5aaf]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[7625]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -184,7 +193,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[f459]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[c73b]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
   },
   {
     "regresses_on": "Nightly",
@@ -194,7 +203,7 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[dcd7]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[6c19]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
   },
   {
     "regresses_on": "Nightly",
@@ -270,7 +279,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[4088]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[4088]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[4832]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[4832]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -278,7 +287,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[bdb6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[bdb6]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9167]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9167]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -286,7 +295,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[892c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[892c]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[78dc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[78dc]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -294,7 +303,7 @@
     "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[4a43]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4a43]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[80a5]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[80a5]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -422,16 +431,14 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/no-core-2.rs",
+    "needs_feature": false,
+    "file": "./src/test/ui/const-generics/outer-lifetime-in-const-generic-default.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "-Zdump-mir=all",
-      "--emit=mir"
+      "--emit=mir",
+      "-Zsave-analysis"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: InterpErrorInfo(InterpErrorInfoInner { kind: enum value has invalid tag: 0x02, backtrace: None })', compiler/rustc_const_eval/src/const_eval/mod.rs:155:54"
+    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:884:26"
   },
   {
     "regresses_on": "Nightly",
