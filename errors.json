@@ -1,13 +1,5 @@
 [
   {
-    "regresses_on": "Stable",
-    "needs_feature": true,
-    "file": "./library/backtrace/src/lib.rs",
-    "args": [],
-    "error_reason": "RUST_BACKTRACE=",
-    "ice_msg": ""
-  },
-  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/assembly/target-feature-multiple.rs",
@@ -124,22 +116,22 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
-    "args": [
-      "-Zvalidate-mir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:113 ~ condition[740c]::main), const_param_did: None }) (after pass InstCombine) at bb5[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
     "file": "./src/test/assembly/static-relocation-model.rs",
     "args": [
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[12e3]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[5e98]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
+    "args": [
+      "-Zvalidate-mir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:20 ~ slice[41c1]::{impl#4}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -150,7 +142,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[a5cc]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[1112]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -161,7 +153,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[b14e]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[d73c]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -172,7 +164,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[9e47]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[aa11]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -183,7 +175,7 @@
       "--emit=mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[6556]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[6aab]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -193,17 +185,17 @@
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[ea83]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[905e]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
+    "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
     "args": [
       "-Zvalidate-mir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:59 ~ slice[ce53]::main), const_param_did: None }) (after pass InstCombine) at bb0[6]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:28 ~ condition[5977]::{impl#11}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -279,7 +271,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[1513]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[1513]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[3764]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[3764]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -287,7 +279,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[e381]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[e381]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[b2fb]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[b2fb]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -295,7 +287,7 @@
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[a21e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[a21e]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[d000]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[d000]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -303,23 +295,7 @@
     "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[3ab6]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[3ab6]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/incremental/delayed_span_bug.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
-    "args": [],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[7904]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7904]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -439,6 +415,86 @@
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:884:26"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-tuple-sole.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: ([isize],)', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-raw.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (dyn Trait,)', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-pass-valgrind/dst-dtor-4.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (i32, [Foo])', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-pass-valgrind/dst-dtor-3.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (i32, dyn Trait)', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-tuple.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (isize, &str, [isize])', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-trait-tuple.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (isize, &str, dyn ToBar)', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-tuple-zst-offsets.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (u8, [()])', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-tuple-no-reorder.rs",
+    "args": [
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'fat_pointer_kind() - Encountered unexpected `pointee_ty`: (u8, [u32])', compiler/rustc_codegen_llvm/src/debuginfo/utils.rs:102:13"
   },
   {
     "regresses_on": "Nightly",
