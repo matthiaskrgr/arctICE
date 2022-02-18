@@ -67,7 +67,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/2ff7ea4de291b437912c5082b6c92fefe7d6457f/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
+    "ice_msg": "ICE /rustc/30b3f35c420694a4f24e5a4df00f06073f4f3a37/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
   },
   {
     "regresses_on": "Nightly",
@@ -81,7 +81,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/2ff7ea4de291b437912c5082b6c92fefe7d6457f/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
+    "ice_msg": "ICE /rustc/30b3f35c420694a4f24e5a4df00f06073f4f3a37/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
   },
   {
     "regresses_on": "Nightly",
@@ -95,7 +95,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/2ff7ea4de291b437912c5082b6c92fefe7d6457f/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
+    "ice_msg": "ICE /rustc/30b3f35c420694a4f24e5a4df00f06073f4f3a37/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
   },
   {
     "regresses_on": "Nightly",
@@ -109,7 +109,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/2ff7ea4de291b437912c5082b6c92fefe7d6457f/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
+    "ice_msg": "ICE /rustc/30b3f35c420694a4f24e5a4df00f06073f4f3a37/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
   },
   {
     "regresses_on": "Nightly",
@@ -123,7 +123,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/2ff7ea4de291b437912c5082b6c92fefe7d6457f/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
+    "ice_msg": "ICE /rustc/30b3f35c420694a4f24e5a4df00f06073f4f3a37/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
   },
   {
     "regresses_on": "Nightly",
@@ -137,7 +137,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE /rustc/2ff7ea4de291b437912c5082b6c92fefe7d6457f/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
+    "ice_msg": "ICE /rustc/30b3f35c420694a4f24e5a4df00f06073f4f3a37/compiler/rustc_middle/src/ty/layout.rs:2254:25: for_variant called on zero-variant enum"
   },
   {
     "regresses_on": "Nightly",
@@ -219,7 +219,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[e8ee]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[5887]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -231,7 +231,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:20 ~ slice[1d9f]::{impl#4}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:20 ~ slice[2177]::{impl#4}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -244,7 +244,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[19cc]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[875a]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -257,7 +257,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[ac1a]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[ec10]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -270,7 +270,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[6ec5]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[8dc0]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -283,7 +283,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[fd71]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[c23a]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -295,7 +295,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[f044]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[b918]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
   },
   {
     "regresses_on": "Nightly",
@@ -307,7 +307,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:28 ~ condition[7a5e]::{impl#11}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
+    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:28 ~ condition[d5bb]::{impl#11}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
   },
   {
     "regresses_on": "Nightly",
@@ -412,7 +412,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[7b41]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[7b41]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[3d07]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[3d07]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -423,7 +423,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[7b41]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[7b41]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[3d07]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[3d07]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -434,7 +434,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[7b41]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[7b41]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[3d07]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[3d07]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -445,7 +445,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fcfc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fcfc]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[e82f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[e82f]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -456,7 +456,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fcfc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fcfc]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[e82f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[e82f]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -467,7 +467,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fcfc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fcfc]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[e82f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[e82f]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -478,7 +478,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[12cc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[12cc]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[23dc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[23dc]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -489,7 +489,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[12cc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[12cc]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[23dc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[23dc]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -500,7 +500,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[12cc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[12cc]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[23dc]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[23dc]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -511,7 +511,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[d643]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[d643]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[e17d]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[e17d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -522,7 +522,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[d643]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[d643]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[e17d]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[e17d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -533,7 +533,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[d643]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[d643]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[e17d]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[e17d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
