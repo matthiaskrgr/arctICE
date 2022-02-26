@@ -57,176 +57,6 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-37725.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as Foo>, [])` during codegen"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/trait-bounds/issue-75961.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<&mut () as std::clone::Clone>, [])` during codegen"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<i32 as Foo>, [])` during codegen"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered error `Unimplemented` selecting `Binder(<std::string::String as std::ops::Neg>, [])` during codegen"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE Encountered errors `[FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<i32 as std::iter::Iterator>, polarity:Positive), []), depth=1),Unimplemented)]` resolving bounds outside of type inference"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/assembly/static-relocation-model.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:15 ~ static_relocation_model[f9fc]::orange), const_param_did: None }) (after pass InstCombine) at bb0[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:20 ~ slice[744b]::{impl#4}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/array.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ array[7aee]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/closure.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ closure[468e]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/fun_ptr.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ fun_ptr[9af6]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/ptr_cast.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:23 ~ ptr_cast[bd88]::{impl#6}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/static.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:27 ~ static[fdb7]::main), const_param_did: None }) (after pass InstCombine) at bb4[2]:"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE broken MIR in Item(WithOptConstParam { did: DefId(0:28 ~ condition[57f6]::{impl#11}::index), const_param_did: None }) (after pass InstCombine) at bb1[1]:"
-  },
-  {
-    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/const-generics/const-argument-non-static-lifetime.rs",
     "args": [
@@ -328,7 +158,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[24ce]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[24ce]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[2539]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[2539]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -339,7 +169,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[24ce]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[24ce]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[2539]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[2539]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -350,7 +180,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[24ce]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[24ce]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_demangling[2539]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_demangling[2539]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -361,7 +191,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[3c9f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[3c9f]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[bc99]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[bc99]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -372,7 +202,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[3c9f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[3c9f]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[bc99]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[bc99]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -383,7 +213,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[3c9f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[3c9f]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[bc99]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[bc99]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -394,7 +224,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1541]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1541]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[64bb]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[64bb]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -405,7 +235,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1541]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1541]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[64bb]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[64bb]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -416,7 +246,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1541]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1541]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[64bb]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[64bb]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -427,7 +257,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[743d]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[743d]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[ef07]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[ef07]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -438,7 +268,7 @@
       "-C incremental=<dir>"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[743d]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[743d]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[ef07]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[ef07]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -449,7 +279,107 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[743d]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[743d]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[ef07]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[ef07]) with no parent"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/array.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/closure.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/fun_ptr.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/ptr_cast.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/tests/run/static.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/assembly/static-relocation-model.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -461,7 +391,21 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-37725.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -473,7 +417,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -485,7 +429,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -497,7 +441,63 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/trait-bounds/issue-75961.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "`delay_span_bug`",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -509,7 +509,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -521,7 +521,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -533,7 +533,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -545,7 +545,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -557,7 +557,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
@@ -569,7 +569,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "`delay_span_bug`",
-    "ice_msg": "ICE failed to process buffered lint here (dummy = false)"
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
     "regresses_on": "Nightly",
