@@ -5,20 +5,10 @@
     "file": "./src/test/assembly/target-feature-multiple.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f069e976340: i32,i32,ch = X86ISD::RDRAND 0x7f069e8ee3e8",
-    "ice_msg": ""
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/assembly/target-feature-multiple.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fd78bd76340: i32,i32,ch = X86ISD::RDRAND 0x7fd78bcee3e8",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f6ceb37d340: i32,i32,ch = X86ISD::RDRAND 0x7f6ceb2ed3e8, ./src/test/assembly/target-feature-multiple.rs:40:6",
     "ice_msg": ""
   },
   {
@@ -27,7 +17,8 @@
     "file": "./src/test/codegen/abi-x86-interrupt.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
     "error_reason": "LLVM ERROR: X86 interrupts may not return any value",
     "ice_msg": ""
@@ -38,20 +29,10 @@
     "file": "./src/test/codegen/intrinsics/prefetch.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f0342d861a0: ch = Prefetch<(load (s8) from %ir.3)> 0x7f0342cf33e8, 0x7f0342d860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>",
-    "ice_msg": ""
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/codegen/intrinsics/prefetch.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7ffbbdd861a0: ch = Prefetch<(load (s8) from %ir.3)> 0x7ffbbdcf33e8, 0x7ffbbdd860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f4c907861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f4c906f23e8, 0x7f4c907860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": ""
   },
   {
@@ -117,6 +98,30 @@
     "ice_msg": "ICE compiler/rustc_borrowck/src/universal_regions.rs:811:36: cannot convert `ReEarlyBound(0, 'b)` to a region vid"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/higher-rank-trait-bounds/normalize-under-binder/issue-80706.rs",
+    "args": [
+      "--edition=2018",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_codegen_llvm/src/context.rs:949:13: failed to get layout for `Result<<SaveUser as StorageRequestReturnType>::Output, String>`: the type `<SaveUser as StorageRequestReturnType>::Output` has an unknown layout"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/higher-rank-trait-bounds/normalize-under-binder/issue-80706.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_codegen_ssa/src/debuginfo/type_names.rs:393:13: debuginfo: Trying to create type name for unexpected type: <SaveUser as StorageRequestReturnType>::Output"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/never_type/issue-52443.rs",
@@ -180,7 +185,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc2]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8584]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8584]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -188,10 +193,11 @@
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc2]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8584]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8584]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -202,18 +208,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc2]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc2]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8584]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8584]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -224,7 +219,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[d4d8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[d4d8]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[283d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[283d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -232,10 +227,11 @@
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[d4d8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[d4d8]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[283d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[283d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -246,7 +242,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39d8]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39d8]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[4ee7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4ee7]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -254,10 +250,11 @@
     "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39d8]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39d8]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[4ee7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4ee7]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -268,106 +265,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39d8]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39d8]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/foreign-types.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39d8]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39d8]) with no parent"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/source/expr-block.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/source/expr-block.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/source/expr-block.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/source/expr-block.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/target/expr-block.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/target/expr-block.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/target/expr-block.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/rustfmt/tests/target/expr-block.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
-    ],
-    "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/fn_ctxt/_impl.rs:139:13: no type for local variable local let y = x + 1; (hir_id=HirId { owner: DefId(0:16 ~ expr_block[fcaf]::combine_block), local_id: 54 })"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[4ee7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4ee7]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -471,6 +369,29 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/incremental/delayed_span_bug.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/incremental/delayed_span_bug.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-37725.rs",
     "args": [
@@ -491,6 +412,29 @@
       "-Zincremental-verify-ich=yes",
       "-Zmir-opt-level=3",
       "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
+    "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -595,9 +539,58 @@
     "file": "./src/test/ui/pattern/usefulness/slice-pattern-const.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>"
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
     "ice_msg": "thread 'rustc' panicked at 'forcing query with already existing `DepNode`"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/closures/print/closure-print-generic-1.rs",
+    "args": [
+      "--edition=2021",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 11', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/closures/print/closure-print-generic-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 11', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/closures/print/closure-print-generic-verbose-1.rs",
+    "args": [
+      "--edition=2021",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 11', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/closures/print/closure-print-generic-verbose-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 11', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10"
   }
 ]
