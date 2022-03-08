@@ -8,7 +8,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f192397d340: i32,i32,ch = X86ISD::RDRAND 0x7f19238ed3e8, ./src/test/assembly/target-feature-multiple.rs:40:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fec0637d340: i32,i32,ch = X86ISD::RDRAND 0x7fec062ed3e8, ./src/test/assembly/target-feature-multiple.rs:40:6",
     "ice_msg": ""
   },
   {
@@ -32,7 +32,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f8c64b851a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f8c64af13e8, 0x7f8c64b850d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f3246d861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f3246cf23e8, 0x7f3246d860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": ""
   },
   {
@@ -197,7 +197,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4ee4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4ee4]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9d40]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9d40]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -209,7 +209,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4ee4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4ee4]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9d40]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9d40]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -220,7 +220,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4ee4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4ee4]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9d40]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9d40]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -231,7 +231,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7391]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7391]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[e22d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[e22d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -243,7 +243,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7391]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7391]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[e22d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[e22d]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -254,7 +254,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[9da7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9da7]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[28fe]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[28fe]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -266,7 +266,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[9da7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9da7]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[28fe]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[28fe]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -277,7 +277,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[9da7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9da7]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[28fe]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[28fe]) with no parent"
   },
   {
     "regresses_on": "Nightly",
