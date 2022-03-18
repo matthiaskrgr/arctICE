@@ -8,7 +8,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f817d97d340: i32,i32,ch = X86ISD::RDRAND 0x7f817d8ed3e8, ./src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7ff0e357d340: i32,i32,ch = X86ISD::RDRAND 0x7ff0e34ed3e8, ./src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": ""
   },
   {
@@ -32,7 +32,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f37817861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f37816f23e8, 0x7f37817860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fbe2cb861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fbe2caf23e8, 0x7fbe2cb860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": ""
   },
   {
@@ -185,7 +185,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9de9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9de9]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a43e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a43e]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -197,7 +197,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9de9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9de9]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a43e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a43e]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -208,7 +208,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9de9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9de9]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a43e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a43e]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -219,7 +219,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1a36]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1a36]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f221]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f221]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -231,7 +231,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1a36]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1a36]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f221]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f221]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -242,7 +242,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[cf73]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[cf73]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[a430]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a430]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -254,7 +254,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[cf73]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[cf73]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[a430]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a430]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -265,7 +265,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[cf73]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[cf73]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[a430]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a430]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -615,7 +615,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/461e8078010433ff7de2db2aaae8a3cfb0847215/compiler/rustc_middle/src/ty/subst.rs:364:43"
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/4ca56d2b7bbe275bc6c9f3cd698c6e0719a07182/compiler/rustc_middle/src/ty/subst.rs:364:43"
   },
   {
     "regresses_on": "Nightly",
