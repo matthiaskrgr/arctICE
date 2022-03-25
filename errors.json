@@ -1,5 +1,106 @@
 [
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/mod.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "109 |             rtabort!(\"stack overflow\");",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "109 |             rtabort!(\"stack overflow\");",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/mod.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "109 |             rtabort!(\"stack overflow\");",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/stack_overflow.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "109 |             rtabort!(\"stack overflow\");",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/stack_overflow.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "109 |             rtabort!(\"stack overflow\");",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/stack_overflow.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "109 |             rtabort!(\"stack overflow\");",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/unix/thread.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "104 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/windows/mod.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "53 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./library/std/src/sys/windows/thread.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "53 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
+    "ice_msg": ""
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/assembly/target-feature-multiple.rs",
@@ -8,7 +109,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f20d497d340: i32,i32,ch = X86ISD::RDRAND 0x7f20d48ed3e8, ./src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fa42ed7d340: i32,i32,ch = X86ISD::RDRAND 0x7fa42eced3e8, ./src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": ""
   },
   {
@@ -32,30 +133,86 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fad221861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fad220f23e8, 0x7fad221860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fe840f861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fe840ef23e8, 0x7fe840f860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/consts/raw-ptr-const.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "1  | / #![allow(const_err)] // make sure we hit the `delay_span_bug`",
     "ice_msg": ""
   },
   {
     "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./src/test/ui/consts/raw-ptr-const.rs",
+    "file": "./src/test/ui/issues/issue-17252.rs",
     "args": [
-      "-Wabsolute-paths-not-starting-with-crate",
-      "-Wbox-pointers",
-      "-Wdeprecated-in-future",
-      "-Welided-lifetimes-in-paths",
-      "-Wexplicit-outlives-requirements",
-      "-Wkeyword-idents",
-      "-Wmacro-use-extern-crate",
-      "-Wmeta-variable-misuse",
-      "-Wmissing-abi",
-      "-Wmissing-copy-implementations",
-      "-Wmissing-debug-implementations",
-      "-Wmissing-docs",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "1  | / #![allow(const_err)] // make sure we hit the `delay_span_bug`",
+    "error_reason": "4 |     let _x: [u8; FOO]; // caused stack overflow prior to fix",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-17252.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "4 |     let _x: [u8; FOO]; // caused stack overflow prior to fix",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-17252.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "4 |     let _x: [u8; FOO]; // caused stack overflow prior to fix",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/clippy_lints/src/lib.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "25  | |     \"allocating large arrays on stack may cause stack overflow\"",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/clippy_lints/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "25  | |     \"allocating large arrays on stack may cause stack overflow\"",
+    "ice_msg": ""
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/clippy_lints/src/lib.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "25  | |     \"allocating large arrays on stack may cause stack overflow\"",
     "ice_msg": ""
   },
   {
@@ -147,13 +304,10 @@
     "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:428:18: unexpected res Err in variant_of_res"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/issue-91069.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -161,13 +315,10 @@
     "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize <Wrap as Associate>::Associated, maybe try to call `try_normalize_erasing_regions` instead"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/issue-67684.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -175,13 +326,10 @@
     "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize <impl Parser as Parser>::PartialState, maybe try to call `try_normalize_erasing_regions` instead"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/issue-82079.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -197,7 +345,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5896]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5896]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f474]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f474]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -209,7 +357,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5896]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5896]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f474]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f474]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -220,7 +368,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5896]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5896]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f474]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f474]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -231,7 +379,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[c3e8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[c3e8]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ffcd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ffcd]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -243,7 +391,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[c3e8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[c3e8]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ffcd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ffcd]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -254,7 +402,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39ba]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39ba]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[9895]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9895]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -266,7 +414,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39ba]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39ba]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[9895]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9895]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -277,15 +425,13 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[39ba]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39ba]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[9895]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9895]) with no parent"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/array.rs",
     "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -293,12 +439,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/closure.rs",
     "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -306,11 +450,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/condition.rs",
     "args": [
-      "-Zvalidate-mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -318,12 +461,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/fun_ptr.rs",
     "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -331,12 +472,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/ptr_cast.rs",
     "args": [
-      "-Zvalidate-mir",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -344,11 +483,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_gcc/tests/run/slice.rs",
     "args": [
-      "-Zvalidate-mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -356,11 +494,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/assembly/static-relocation-model.rs",
     "args": [
-      "-Zvalidate-mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -391,13 +528,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-37725.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -405,13 +539,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/trait-bounds/issue-75961.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -442,13 +573,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/trivial-bounds/trivial-bounds-inconsistent.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -456,13 +584,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/tools/clippy/tests/ui/crashes/ice-3969.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -470,13 +595,10 @@
     "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/tools/clippy/tests/ui/crashes/trivial_bounds.rs",
     "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=3",
-      "--emit=mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -521,11 +643,10 @@
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:883:26"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/lint/rfc-2383-lint-reason/catch_multiple_lint_triggers.rs",
     "args": [
-      "-Zunpretty=expanded,hygiene",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -533,11 +654,10 @@
     "ice_msg": "thread 'rustc' panicked at 'all diagnostics with unstable expectations should have been converted', compiler/rustc_errors/src/lib.rs:526:9"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/lint/rfc-2383-lint-reason/expect_multiple_lints.rs",
     "args": [
-      "-Zunpretty=expanded,hygiene",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -557,11 +677,10 @@
     "ice_msg": "thread 'rustc' panicked at 'all diagnostics with unstable expectations should have been converted', compiler/rustc_errors/src/lib.rs:526:9"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/lint/rfc-2383-lint-reason/fulfilled_expectation_early_lints.rs",
     "args": [
-      "-Zunpretty=expanded,hygiene",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -615,6 +734,6 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/37b55c8a0cafdb60b9168da34f904acc70157df8/compiler/rustc_middle/src/ty/subst.rs:364:43"
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/7941b3f1473331d2abb2b8796046adc0105c8f94/compiler/rustc_middle/src/ty/subst.rs:364:43"
   }
 ]
