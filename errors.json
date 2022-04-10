@@ -8,7 +8,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f175c37d340: i32,i32,ch = X86ISD::RDRAND 0x7f175c2ed3e8, ./src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f453a37d340: i32,i32,ch = X86ISD::RDRAND 0x7f453a2ed3e8, ./src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": ""
   },
   {
@@ -32,7 +32,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fdaa31861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fdaa30f23e8, 0x7fdaa31860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f3fc6b861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f3fc6af23e8, 0x7f3fc6b860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, ./src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": ""
   },
   {
@@ -121,6 +121,17 @@
     "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize <impl Parser as Parser>::PartialState, maybe try to call `try_normalize_erasing_regions` instead"
   },
   {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-82079.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "query stack during panic:",
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:179:90: Failed to normalize [closure@./src/test/ui/associated-types/issue-82079.rs:13:25: 13:46], maybe try to call `try_normalize_erasing_regions` instead"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
@@ -129,7 +140,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c02b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c02b]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[eac4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[eac4]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -141,7 +152,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c02b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c02b]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[eac4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[eac4]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -152,7 +163,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c02b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c02b]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_str_demangling[eac4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[eac4]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -163,7 +174,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[29f9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[29f9]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[929c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[929c]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -175,7 +186,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[29f9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[29f9]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[929c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[929c]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -186,7 +197,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[7703]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7703]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[c4c3]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c4c3]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -198,7 +209,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[7703]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7703]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[c4c3]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c4c3]) with no parent"
   },
   {
     "regresses_on": "Nightly",
@@ -209,7 +220,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[7703]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7703]) with no parent"
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:41:21: finding type for DefId(0:9 ~ foreign_types[c4c3]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c4c3]) with no parent"
   },
   {
     "regresses_on": "Beta",
@@ -236,7 +247,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/upvar.rs:1708:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), vis: Spanned { node: Inherited, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) }, generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), bounds: [], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false } }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 69 }, name: Fresh(DefId(0:32 ~ issue_86800[b3b0]::{impl#1}::do_transaction::'_)), bounds: [], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided } }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 65 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<O>#0), bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:76 (#0), res: Def(Trait, DefId(2:3315 ~ core[a448]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 63 }), res: Some(Def(Trait, DefId(2:3315 ~ core[a448]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 61 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 55 }, kind: Rptr(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 50 }: ), MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 54 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[b3b0]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 51 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[b3b0]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 52 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 53 }: ), Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 62 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 56 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:76 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[b3b0]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 60 }), res: Some(Err), args: Some(GenericArgs { args: [Lifetime(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 59 }: )), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 57 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:75 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[b3b0]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 58 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[b3b0]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:75 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:76 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:76 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:76 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 64 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:76 (#0) }, None)], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:76 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true } }], where_clause: WhereClause { predicates: [], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 49 }, kind: Rptr(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 47 }: '_), MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 48 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[b3b0]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 66 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:76 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[b3b0]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:76 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 68 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[b3b0]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 67 }: '_))]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b3b0]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0) })"
+    "ice_msg": "ICE compiler/rustc_typeck/src/check/upvar.rs:1708:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), vis: Spanned { node: Inherited, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) }, generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), bounds: [], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false } }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 69 }, name: Fresh(DefId(0:32 ~ issue_86800[b6f1]::{impl#1}::do_transaction::'_)), bounds: [], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided } }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 65 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<O>#0), bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:76 (#0), res: Def(Trait, DefId(2:3360 ~ core[4916]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 63 }), res: Some(Def(Trait, DefId(2:3360 ~ core[4916]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 61 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 55 }, kind: Rptr(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 50 }: ), MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 54 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[b6f1]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 51 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[b6f1]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 52 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 53 }: ), Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 62 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 56 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:76 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[b6f1]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 60 }), res: Some(Err), args: Some(GenericArgs { args: [Lifetime(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 59 }: )), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 57 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:75 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[b6f1]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 58 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[b6f1]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:75 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:76 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:76 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:76 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 64 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:76 (#0) }, None)], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:76 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true } }], where_clause: WhereClause { predicates: [], span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 49 }, kind: Rptr(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 47 }: '_), MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 48 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[b6f1]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 66 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:76 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[b6f1]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:76 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 68 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[b6f1]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(lifetime(HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 67 }: '_))]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[b6f1]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0) })"
   },
   {
     "regresses_on": "Master",
@@ -588,6 +599,6 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "query stack during panic:",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/f4a7ce997a1d7546d2b737f8b87d36907bcea2ad/compiler/rustc_middle/src/ty/subst.rs:364:43"
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/8bf93e9b6791acee3a594ed202fdfe45ad9952b5/compiler/rustc_middle/src/ty/subst.rs:364:43"
   }
 ]
