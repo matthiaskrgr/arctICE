@@ -30,6 +30,9 @@ jobs:
       # clone rustc to run icemaker in
       - name: clone rustc
         run: git clone https://github.com/rust-lang/rust rust --depth 1
+      - name: rust git version
+        run: git log -1
+        working-directory: rust
       - name: copy logs into rustc repo
         run: cp -f errors.json rust/errors.json
       - name: copy config.toml into rustc repo
@@ -39,6 +42,9 @@ jobs:
         working-directory: rust
       - name: clone icemaker
         run: git clone https://github.com/matthiaskrgr/icemaker icemaker
+      - name: icemaker version
+        run: git log -1
+        working-directory: icemaker
       - name: build icemaker
         run: cargo build --release
         working-directory: icemaker
