@@ -46,7 +46,7 @@ jobs:
         run: git log -1
         working-directory: icemaker
       - name: build icemaker
-        run: cargo build --release
+        run: cargo build --release --features ci
         working-directory: icemaker
       - name: run icemaker on rustc
         run: ../icemaker/target/release/icemaker -s
