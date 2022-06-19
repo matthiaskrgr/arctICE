@@ -1,75 +1,159 @@
 [
   {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./compiler/rustc_data_structures/src/stack.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "10 | / /// Grows the stack on demand to prevent stack overflow. Call this in strategic locations",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./compiler/rustc_interface/src/interface.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "342 |     eprintln!(\"query stack during panic:\");",
-    "ice_msg": "",
-    "executable": "Clippy"
-  },
-  {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./compiler/rustc_interface/src/lib.rs",
+    "file": "./compiler/rustc_codegen_cranelift/example/arbitrary_self_types_pointers_and_wrappers.rs",
     "args": [
+      "-Cpasses=lint",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "342 |     eprintln!(\"query stack during panic:\");",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
-    "executable": "Clippy"
+    "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./compiler/rustc_query_system/src/lib.rs",
+    "file": "./compiler/rustc_codegen_cranelift/example/arbitrary_self_types_pointers_and_wrappers.rs",
     "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "621 |         sess.struct_err(&format!(\"internal compiler error: encountered incremental compilation error with {:?}\", dep_node))",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
-    "executable": "Clippy"
+    "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./compiler/rustc_query_system/src/query/mod.rs",
+    "file": "./compiler/rustc_codegen_cranelift/example/dst-field-align.rs",
     "args": [
+      "-Cpasses=lint",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "621 |         sess.struct_err(&format!(\"internal compiler error: encountered incremental compilation error with {:?}\", dep_node))",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
-    "executable": "Clippy"
+    "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./compiler/rustc_query_system/src/query/plumbing.rs",
+    "file": "./compiler/rustc_codegen_cranelift/example/dst-field-align.rs",
     "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_cranelift/example/subslice-patterns-const-eval.rs",
+    "args": [
+      "-Cpasses=lint",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "621 |         sess.struct_err(&format!(\"internal compiler error: encountered incremental compilation error with {:?}\", dep_node))",
+    "error_reason": "Undefined behavior: Division by zero",
     "ice_msg": "",
-    "executable": "Clippy"
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_cranelift/example/subslice-patterns-const-eval.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/example/arbitrary_self_types_pointers_and_wrappers.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/example/arbitrary_self_types_pointers_and_wrappers.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_gcc/example/dst-field-align.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_gcc/example/dst-field-align.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_gcc/example/subslice-patterns-const-eval.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_gcc/example/subslice-patterns-const-eval.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Nightly",
@@ -85,55 +169,6 @@
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/mod.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/mod.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/mod.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/mod.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Clippy"
-  },
-  {
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./library/std/src/sys/unix/process/process_unix.rs",
@@ -142,130 +177,6 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "780 |                 write!(f, \"signal: {signal}{signal_string} (core dumped)\")",
-    "ice_msg": "",
-    "executable": "Clippy"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/stack_overflow.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/stack_overflow.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/stack_overflow.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/stack_overflow.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "93 |             rtabort!(\"stack overflow\");",
-    "ice_msg": "",
-    "executable": "Clippy"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/thread.rs",
-    "args": [
-      "-Wunsafe-code",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "104 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/unix/thread.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "104 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
-    "ice_msg": "",
-    "executable": "Clippy"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/windows/mod.rs",
-    "args": [
-      "-Wunsafe-code",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "52 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/windows/mod.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "52 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
-    "ice_msg": "",
-    "executable": "Clippy"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/windows/thread.rs",
-    "args": [
-      "-Wunsafe-code",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "52 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./library/std/src/sys/windows/thread.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "52 | |                 // Next, set up our stack overflow handler which may get triggered if we run",
     "ice_msg": "",
     "executable": "Clippy"
   },
@@ -304,7 +215,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f559977e340: i32,i32,ch = X86ISD::RDRAND 0x7f5599690e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f762017e340: i32,i32,ch = X86ISD::RDRAND 0x7f7620090e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -322,6 +233,58 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/codegen/debug-vtable.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/codegen/debug-vtable.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/codegen/ffi-out-of-bounds-loads.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/codegen/ffi-out-of-bounds-loads.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/codegen/intrinsics/prefetch.rs",
@@ -330,7 +293,33 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fc5fab641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fc5faa95e68, 0x7fc5fab640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f079cb641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f079ca95e68, 0x7f079cb640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/codegen/riscv-abi/riscv64-lp64f-lp64d-abi.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/codegen/riscv-abi/riscv64-lp64f-lp64d-abi.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -345,6 +334,71 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "LLVM ERROR: Broken module found, compilation aborted!",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/debuginfo/pretty-std-collections-hash.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/debuginfo/pretty-std-collections-hash.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/debuginfo/pretty-std-collections.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/debuginfo/pretty-std-collections.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/mir-opt/const_prop/bad_op_unsafe_oob_for_slices.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -375,6 +429,162 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/run-make/static-pie/test-aslr.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/static-pie/test-aslr.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/run-make/wasm-symbols-different-module/bar.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/wasm-symbols-different-module/bar.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/run-make/wasm-symbols-different-module/baz.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/wasm-symbols-different-module/baz.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/issue-19371/foo.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/issue-19371/foo.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/long-linker-command-lines/foo.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/long-linker-command-lines/foo.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/obtain-borrowck/driver.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/obtain-borrowck/driver.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/rustdoc/same-crate-hidden-impl-parameter.rs",
@@ -384,6 +594,165 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/foreign/auxiliary/foreign_lib.rs",
+    "args": [
+      "-Cpasses=lint",
+      "--crate-type",
+      "lib",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call return type mismatches callee return type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/foreign/auxiliary/foreign_lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call return type mismatches callee return type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/align-with-extern-c-fn.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/align-with-extern-c-fn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/dst-raw-slice.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/array-slice-vec/slice-of-zero-size-elements.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/array-slice-vec/slice-of-zero-size-elements.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/subslice-patterns-const-eval-match.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/subslice-patterns-const-eval-match.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/subslice-patterns-const-eval.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/subslice-patterns-const-eval.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/object-method-numbering.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -403,27 +772,121 @@
   {
     "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./src/test/ui/consts/raw-ptr-const.rs",
+    "file": "./src/test/ui/cast/cast-rfc0401.rs",
     "args": [
-      "-Wmissing-docs",
+      "-Cpasses=lint",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "1  | / #![allow(const_err)] // make sure we hit the `delay_span_bug`",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/ui/consts/raw-ptr-const.rs",
+    "file": "./src/test/ui/cast/cast-rfc0401.rs",
     "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/const-generics/defaults/trait_objects.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "1  | / #![allow(const_err)] // make sure we hit the `delay_span_bug`",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
-    "executable": "Rustdoc"
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/const-generics/dyn-supertraits.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/const-generics/generic_const_exprs/subexprs_are_const_evalutable.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/const-generics/generic_const_exprs/subexprs_are_const_evalutable.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/consts/const-err2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/cross-crate/issue-64872/auxiliary/a_def_obj.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/cross-crate/issue-64872/auxiliary/a_def_obj.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Nightly",
@@ -439,6 +902,32 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/derives/derive-macro-const-default.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/derives/derive-macro-const-default.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/deriving/auxiliary/derive-no-std.rs",
@@ -448,6 +937,32 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/drop/dropck_legal_cycles.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/drop/dropck_legal_cycles.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -488,6 +1003,357 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-coerce-custom.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-coerce-custom.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/dynamically-sized-types/dst-field-align.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/dynamically-sized-types/dst-field-align.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-raw.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-raw.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-trait-tuple.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-trait-tuple.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-trait.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/dynamically-sized-types/dst-trait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/for-loop-while/foreach-external-iterators-hashmap-break-restart.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/for-loop-while/foreach-external-iterators-hashmap-break-restart.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/for-loop-while/foreach-external-iterators-hashmap.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/for-loop-while/foreach-external-iterators-hashmap.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/foreign/foreign-truncated-arguments.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/foreign/foreign-truncated-arguments.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generic-associated-types/const-generics-gat-in-trait-return-type-1.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generic-associated-types/const-generics-gat-in-trait-return-type-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generic-associated-types/const-generics-gat-in-trait-return-type-2.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generic-associated-types/const-generics-gat-in-trait-return-type-2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generic-associated-types/const-generics-gat-in-trait-return-type-3.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generic-associated-types/const-generics-gat-in-trait-return-type-3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/hashmap/hashmap-capacity-overflow.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/hashmap/hashmap-capacity-overflow.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/hashmap/hashmap-memory.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/impl-trait/issue-49685.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/impl-trait/issue-49685.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration-too-subtle-2.rs",
@@ -514,39 +1380,383 @@
   {
     "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-17252.rs",
+    "file": "./src/test/ui/issues/auxiliary/issue-11224.rs",
     "args": [
+      "-Cpasses=lint",
+      "--crate-type",
+      "lib",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "4 |     let _x: [u8; FOO]; // caused stack overflow prior to fix",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-17252.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "4 |     let _x: [u8; FOO]; // caused stack overflow prior to fix",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
   {
     "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-17252.rs",
+    "file": "./src/test/ui/issues/issue-12860.rs",
     "args": [
+      "-Cpasses=lint",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "4  | |     let _x: [u8; FOO]; // caused stack overflow prior to fix",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
-    "executable": "Rustdoc"
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-12860.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-12909.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-12909.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-16151.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-16151.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-1696.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-1696.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-20953.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-20953.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-23036.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-23036.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-26186.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-26805.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-26805.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/issues/issue-3026.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/issues/issue-3026.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-3559.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-3559.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-4333.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-4333.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-50518.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-50518.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-56229.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-5988.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-5988.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-7660.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-7660.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Stable",
@@ -597,6 +1807,175 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: Load from function body",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/colorful-write-macros.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/colorful-write-macros.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir-inlining/ice-issue-77306-2.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir-inlining/ice-issue-77306-2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/mir/mir_codegen_calls.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/mir/mir_codegen_calls.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_detects_invalid_ops.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_indexing_oob_1.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_indexing_oob_1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_indexing_oob_2.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_indexing_oob_2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_indexing_oob_3.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/mir_indexing_oob_3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -610,6 +1989,58 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/nll/process_or_insert_default.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/nll/process_or_insert_default.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-envs.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-envs.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -652,6 +2083,188 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/regions/regions-refcell.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/regions/regions-refcell.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-2091-track-caller/std-panic-locations.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-2091-track-caller/std-panic-locations.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/self/arbitrary_self_types_pointers_and_wrappers.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/self/arbitrary_self_types_pointers_and_wrappers.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/self/arbitrary_self_types_raw_pointer_trait.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/self/arbitrary_self_types_raw_pointer_trait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/self/arbitrary_self_types_stdlib_pointers.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/self/arbitrary_self_types_stdlib_pointers.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/self/explicit-self-objects-uniq.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/self/explicit-self-objects-uniq.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/self/objects-owned-object-owned-method.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/self/objects-owned-object-owned-method.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/stdlib-unit-tests/builtin-clone.rs",
@@ -661,6 +2274,396 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/structs-enums/class-cast-to-trait.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/structs-enums/class-cast-to-trait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/send_str_hashmap.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/send_str_hashmap.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/threads-sendsync/sync-send-iterators-in-libcollections.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/threads-sendsync/sync-send-iterators-in-libcollections.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/alias/object.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/alias/object.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/coercion-generic.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/coercion-generic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/coercion.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/coercion.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/inheritance/cast-without-call-to-supertrait.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/inheritance/cast-without-call-to-supertrait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/inheritance/cast.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/inheritance/cast.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/inheritance/repeated-supertrait.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/inheritance/repeated-supertrait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/issue-26339.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/issue-26339.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/issue-9394-inherited-calls.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/issue-9394-inherited-calls.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/region-pointer-simple.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/region-pointer-simple.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/trait-upcasting/basic.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/trait-upcasting/basic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/trait-upcasting/diamond.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/trait-upcasting/diamond.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/ufcs-object.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/ufcs-object.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -737,6 +2740,244 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/ufcs-polymorphic-paths.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/ufcs-polymorphic-paths.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/unboxed-closures/unboxed-closures-sugar-object.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/unboxed-closures/unboxed-closures-sugar-object.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/unsized/unsized-tuple-impls.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/unsized/unsized-tuple-impls.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/unsized-locals/by-value-trait-object-safety-withdefault.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/unsized-locals/by-value-trait-object-safety-withdefault.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/wrong-hashset-issue-42918.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/wrong-hashset-issue-42918.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/test/ui/zero-sized/zero-sized-binary-heap-push.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/zero-sized/zero-sized-binary-heap-push.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/auxiliary/lint-for-crate-rpass.rs",
+    "args": [
+      "-Cpasses=lint",
+      "--crate-type",
+      "lib",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/auxiliary/lint-for-crate-rpass.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/auxiliary/lint-for-crate.rs",
+    "args": [
+      "-Cpasses=lint",
+      "--crate-type",
+      "lib",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/auxiliary/lint-for-crate.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/regions-mock-tcx.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/regions-mock-tcx.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/tools/cargo/crates/cargo-util/src/process_error.rs",
@@ -749,16 +2990,267 @@
     "executable": "Rustdoc"
   },
   {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/clippy_lints/src/lib.rs",
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/from_iter_instead_of_collect.rs",
     "args": [
+      "-Cpasses=lint",
+      "--edition=2021",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "24  | |     \"allocating large arrays on stack may cause stack overflow\"",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
-    "executable": "Clippy"
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/from_iter_instead_of_collect.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/get_first.rs",
+    "args": [
+      "-Cpasses=lint",
+      "--edition=2021",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/get_first.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/get_unwrap.rs",
+    "args": [
+      "-Cpasses=lint",
+      "--edition=2021",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/get_unwrap.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/integer_arithmetic.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/integer_arithmetic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/into_iter_on_ref.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/into_iter_on_ref.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/iter_cloned_collect.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/iter_cloned_collect.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/iter_nth_zero.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/iter_nth_zero.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/iter_with_drain.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/iter_with_drain.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/len_zero.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/len_zero.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/let_unit.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/let_unit.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Nightly",
@@ -774,6 +3266,176 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/mut_key.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/mut_key.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/needless_collect.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/needless_collect.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/needless_collect_indirect.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/needless_collect_indirect.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/op_ref.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/op_ref.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/range_plus_minus_one.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/range_plus_minus_one.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/redundant_clone.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/redundant_clone.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/size_of_in_element_count/expressions.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/tools/clippy/tests/ui/unnecessary_to_owned.rs",
@@ -783,6 +3445,267 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/useless_conversion.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/useless_conversion.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/vec.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/vec.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/zero_sized_hashmap_values.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/zero_sized_hashmap_values.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui-toml/unwrap_used/unwrap_used.rs",
+    "args": [
+      "-Cpasses=lint",
+      "--edition=2021",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui-toml/unwrap_used/unwrap_used.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_calls/exported_symbol_wrong_arguments.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_calls/exported_symbol_wrong_arguments.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr1.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr2.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr3.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr4.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr4.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr5.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call return type mismatches callee return type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr5.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call return type mismatches callee return type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -809,6 +3732,32 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Unusual: Load from function body",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/modifying_constants.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/modifying_constants.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -854,6 +3803,163 @@
   {
     "regresses_on": "Stable",
     "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/static_memory_modification1.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/static_memory_modification1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/static_memory_modification2.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/static_memory_modification2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/static_memory_modification3.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/static_memory_modification3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/unaligned_pointers/alignment.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/unaligned_pointers/atomic_unaligned.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/unaligned_pointers/atomic_unaligned.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/unaligned_pointers/reference_to_packed.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/unaligned_pointers/unaligned_ptr1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/unaligned_pointers/unaligned_ptr3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
     "file": "./src/tools/miri/tests/fail/validity/dangling_ref3.rs",
     "args": [
       "-Cpasses=lint",
@@ -878,6 +3984,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/zst1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/panic/panic/panic1.rs",
@@ -888,6 +4007,384 @@
     "error_reason": " // rustc-env: RUST_BACKTRACE=1",
     "ice_msg": "",
     "executable": "Rustfmt"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/assume_bug.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/assume_bug.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/binary-heap.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/binary-heap.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/cast_fn_ptr.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/cast_fn_ptr.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/closures.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/closures.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/coerce_non_capture_closure_to_fn_ptr.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/coerce_non_capture_closure_to_fn_ptr.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/disable-alignment-check.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Memory reference address is misaligned",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/dst-field-align.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/dst-field-align.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/dst-raw.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/dst-raw.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/dyn-arbitrary-self.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/dyn-arbitrary-self.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/dyn-traits.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/dyn-traits.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/hashmap.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/hashmap.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/slices.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/slices.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/track-caller-attribute.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/track-caller-attribute.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/vec.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/vec.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": false,
+    "file": "./src/tools/tier-check/src/main.rs",
+    "args": [
+      "-Cpasses=lint",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/tier-check/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Master",
@@ -950,8 +4447,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4b0a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4b0a]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4b0a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4b0a]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d1e5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d1e5]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d1e5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d1e5]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -963,8 +4460,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4b0a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4b0a]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4b0a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4b0a]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d1e5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d1e5]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d1e5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d1e5]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -975,8 +4472,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3c45]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3c45]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3c45]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3c45]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3606]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3606]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3606]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3606]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -988,8 +4485,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3c45]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3c45]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3c45]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3c45]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3606]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3606]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3606]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3606]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -1000,8 +4497,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[9e24]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9e24]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[9e24]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9e24]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[a186]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a186]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[a186]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a186]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -1013,8 +4510,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[9e24]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9e24]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[9e24]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9e24]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[a186]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a186]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[a186]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a186]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -1026,8 +4523,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 70 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 65 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 66 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[177e]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3429 ~ core[782f]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 63 }), res: Some(Def(Trait, DefId(2:3429 ~ core[782f]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 61 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 55 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 50 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Implicit }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 54 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[177e]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 51 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[177e]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 52 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 53 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 62 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 56 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[177e]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 60 }), res: Some(Err), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 57 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[177e]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 59 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[177e]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 64 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 49 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 47 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[177e]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 48 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[177e]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 67 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[177e]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 69 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[177e]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 68 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[177e]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 70 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 65 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 66 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[177e]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3429 ~ core[782f]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 63 }), res: Some(Def(Trait, DefId(2:3429 ~ core[782f]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 61 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 55 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 50 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Implicit }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 54 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[177e]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 51 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[177e]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 52 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 53 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 62 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 56 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[177e]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 60 }), res: Some(Err), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 57 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[177e]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 59 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[177e]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 64 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 49 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 47 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[177e]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 48 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[177e]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 67 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[177e]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 69 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[177e]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 68 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[177e]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[177e]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
+    "error_reason": "error: internal compiler error: compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 70 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 65 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 66 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[cabd]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3429 ~ core[97ce]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 63 }), res: Some(Def(Trait, DefId(2:3429 ~ core[97ce]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 61 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 55 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 50 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Implicit }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 54 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[cabd]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 51 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[cabd]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 52 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 53 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 62 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 56 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[cabd]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 60 }), res: Some(Err), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 57 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[cabd]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 59 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[cabd]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 64 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 49 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 47 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[cabd]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 48 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[cabd]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 67 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[cabd]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 69 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[cabd]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 68 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[cabd]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
+    "ice_msg": "ICE compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 70 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 65 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 66 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[cabd]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3429 ~ core[97ce]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 63 }), res: Some(Def(Trait, DefId(2:3429 ~ core[97ce]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 61 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 55 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 50 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Implicit }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 54 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[cabd]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 51 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[cabd]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 52 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 53 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 62 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 56 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[cabd]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 60 }), res: Some(Err), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 57 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[cabd]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 59 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[cabd]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 64 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 49 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 47 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[cabd]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 48 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[cabd]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 67 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[cabd]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 69 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[cabd]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 68 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:32 ~ issue_86800[cabd]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[cabd]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
     "executable": "Rustc"
   },
   {
@@ -1283,7 +4780,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"continue\"), visibility: Public, item_id: DefId(DefId(0:13 ~ foo[2339]::continue_keyword)), kind: Keyword, docs: None } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
+    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"continue\"), visibility: Public, item_id: DefId(DefId(0:13 ~ foo[4b52]::continue_keyword)), kind: Keyword, docs: None } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
     "executable": "Rustdoc"
   },
   {
@@ -1295,7 +4792,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"match\"), visibility: Public, item_id: DefId(DefId(0:3 ~ foo[2339]::foo)), kind: Keyword, docs: Some(\"this is a test!\") } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
+    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"match\"), visibility: Public, item_id: DefId(DefId(0:3 ~ foo[4b52]::foo)), kind: Keyword, docs: Some(\"this is a test!\") } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
     "executable": "Rustdoc"
   },
   {
@@ -1307,7 +4804,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"tadam\"), visibility: Public, item_id: DefId(DefId(0:3 ~ existing_doc_keyword[5209]::tadam)), kind: Keyword, docs: None } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
+    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"tadam\"), visibility: Public, item_id: DefId(DefId(0:3 ~ existing_doc_keyword[e0b8]::tadam)), kind: Keyword, docs: None } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
     "executable": "Rustdoc"
   },
   {
@@ -1319,7 +4816,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"where\"), visibility: Public, item_id: DefId(DefId(0:4 ~ exotic[5db6]::where_keyword)), kind: Keyword, docs: Some(\"keywords? sure, pile them on\") } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
+    "ice_msg": "thread 'rustc' panicked at 'Item { name: Some(\"where\"), visibility: Public, item_id: DefId(DefId(0:4 ~ exotic[3a68]::where_keyword)), kind: Keyword, docs: Some(\"keywords? sure, pile them on\") } is not supported for JSON output', src/librustdoc/json/conversions.rs:260:13",
     "executable": "Rustdoc"
   },
   {
@@ -1474,7 +4971,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/8e430bfa9a6a9d81b25bddf6325069d217dc6f3f/compiler/rustc_middle/src/ty/subst.rs:363:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/3b98c08288528c243973a54934e4be75bcf20c31/compiler/rustc_middle/src/ty/subst.rs:363:43",
     "executable": "Rustc"
   },
   {
