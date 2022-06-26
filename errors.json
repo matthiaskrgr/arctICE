@@ -78,19 +78,6 @@
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./library/core/src/lib.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./library/std/src/sys/unix/process/process_unix.rs",
@@ -124,7 +111,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f643e77e340: i32,i32,ch = X86ISD::RDRAND 0x7f643e690e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f706a57e340: i32,i32,ch = X86ISD::RDRAND 0x7f706a490e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -176,7 +163,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f78401641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f7840095e68, 0x7f78401640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f389e1641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f389e095e68, 0x7f389e1640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -601,42 +588,6 @@
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_1.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
   },
   {
     "regresses_on": "Nightly",
@@ -1226,18 +1177,6 @@
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/recursion/issue-38591-non-regular-dropck-recursion.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/regions/regions-refcell.rs",
@@ -1730,18 +1669,6 @@
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/cargo/crates/cargo-util/src/process_error.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "191 | | /// segmentation faults or signals.",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/clippy/tests/ui/from_iter_instead_of_collect.rs",
@@ -2048,463 +1975,6 @@
   {
     "regresses_on": "Stable",
     "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_calls/exported_symbol_wrong_arguments.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr1.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr2.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr3.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr4.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument count mismatches callee argument count",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr5.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call return type mismatches callee return type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/deref_fn_ptr.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Unusual: Load from function body",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/modifying_constants.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Write to read-only memory",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/never_say_never.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/never_transmute_humans.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/never_transmute_void.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/static_memory_modification1.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Write to read-only memory",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/static_memory_modification2.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Write to read-only memory",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/static_memory_modification3.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Write to read-only memory",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/unaligned_pointers/alignment.rs",
-    "args": [
-      "-Zmir-opt-level=3",
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Memory reference address is misaligned",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/unaligned_pointers/atomic_unaligned.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Memory reference address is misaligned",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/unaligned_pointers/reference_to_packed.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Undefined behavior: Memory reference address is misaligned",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/unaligned_pointers/unaligned_ptr1.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Undefined behavior: Memory reference address is misaligned",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/unaligned_pointers/unaligned_ptr3.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Undefined behavior: Memory reference address is misaligned",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/validity/dangling_ref3.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Unusual: Returning alloca value",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/zst1.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Undefined behavior: Buffer overflow",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/assume_bug.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Division by zero",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/binary-heap.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Division by zero",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/cast_fn_ptr.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/closures.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/coerce_non_capture_closure_to_fn_ptr.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/disable-alignment-check.rs",
-    "args": [
-      "-Zmir-opt-level=3",
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Memory reference address is misaligned",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/dst-field-align.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/dst-raw.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/dyn-arbitrary-self.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/dyn-traits.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/hashmap.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/slices.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Division by zero",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/track-caller-attribute.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/vec.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Division by zero",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Stable",
-    "needs_feature": false,
     "file": "./src/tools/tier-check/src/main.rs",
     "args": [
       "-Cpasses=lint",
@@ -2576,8 +2046,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[6661]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[6661]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[6661]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[6661]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5b96]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5b96]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5b96]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5b96]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -2588,8 +2058,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[8d0b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[8d0b]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[8d0b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[8d0b]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[c7aa]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[c7aa]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[c7aa]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[c7aa]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -2600,8 +2070,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[1a31]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[1a31]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[1a31]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[1a31]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[2427]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2427]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[2427]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2427]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -2613,8 +2083,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 47 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 67 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 68 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[afc8]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 51 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3431 ~ core[2af7]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 65 }), res: Some(Def(Trait, DefId(2:3431 ~ core[2af7]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 63 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 57 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 52 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Param(DefId(0:35 ~ issue_86800[afc8]::{impl#1}::do_transaction::'_#1), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 56 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[afc8]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 53 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[afc8]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 54 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 55 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 64 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[afc8]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 62 }), res: Some(Def(TyAlias, DefId(0:16 ~ issue_86800[afc8]::TransactionFuture))), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 59 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 60 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[afc8]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 61 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[afc8]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 66 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 50 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 48 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[afc8]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 49 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[afc8]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 69 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[afc8]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 71 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[afc8]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 70 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[afc8]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
-    "ice_msg": "ICE compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 47 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 67 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 68 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[afc8]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 51 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3431 ~ core[2af7]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 65 }), res: Some(Def(Trait, DefId(2:3431 ~ core[2af7]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 63 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 57 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 52 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Param(DefId(0:35 ~ issue_86800[afc8]::{impl#1}::do_transaction::'_#1), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 56 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[afc8]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 53 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[afc8]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 54 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 55 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 64 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[afc8]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 62 }), res: Some(Def(TyAlias, DefId(0:16 ~ issue_86800[afc8]::TransactionFuture))), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 59 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 60 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[afc8]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 61 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[afc8]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 66 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 50 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 48 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[afc8]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 49 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[afc8]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 69 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[afc8]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 71 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[afc8]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 70 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[afc8]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[afc8]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
+    "error_reason": "error: internal compiler error: compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 47 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 67 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 68 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[65ed]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 51 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3431 ~ core[1c8f]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 65 }), res: Some(Def(Trait, DefId(2:3431 ~ core[1c8f]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 63 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 57 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 52 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Param(DefId(0:35 ~ issue_86800[65ed]::{impl#1}::do_transaction::'_#1), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 56 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[65ed]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 53 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[65ed]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 54 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 55 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 64 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[65ed]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 62 }), res: Some(Def(TyAlias, DefId(0:16 ~ issue_86800[65ed]::TransactionFuture))), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 59 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 60 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[65ed]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 61 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[65ed]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 66 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 50 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 48 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[65ed]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 49 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[65ed]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 69 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[65ed]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 71 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[65ed]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 70 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[65ed]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
+    "ice_msg": "ICE compiler/rustc_typeck/src/check/upvar.rs:1715:13: Drop location span error: need to handle more Node ImplItem(ImplItem { ident: do_transaction#0, def_id: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), generics: Generics { params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 46 }, name: Plain(O#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:29: 38:30 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: false }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 47 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }, GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 67 }, name: Plain(impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), pure_wrt_drop: false, kind: Type { default: None, synthetic: true }, colon_span: None }], predicates: [BoundPredicate(WhereBoundPredicate { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), origin: ImplTrait, bound_generic_params: [], bounded_ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 68 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[65ed]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [GenericParam { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 51 }, name: Fresh, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), pure_wrt_drop: false, kind: Lifetime { kind: Elided }, colon_span: None }], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0), res: Def(Trait, DefId(2:3431 ~ core[1c8f]::ops::function::FnOnce)), segments: [PathSegment { ident: FnOnce#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 65 }), res: Some(Def(Trait, DefId(2:3431 ~ core[1c8f]::ops::function::FnOnce))), args: Some(GenericArgs { args: [Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 63 }, kind: Tup([Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 57 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 52 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:32 (#0), name: Param(DefId(0:35 ~ issue_86800[65ed]::{impl#1}::do_transaction::'_#1), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 56 }, kind: TraitObject([PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0), res: Def(Trait, DefId(0:7 ~ issue_86800[65ed]::Transaction)), segments: [PathSegment { ident: Transaction#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 53 }), res: Some(Def(Trait, DefId(0:7 ~ issue_86800[65ed]::Transaction))), args: None, infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 54 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:40: 39:51 (#0) }], Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 55 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0), name: ImplicitObjectLifetimeDefault }, Dyn), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:36: 39:51 (#0) }, mutbl: Mut }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:31: 39:51 (#0) }]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) })], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 64 }, ident: Output#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 58 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0), res: Def(TyAlias, DefId(0:16 ~ issue_86800[65ed]::TransactionFuture)), segments: [PathSegment { ident: TransactionFuture#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 62 }), res: Some(Def(TyAlias, DefId(0:16 ~ issue_86800[65ed]::TransactionFuture))), args: Some(GenericArgs { args: [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 59 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:74: 39:76 (#0), name: Underscore }), Type(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 60 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0), res: Def(TyParam, DefId(0:27 ~ issue_86800[65ed]::{impl#1}::do_transaction::O)), segments: [PathSegment { ident: O#0, hir_id: Some(HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 61 }), res: Some(Def(TyParam, DefId(0:27 ~ issue_86800[65ed]::{impl#1}::do_transaction::O))), args: None, infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:78: 39:79 (#0) })], bindings: [], parenthesized: false, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:73: 39:80 (#0) }), infer_args: false }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }) }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:56: 39:80 (#0) }], parenthesized: true, span_ext: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:30: 39:52 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 66 } }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:24: 39:80 (#0) }, None)] })], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:30: 40:30 (#0), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:28: 38:31 (#0) }, kind: Fn(FnSig { header: FnHeader { unsafety: Normal, constness: NotConst, asyncness: Async, abi: Rust }, decl: FnDecl { inputs: [Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 50 }, kind: Rptr(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 48 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[65ed]::{impl#1}::do_transaction::'_), Fresh) }, MutTy { ty: Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 49 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0), res: SelfTy { trait_: None, alias_to: Some((DefId(0:25 ~ issue_86800[65ed]::{impl#1}), false)) }, segments: [PathSegment { ident: Self#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, mutbl: Not }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:14 (#0) }, Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 69 }, kind: Path(Resolved(None, Path { span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0), res: Def(TyParam, DefId(0:29 ~ issue_86800[65ed]::{impl#1}::do_transaction::{opaque#1})), segments: [PathSegment { ident: impl FnOnce(&mut dyn Transaction) -> TransactionFuture<'_, O>#0, hir_id: None, res: None, args: None, infer_args: true }] })), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:19: 39:80 (#0) }], output: Return(Ty { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 71 }, kind: OpaqueDef(ItemId { def_id: DefId(0:28 ~ issue_86800[65ed]::{impl#1}::do_transaction::{opaque#0}) }, [Lifetime(Lifetime { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 70 }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:39:9: 39:10 (#0), name: Param(DefId(0:34 ~ issue_86800[65ed]::{impl#1}::do_transaction::'_), Fresh) })]), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:40:10: 40:30 (#10) }), c_variadic: false, implicit_self: ImmRef }, span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 40:30 (#0) }, BodyId { hir_id: HirId { owner: DefId(0:26 ~ issue_86800[65ed]::{impl#1}::do_transaction), local_id: 45 } }), span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 45:6 (#0), vis_span: ./src/test/ui/impl-trait/issues/issue-86800.rs:38:5: 38:5 (#0) })",
     "executable": "Rustc"
   },
   {
@@ -2974,7 +2444,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/fdca237d5194bf8a1c9b437ebd2114d1c2ba6195/compiler/rustc_middle/src/ty/subst.rs:363:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/20a6f3a8a8ce5ae18d06b12cd7904bc5294ca753/compiler/rustc_middle/src/ty/subst.rs:363:43",
     "executable": "Rustc"
   },
   {
