@@ -1,6 +1,32 @@
 [
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc/build.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_cranelift/build_system/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./compiler/rustc_codegen_cranelift/example/arbitrary_self_types_pointers_and_wrappers.rs",
     "args": [
@@ -26,6 +52,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_cranelift/example/std_example.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./compiler/rustc_codegen_cranelift/example/subslice-patterns-const-eval.rs",
@@ -35,6 +74,32 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_cranelift/scripts/filter_profile.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./compiler/rustc_codegen_cranelift/y.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -65,6 +130,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./compiler/rustc_codegen_gcc/example/std_example.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./compiler/rustc_codegen_gcc/example/subslice-patterns-const-eval.rs",
@@ -79,8 +157,34 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./library/backtrace/ci/runtest-android.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./library/core/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./library/proc_macro/src/lib.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -101,6 +205,136 @@
     "error_reason": "780 |                 write!(f, \"signal: {signal}{signal_string} (core dumped)\")",
     "ice_msg": "",
     "executable": "Clippy"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./library/stdarch/ci/runtest-android.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./library/stdarch/crates/stdarch-gen/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./library/test/src/helpers/concurrency.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/bootstrap/bin/llvm-config-wrapper.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/bootstrap/bin/rustdoc.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/bootstrap/build.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch02-guessing-game-tutorial/listing-02-01/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch02-guessing-game-tutorial/listing-02-02/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch02-guessing-game-tutorial/no-listing-02-without-expect/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch03-common-programming-concepts/no-listing-15-invalid-array-access/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Stable",
@@ -207,6 +441,890 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-03/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-04/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-05/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-06/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-07/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-08/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-09/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/listing-09-12/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/no-listing-04-unwrap/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch09-error-handling/no-listing-05-expect/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-04/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-05/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-06/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-07/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-08/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-10/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-11/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-12/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-13/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-14/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-15/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-16/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-19/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-20/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-21/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-23/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/listing-12-24/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/no-listing-01-handling-errors-in-main/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/no-listing-02-using-search-in-run/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/output-only-03-multiple-matches/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch12-an-io-project/output-only-04-no-matches/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch13-functional-features/listing-12-23-reproduced/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch13-functional-features/listing-12-24-reproduced/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch13-functional-features/listing-13-18/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch13-functional-features/listing-13-20/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch13-functional-features/listing-13-22/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-01/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-02/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-05/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-07/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-08/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-10/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-11/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/listing-16-15/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch16-fearless-concurrency/no-listing-01-join-too-early/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-01/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-02/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-03/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-05/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-06/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-07/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-09/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-10/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-11/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-14/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-15/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-16/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-18/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-19/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-20/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-21/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-23/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-24/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/listing-20-25/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/no-listing-06-fix-threadpool-drop/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/listings/ch20-web-server/no-listing-07-final-code/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/tools/src/bin/convert_quotes.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/doc/book/tools/src/bin/remove_hidden_lines.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/doc/rustc-dev-guide/examples/rustc-driver-example.rs",
@@ -247,6 +1365,19 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/etc/test-float-parse/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/assembly/static-relocation-model.rs",
     "args": [
@@ -267,7 +1398,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f740f97e340: i32,i32,ch = X86ISD::RDRAND 0x7f740f890e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f9dfb97e340: i32,i32,ch = X86ISD::RDRAND 0x7f9dfb890e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -319,7 +1450,20 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f6f02d641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f6f02c95e68, 0x7f6f02d640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f56bd9641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f56bd895e68, 0x7f56bd9640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/codegen/remap_path_prefix/issue-73167-remap-std.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -379,6 +1523,32 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
+    "file": "./src/test/debuginfo/thread-names.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/debuginfo/thread.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
     "file": "./src/test/mir-opt/const_prop/bad_op_unsafe_oob_for_slices.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
@@ -406,6 +1576,45 @@
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/mir-opt/uninhabited-enum.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/native-link-modifier-whole-archive/directly_linked.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/native-link-modifier-whole-archive/native_lib_in_src.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/native-link-modifier-whole-archive/rlib_with_cmdline_native_lib.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -455,6 +1664,175 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/coverage/abort.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/assert.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/coverage/closure_macro.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/drop_trait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/generics.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/overflow.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/panic_unwind.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/try_error_result.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/unused.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/coverage/while_early_ret.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/debug-assertions/debug.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/emit/test-26235.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/run-make-fulldeps/hotplug_codegen_backend/the_backend.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/run-make-fulldeps/issue-19371/foo.rs",
@@ -496,7 +1874,137 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/reproducible-build/linker.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/reproducible-build-2/linker.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/save-analysis/krate2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/save-analysis-fail/krate2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make-fulldeps/windows-spawn/spawn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-pass-valgrind/down-with-thread-dtors.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-pass-valgrind/exit-flushes.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
     "file": "./src/test/rustdoc/same-crate-hidden-impl-parameter.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/rustdoc-gui/src/test_docs/build.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/extern/extern-call-deep2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/extern/extern-call-scrub.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -524,6 +2032,58 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
+    "file": "./src/test/ui/abi/foreign/foreign-call-no-runtime.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/segfault-no-out-of-stack.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/abi/stack-probes.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/abi/stack-protector.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
     "file": "./src/test/ui/align-with-extern-c-fn.rs",
     "args": [
       "-Cpasses=lint",
@@ -531,6 +2091,45 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/alloc-error/default-alloc-error-hook.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/box-of-array-of-drop-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/box-of-array-of-drop-2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -549,6 +2148,19 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/nested-vec-3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/array-slice-vec/slice-of-zero-size-elements.rs",
     "args": [
@@ -557,6 +2169,32 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/slice-panic-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/array-slice-vec/slice-panic-2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -588,6 +2226,19 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/asm/x86_64/sym.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/associated-types/object-method-numbering.rs",
     "args": [
@@ -597,6 +2248,58 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/attributes/main-removed-2/auxiliary/tokyo.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/backtrace-apple-no-dsymutil.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/backtrace.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/borrowck/two-phase-multiple-activations.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -623,6 +2326,136 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/cleanup-rvalue-temp-during-incomplete-alloc.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/codegen/init-large-type.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/codegen/issue-28950.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/command/command-argv0.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/command/command-create-pidfd.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/command/command-current-dir.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/command/command-exec.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/command/command-pre-exec.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/command/command-setgroups.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/command/command-uid-gid.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -733,6 +2566,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/drop/drop-trait-enum.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/drop/dropck_legal_cycles.rs",
@@ -746,40 +2592,17 @@
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_1.rs",
+    "file": "./src/test/ui/drop/terminate-in-initializer.rs",
     "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "fatal runtime error: stack overflow",
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Nightly",
@@ -843,6 +2666,58 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/env-args-reverse-iterator.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/env-funky-keys.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/extern/issue-64655-allow-unwind-when-calling-panic-directly.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/extern/issue-64655-extern-rust-must-allow-unwind.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -988,6 +2863,19 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/inherit-env.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/issues/auxiliary/issue-11224.rs",
@@ -999,6 +2887,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-10626.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1042,6 +2943,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-16560.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-1696.rs",
@@ -1055,6 +2969,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/issues/issue-17322.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-20953.rs",
@@ -1064,6 +2991,45 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-21291.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-2190-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-22864-2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1083,6 +3049,32 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-24533.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-25089.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
     "file": "./src/test/ui/issues/issue-26186.rs",
     "args": [
       "-Zmir-opt-level=3",
@@ -1091,6 +3083,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-26655.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1109,6 +3114,19 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-30018-panic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/issues/issue-3026.rs",
     "args": [
@@ -1117,6 +3135,32 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/issues/issue-30490.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-33770.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1147,6 +3191,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-4333.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/issues/issue-50518.rs",
@@ -1170,6 +3227,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-59020.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1213,6 +3283,32 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/logging-only-prints-once.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/lto/lto-still-runs-thread-dtors.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/lto/thin-lto-inlines.rs",
@@ -1235,6 +3331,45 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/colorful-write-macros.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/macro-with-braces-in-expr-position.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/mir/issue-77911.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1318,6 +3453,19 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/moves/moves-based-on-type-capture-clause.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/never_type/never_transmute_never.rs",
     "args": [
@@ -1343,6 +3491,383 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/numbers-arithmetic/int-abs-overflow.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/numbers-arithmetic/issue-8460-const.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/numbers-arithmetic/issue-8460.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panic-runtime/abort.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panic-runtime/lto-abort.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panic-runtime/lto-unwind.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/panics/abort-on-panic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/panics/panic-handler-chain-update-hook.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/panics/panic-handler-chain.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/panics/panic-handler-flail-wildly.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/panics/panic-handler-set-twice.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panics/panic-in-dtor-drops-fields.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panics/panic-recover-propagate.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panics/panic-task-name-none.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/panics/panic-task-name-owned.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/parser/macro-braces-dot-question.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/paths-containing-nul.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/print-stdout-eprint-stderr.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/proc-macro/auxiliary/issue-59191.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/core-run-destroy.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/fds-are-cloexec.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/issue-13304.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/issue-14456.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/issue-14940.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/issue-16272.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/issue-20091.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/multi-panic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/no-stdio.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/nofile-limit.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/process/process-envs.rs",
@@ -1352,6 +3877,97 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-exit.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/process-panic-after-fork.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-remove-from-env.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-sigpipe.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-spawn-nonexistent.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-spawn-with-unicode-params.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/process-status-inherits-stdin.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1369,16 +3985,69 @@
     "executable": "Rustc"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/ui/recursion/issue-38591-non-regular-dropck-recursion.rs",
+    "file": "./src/test/ui/process/signal-exit-status.rs",
     "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "fatal runtime error: stack overflow",
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
-    "executable": "Rustdoc"
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process/sigpipe-should-be-ignored.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/process/try-wait.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process-termination/process-termination-blocking-io.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/process-termination/process-termination-simple.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
   },
   {
     "regresses_on": "Stable",
@@ -1394,6 +4063,45 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-1937-termination-trait/termination-trait-for-box-dyn-error.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-1937-termination-trait/termination-trait-for-result-box-error_err.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-1937-termination-trait/termination-trait-for-str.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/rfc-2091-track-caller/std-panic-locations.rs",
@@ -1403,6 +4111,110 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfcs/rfc-1937-termination-trait/termination-trait-for-box-dyn-error.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfcs/rfc-1937-termination-trait/termination-trait-for-result-box-error_ok.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfcs/rfc-1937-termination-trait/termination-trait-for-result.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfcs/rfc-1937-termination-trait/termination-trait-for-str.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/runtime/atomic-print.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/runtime/backtrace-debuginfo.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/runtime/out-of-stack.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/runtime/rt-explody-panic-payloads.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1473,6 +4285,58 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/simd/shuffle-not-out-of-bounds.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/simd/target-feature-mixup.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/std-backtrace.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/stdio-is-blocking.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/stdlib-unit-tests/builtin-clone.rs",
     "args": [
@@ -1498,6 +4362,188 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/structs-enums/ivec-tag.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/structs-enums/unit-like-struct-drop-run.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/thread-local/tls.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/child-outlives-parent.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/clone-with-exterior.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/comm.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/eprint-on-tls-drop.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/issue-24313.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/issue-29488.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/issue-4446.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/issue-4448.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/issue-8827.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/issue-9396.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/send-resource.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/threads-sendsync/send_str_hashmap.rs",
@@ -1507,6 +4553,97 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/sendfn-spawn-with-fn-arg.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/spawn-fn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/spawn-types.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/spawn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/spawn2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/spawning-with-debug.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/sync-send-in-std.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1525,6 +4662,318 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-0.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-10.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-11.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-12.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-13.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-14.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-15.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-17.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-3.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-7.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-comm-9.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-life-0.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-spawn-barefn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/task-spawn-move-and-copy.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/threads-sendsync/task-stderr.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/tcp-stress.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/threads.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/tls-dtors-are-run-in-a-static-binary.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/threads-sendsync/tls-init-on-init.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/threads-sendsync/tls-try-with.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/unwind-resource.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/yield.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/yield1.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/traits/alias/object.rs",
     "args": [
@@ -1533,6 +4982,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/traits/bound/in-arc.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1752,6 +5214,19 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/typeck/issue-88609.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/test/ui/ufcs-polymorphic-paths.rs",
@@ -1779,6 +5254,19 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/unique/unique-send-2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/unsized/unsized-tuple-impls.rs",
     "args": [
@@ -1800,6 +5288,45 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/unwind-unique.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/wait-forked-but-failed-child.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/write-fmt-errors.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1860,6 +5387,58 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/create-dir-all-bare.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/issue-11881.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/issue-15149.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui-fulldeps/mod_dir_path_canonicalized.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui-fulldeps/regions-mock-tcx.rs",
@@ -1869,6 +5448,45 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/rename-directory.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/stdio-from.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/switch-stdout.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1885,6 +5503,175 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/cargo/src/cargo/util/profile.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/cargotest/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/clippy_dev/src/setup/intellij.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/clippy_dev/src/setup/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/rustc_tools_util/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/bytes_count_to_len.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/create_dir.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/deref_by_slicing.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/doc_errors.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/explicit_write.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/filetype_is_file.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/format_args.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/format_args_unfixable.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/clippy/tests/ui/from_iter_instead_of_collect.rs",
@@ -1895,6 +5682,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/from_str_radix_10.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2044,6 +5844,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/map_err.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/clippy/tests/ui/mut_key.rs",
@@ -2083,6 +5896,32 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/non_octal_unix_permissions.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/ok_expect.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/clippy/tests/ui/op_ref.rs",
@@ -2092,6 +5931,32 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/open_options.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/panic_in_result_fn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2124,6 +5989,32 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/redundant_slicing.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/same_item_push.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
     "file": "./src/tools/clippy/tests/ui/size_of_in_element_count/expressions.rs",
     "args": [
       "-Zmir-opt-level=3",
@@ -2132,6 +6023,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/unnecessary_iter_cloned.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2162,6 +6066,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/useless_conversion.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/clippy/tests/ui/vec.rs",
@@ -2171,6 +6088,71 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/verbose_file_reads.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/write_literal.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/write_literal_2.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/write_with_newline.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/writeln_empty_string.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2198,6 +6180,175 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/workspace.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/lld-wrapper/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/test-cargo-miri/subcrate/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/concurrency/libc_pthread_join_main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/concurrency/libc_pthread_join_multiple.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/concurrency/libc_pthread_join_self.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/concurrency/thread-spawn.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/concurrency/thread_local_static_dealloc.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/data_race/fence_after_load.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/fs/isolated_file.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/fs/isolated_stdin.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/fs/read_from_stdout.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/fs/write_to_stdin.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2345,6 +6496,19 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/fail/should-pass/cpp20_rwc_syncs.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/fail/static_memory_modification1.rs",
@@ -2380,6 +6544,84 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Write to read-only memory",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_mutex_deadlock.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_mutex_wrong_owner.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_read_wrong_owner.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_write_read_deadlock.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_write_write_deadlock.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_write_wrong_owner.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2464,6 +6706,32 @@
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/weak_memory/racing_mixed_size.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/fail/weak_memory/racing_mixed_size_read.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/fail/zst1.rs",
     "args": [
@@ -2472,6 +6740,19 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Undefined behavior: Buffer overflow",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/0concurrency_arc_drop.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2485,6 +6766,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/available-parallelism.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2537,6 +6831,162 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/channels.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/concurrent_caller_location.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/issue1643.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/concurrency/linux-futex.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/simple.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/spin_loop.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/spin_loops_nopreempt.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/sync.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/sync_nopreempt.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/concurrency/tls_lib_drop.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/current_dir.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/current_dir_with_isolation.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2607,6 +7057,32 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/fs.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/fs_with_isolation.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/pass/hashmap.rs",
@@ -2622,6 +7098,45 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/libc.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/main_result.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/panic/concurrent-panic.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
     "file": "./src/tools/miri/tests/pass/slices.rs",
     "args": [
       "-Cpasses=lint",
@@ -2629,6 +7144,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Division by zero",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/threadleak_ignored.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2659,6 +7187,253 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/weak_memory/extra_cpp.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/weak_memory/extra_cpp_unsafe.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/weak_memory/weak.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/remote-test-client/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/remote-test-server/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rls/rls-analysis/src/listings/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rls/rls-analysis/src/util.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rls/tests/support/paths.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/paths/src/lib.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_48/proc_macro/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_54/proc_macro/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_56/proc_macro/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_57/proc_macro/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_58/proc_macro/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_63/proc_macro/mod.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/rust-analyzer/build.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/rust-analyzer/tests/slow-tests/testdir.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustdoc-themes/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/rustfmt/build.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": false,
     "file": "./src/tools/tier-check/src/main.rs",
@@ -2668,6 +7443,19 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "ice_msg": "",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/x/src/main.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2732,8 +7520,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f851]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f851]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f851]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f851]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[47f2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[47f2]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[47f2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[47f2]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -2741,11 +7529,12 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[bae9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[bae9]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[bae9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[bae9]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[2c65]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[2c65]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[2c65]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[2c65]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -2756,8 +7545,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[a5a2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a5a2]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[a5a2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a5a2]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[9fec]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9fec]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[9fec]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[9fec]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -2779,21 +7568,6 @@
     "args": [
       "-Zmir-opt-level=3",
       "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/trait-bounds/select-param-env-instead-of-blanket.rs",
-    "args": [
-      "-Zmir-opt-level=3",
-      "--crate-type",
-      "lib",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -3068,6 +7842,19 @@
     "executable": "Rustdoc"
   },
   {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/abi/rustcall-generic.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: unexpected panic",
+    "ice_msg": "thread 'rustc' panicked at 'called `Option::unwrap()` on a `None` value', compiler/rustc_mir_transform/src/inline.rs:185:32",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/pattern/usefulness/slice-pattern-const.rs",
@@ -3105,7 +7892,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/46b8c23f3eb5e4d0e0aa27eb3f20d5b8fc3ed51f/compiler/rustc_middle/src/ty/subst.rs:363:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/6a1092056441652fe5fe5c5b422644951e6b99ce/compiler/rustc_middle/src/ty/subst.rs:363:43",
     "executable": "Rustc"
   },
   {
@@ -3117,7 +7904,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'proc-macro derives require a name', src/librustdoc/clean/mod.rs:808:22",
+    "ice_msg": "thread 'rustc' panicked at 'proc-macro derives require a name', src/librustdoc/clean/mod.rs:805:25",
     "executable": "Rustdoc"
   }
 ]
