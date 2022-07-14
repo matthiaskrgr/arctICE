@@ -1411,7 +1411,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f06db77e340: i32,i32,ch = X86ISD::RDRAND 0x7f06db690e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f852917e340: i32,i32,ch = X86ISD::RDRAND 0x7f8529090e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1463,7 +1463,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f852cb641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f852ca95e68, 0x7f852cb640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f0de69641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f0de6895e68, 0x7f0de69640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2652,19 +2652,6 @@
     "error_reason": "fatal runtime error: stack overflow",
     "ice_msg": "",
     "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/dynamically-sized-types/dst-coerce-custom.rs",
-    "args": [
-      "-Cpasses=lint",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
   },
   {
     "regresses_on": "Stable",
@@ -7542,8 +7529,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/adt.rs:432:18: unexpected res Err in variant_of_res",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:432:18: unexpected res Err in variant_of_res",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/adt.rs:443:18: unexpected res Err in variant_of_res",
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:443:18: unexpected res Err in variant_of_res",
     "executable": "Rustc"
   },
   {
@@ -7555,8 +7542,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/adt.rs:432:18: unexpected res Err in variant_of_res",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:432:18: unexpected res Err in variant_of_res",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/adt.rs:443:18: unexpected res Err in variant_of_res",
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/adt.rs:443:18: unexpected res Err in variant_of_res",
     "executable": "Rustc"
   },
   {
@@ -7581,8 +7568,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ec66]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ec66]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ec66]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ec66]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[10ee]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[10ee]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[10ee]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[10ee]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7593,8 +7580,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3a0f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3a0f]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3a0f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3a0f]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[54b2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[54b2]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[54b2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[54b2]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7605,8 +7592,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[7db6]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7db6]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[7db6]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7db6]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[617b]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[617b]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[617b]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[617b]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7642,6 +7629,32 @@
     "args": [
       "-Zmir-opt-level=3",
       "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/let-else/let-else-bindings.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/let-else/let-else-source-expr-nomove-pass.rs",
+    "args": [
+      "-Zvalidate-mir",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -7862,7 +7875,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1342:48",
+    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1335:48",
     "executable": "Rustc"
   },
   {
@@ -7875,7 +7888,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:883:26",
+    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:876:26",
     "executable": "Rustc"
   },
   {
@@ -7888,7 +7901,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:883:26",
+    "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:876:26",
     "executable": "Rustc"
   },
   {
@@ -7953,7 +7966,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/1c7b36d4db582cb47513a6c7176baaec1c3346ab/compiler/rustc_middle/src/ty/subst.rs:364:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/87588a2afd9ca903366f0deaf84d805f34469384/compiler/rustc_middle/src/ty/subst.rs:364:43",
     "executable": "Rustc"
   },
   {
