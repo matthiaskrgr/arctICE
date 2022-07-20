@@ -190,7 +190,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1411,7 +1411,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f80add7e340: i32,i32,ch = X86ISD::RDRAND 0x7f80adc90e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fde58d7e340: i32,i32,ch = X86ISD::RDRAND 0x7fde58c90e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1463,7 +1463,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f42d1b641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f42d1a95e68, 0x7f42d1b640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fd57e5641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fd57e495e68, 0x7fd57e5640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -3086,7 +3086,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
+    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -7291,8 +7291,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:5 ~ issue_96572_unconstrained_upvar[c618]::main::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:5 ~ issue_96572_unconstrained_upvar[c618]::main::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:5 ~ issue_96572_unconstrained_upvar[93fa]::main::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:5 ~ issue_96572_unconstrained_upvar[93fa]::main::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc"
   },
   {
@@ -7304,8 +7304,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ba9b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ba9b]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ba9b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ba9b]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[79f8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[79f8]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[79f8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[79f8]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7317,8 +7317,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4295]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4295]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4295]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4295]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[b5b0]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[b5b0]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[b5b0]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[b5b0]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7330,8 +7330,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[970e]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[970e]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[970e]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[970e]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[39b1]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39b1]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[39b1]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[39b1]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7626,7 +7626,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/f8588549c3c3d45c32b404210cada01e2a45def3/compiler/rustc_middle/src/ty/subst.rs:364:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/9a7b7d5e50ab0b59c6d349bbf005680a7c880e98/compiler/rustc_middle/src/ty/subst.rs:364:43",
     "executable": "Rustc"
   },
   {
