@@ -1411,7 +1411,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fd97757e340: i32,i32,ch = X86ISD::RDRAND 0x7fd977490e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fe461b7e340: i32,i32,ch = X86ISD::RDRAND 0x7fe461a90e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1463,7 +1463,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f9be0b641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f9be0a95e68, 0x7f9be0b640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f6a4cd641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f6a4cc95e68, 0x7f6a4cd640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -6084,45 +6084,6 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/concurrency/libc_pthread_join_main.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/concurrency/libc_pthread_join_multiple.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/concurrency/libc_pthread_join_self.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/fail/concurrency/thread-spawn.rs",
     "args": [
@@ -6177,45 +6138,6 @@
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/fail/fs/isolated_file.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/fs/isolated_stdin.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/fs/read_from_stdout.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/fs/write_to_stdin.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -6417,84 +6339,6 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Undefined behavior: Write to read-only memory",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_mutex_deadlock.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_mutex_wrong_owner.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_read_wrong_owner.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_write_read_deadlock.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_write_write_deadlock.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/sync/libc_pthread_rwlock_write_wrong_owner.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -6721,19 +6565,6 @@
   },
   {
     "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/concurrency/linux-futex.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/pass/concurrency/simple.rs",
     "args": [
@@ -6891,26 +6722,13 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/fs.rs",
+    "file": "./src/tools/miri/tests/pass/dyn-upcast.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/fs_with_isolation.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
+    "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -6924,19 +6742,6 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "Undefined behavior: Call argument type mismatches callee parameter type",
-    "ice_msg": "",
-    "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/libc.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -7339,8 +7144,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[1970]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[1970]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[1970]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[1970]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9bc9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9bc9]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9bc9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9bc9]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7352,8 +7157,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ce58]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ce58]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ce58]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ce58]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30e7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30e7]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30e7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30e7]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7365,8 +7170,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[6fa7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[6fa7]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[6fa7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[6fa7]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[2968]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2968]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[2968]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2968]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7661,7 +7466,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/62b272d25c5bb8b6bb8ac73797d82b8b9a1eabda/compiler/rustc_middle/src/ty/subst.rs:364:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/848090dcd18553b790461132ca9d2a020aeea9a2/compiler/rustc_middle/src/ty/subst.rs:364:43",
     "executable": "Rustc"
   },
   {
