@@ -1411,7 +1411,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fe461b7e340: i32,i32,ch = X86ISD::RDRAND 0x7fe461a90e68, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fb49177e340: i32,i32,ch = X86ISD::RDRAND 0x7fb491690e68, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -1463,7 +1463,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f6a4cd641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f6a4cc95e68, 0x7f6a4cd640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f7bea7641a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f7bea695e68, 0x7f7bea7640d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -2558,42 +2558,6 @@
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_1.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
   },
   {
     "regresses_on": "Nightly",
@@ -3931,18 +3895,6 @@
     "error_reason": "Unusual: unreachable immediately preceded by instruction without side effects",
     "ice_msg": "",
     "executable": "Rustc"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/recursion/issue-38591-non-regular-dropck-recursion.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc"
   },
   {
     "regresses_on": "Nightly",
@@ -7144,8 +7096,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9bc9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9bc9]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9bc9]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9bc9]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[1ddd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[1ddd]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[1ddd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[1ddd]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7157,8 +7109,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30e7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30e7]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30e7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30e7]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[d17e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[d17e]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[d17e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[d17e]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7170,8 +7122,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[2968]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2968]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[2968]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2968]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[42b2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[42b2]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[42b2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[42b2]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -7466,7 +7418,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/848090dcd18553b790461132ca9d2a020aeea9a2/compiler/rustc_middle/src/ty/subst.rs:364:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/93ffde6f04d3d24327a4e17a2a2bf4f63c246235/compiler/rustc_middle/src/ty/subst.rs:364:43",
     "executable": "Rustc"
   },
   {
