@@ -20,7 +20,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7efd4c97d340: i32,i32,ch = X86ISD::RDRAND 0x7efd4c8ed3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f0b8b581340: i32,i32,ch = X86ISD::RDRAND 0x7f0b8b4ed3e8, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -46,7 +46,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f1bca5861a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f1bca4f23e8, 0x7f1bca5860d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f11d0d8a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f11d0cf23e8, 0x7f11d0d8a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -219,6 +219,19 @@
     "executable": "Clippy"
   },
   {
+    "regresses_on": "Beta",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/alias/self-in-generics.rs",
+    "args": [
+      "-Zsave-analysis",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: /rustc/f22819bcce4abaff7d1246a56eec493418f9f4ee/compiler/rustc_middle/src/ty/relate.rs:412:13: var types encountered in super_relate_tys",
+    "ice_msg": "ICE /rustc/f22819bcce4abaff7d1246a56eec493418f9f4ee/compiler/rustc_middle/src/ty/relate.rs:412:13: var types encountered in super_relate_tys",
+    "executable": "Rustc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/async-await/issue-70594.rs",
@@ -246,6 +259,18 @@
     "executable": "Rustc"
   },
   {
+    "regresses_on": "Beta",
+    "needs_feature": true,
+    "file": "./src/test/ui/traits/alias/self-in-generics.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_privacy/src/lib.rs:282:17: unexpected type: FreshTy(0)",
+    "ice_msg": "ICE compiler/rustc_privacy/src/lib.rs:282:17: unexpected type: FreshTy(0)",
+    "executable": "Rustdoc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
@@ -254,8 +279,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f0e4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f0e4]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f0e4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f0e4]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5408]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5408]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5408]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5408]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -267,8 +292,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f360]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f360]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f360]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f360]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1e6f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1e6f]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1e6f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1e6f]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -280,8 +305,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[e725]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[e725]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[e725]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[e725]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[24f2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[24f2]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[24f2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[24f2]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -507,7 +532,7 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f360]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f360]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[1e6f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[1e6f]) with no parent",
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1335:48",
     "executable": "Rustc"
   },
@@ -573,7 +598,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/2ed0f29168f5bc116e747152be600519b5d78bfd/compiler/rustc_middle/src/ty/subst.rs:371:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/f22819bcce4abaff7d1246a56eec493418f9f4ee/compiler/rustc_middle/src/ty/subst.rs:371:43",
     "executable": "Rustc"
   },
   {
