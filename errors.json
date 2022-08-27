@@ -20,7 +20,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f98adb81340: i32,i32,ch = X86ISD::RDRAND 0x7f98adaea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f7d77981340: i32,i32,ch = X86ISD::RDRAND 0x7f7d778ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -46,7 +46,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fe50638a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fe5062e63e8, 0x7fe50638a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fb7d07891a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fb7d06e53e8, 0x7fb7d07890d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc"
   },
@@ -219,6 +219,42 @@
     "executable": "Clippy"
   },
   {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/const-generics/min_const_generics/macro.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/hir/map/mod.rs:200:13: local_def_id: no entry for `HirId { owner: DefId(0:12 ~ macro[ea19]::make_marker::{opaque#0}), local_id: 2 }`, which has a map of `Some(Stmt(Stmt { hir_id: HirId { owner: DefId(0:12 ~ macro[ea19]::make_marker::{opaque#0}), local_id: 2 }, kind: Item(ItemId { def_id: DefId(0:14 ~ macro[ea19]::make_marker::{opaque#0}::{constant#0}::const_macro) }), span: ./src/test/ui/const-generics/min_const_generics/macro.rs:16:5: 16:47 (#0) }))`",
+    "ice_msg": "ICE /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/hir/map/mod.rs:200:13: local_def_id: no entry for `HirId { owner: DefId(0:12 ~ macro[ea19]::make_marker::{opaque#0}), local_id: 2 }`, which has a map of `Some(Stmt(Stmt { hir_id: HirId { owner: DefId(0:12 ~ macro[ea19]::make_marker::{opaque#0}), local_id: 2 }, kind: Item(ItemId { def_id: DefId(0:14 ~ macro[ea19]::make_marker::{opaque#0}::{constant#0}::const_macro) }), span: ./src/test/ui/const-generics/min_const_generics/macro.rs:16:5: 16:47 (#0) }))`",
+    "executable": "Rustdoc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/auxiliary/issue-75982.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/hir/map/mod.rs:200:13: local_def_id: no entry for `HirId { owner: DefId(0:3 ~ issue_75982[4c65]::_), local_id: 2 }`, which has a map of `Some(Stmt(Stmt { hir_id: HirId { owner: DefId(0:3 ~ issue_75982[4c65]::_), local_id: 2 }, kind: Item(ItemId { def_id: DefId(0:4 ~ issue_75982[4c65]::_::first_macro) }), span: ./src/test/ui/macros/auxiliary/issue-75982.rs:3:5: 5:6 (#0) }))`",
+    "ice_msg": "ICE /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/hir/map/mod.rs:200:13: local_def_id: no entry for `HirId { owner: DefId(0:3 ~ issue_75982[4c65]::_), local_id: 2 }`, which has a map of `Some(Stmt(Stmt { hir_id: HirId { owner: DefId(0:3 ~ issue_75982[4c65]::_), local_id: 2 }, kind: Item(ItemId { def_id: DefId(0:4 ~ issue_75982[4c65]::_::first_macro) }), span: ./src/test/ui/macros/auxiliary/issue-75982.rs:3:5: 5:6 (#0) }))`",
+    "executable": "Rustdoc"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/imports/local-modularized-tricky-pass-2.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/hir/map/mod.rs:200:13: local_def_id: no entry for `HirId { owner: DefId(0:8 ~ local_modularized_tricky_pass_2[ff43]::deep::deep::Deeper), local_id: 4 }`, which has a map of `Some(Stmt(Stmt { hir_id: HirId { owner: DefId(0:8 ~ local_modularized_tricky_pass_2[ff43]::deep::deep::Deeper), local_id: 4 }, kind: Item(ItemId { def_id: DefId(0:10 ~ local_modularized_tricky_pass_2[ff43]::deep::deep::Deeper::{constant#0}::exported) }), span: ./src/test/ui/imports/local-modularized-tricky-pass-2.rs:21:13: 23:14 (#0) }))`",
+    "ice_msg": "ICE /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/hir/map/mod.rs:200:13: local_def_id: no entry for `HirId { owner: DefId(0:8 ~ local_modularized_tricky_pass_2[ff43]::deep::deep::Deeper), local_id: 4 }`, which has a map of `Some(Stmt(Stmt { hir_id: HirId { owner: DefId(0:8 ~ local_modularized_tricky_pass_2[ff43]::deep::deep::Deeper), local_id: 4 }, kind: Item(ItemId { def_id: DefId(0:10 ~ local_modularized_tricky_pass_2[ff43]::deep::deep::Deeper::{constant#0}::exported) }), span: ./src/test/ui/imports/local-modularized-tricky-pass-2.rs:21:13: 23:14 (#0) }))`",
+    "executable": "Rustdoc"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/async-await/issue-70594.rs",
@@ -254,8 +290,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5632]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5632]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[5632]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[5632]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[36b6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[36b6]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_str_demangling[36b6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[36b6]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -267,8 +303,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f6f4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f6f4]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f6f4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f6f4]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30a6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30a6]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30a6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30a6]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -280,8 +316,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[3d14]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[3d14]) with no parent",
-    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[3d14]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[3d14]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[4cc2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4cc2]) with no parent",
+    "ice_msg": "ICE compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:9 ~ foreign_types[4cc2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4cc2]) with no parent",
     "executable": "Rustc"
   },
   {
@@ -507,7 +543,7 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f6f4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f6f4]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:40:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[30a6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[30a6]) with no parent",
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1335:48",
     "executable": "Rustc"
   },
@@ -595,7 +631,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/cfb5ae26a4496b7d35180f15e47ada0f3897c7e8/compiler/rustc_middle/src/ty/subst.rs:371:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/2b443a8d97ff1f26c35e4bcf682bf9a89e8a66d2/compiler/rustc_middle/src/ty/subst.rs:371:43",
     "executable": "Rustc"
   },
   {
