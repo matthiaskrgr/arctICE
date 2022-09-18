@@ -18,7 +18,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fef0a781340: i32,i32,ch = X86ISD::RDRAND 0x7fef0a6ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7faf72f81340: i32,i32,ch = X86ISD::RDRAND 0x7faf72eea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -46,9 +46,22 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f6c2ab8a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f6c2aae63e8, 0x7f6c2ab8a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fb77d1841a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fb77d0e93e8, 0x7fb77d1840d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
@@ -252,8 +265,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[cf3a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[cf3a]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[cf3a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[cf3a]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c5fa]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c5fa]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c5fa]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c5fa]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -266,8 +279,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7978]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7978]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7978]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7978]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[956d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[956d]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[956d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[956d]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -280,8 +293,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[6182]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[6182]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[6182]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[6182]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[2e14]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2e14]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[2e14]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2e14]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -293,8 +306,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_ty_utils/src/assoc.rs:70:5: unexpected parent of trait or impl item or item not found: OpaqueTy(OpaqueTy { generics: Generics { params: [], predicates: [], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0), res: Def(Trait, DefId(2:3594 ~ core[1a27]::ops::deref::Deref)), segments: [PathSegment { ident: Deref#0, hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 3 }, res: Def(Trait, DefId(2:3594 ~ core[1a27]::ops::deref::Deref)), args: Some(GenericArgs { args: [], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 2 }, ident: Target#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 1 }, kind: OpaqueDef(ItemId { def_id: DefId(0:12 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}::{opaque#0}) }, [], true), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:41: 10:62 (#0) }) }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:32: 10:62 (#0) }], parenthesized: false, span_ext: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:31: 10:63 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 4 } }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0) }, None)], origin: FnReturn(DefId(0:10 ~ nested_rpitit[3c9c]::Foo::bar)), in_trait: true })",
-    "ice_msg": "ICE: compiler/rustc_ty_utils/src/assoc.rs:70:5: unexpected parent of trait or impl item or item not found: OpaqueTy(OpaqueTy { generics: Generics { params: [], predicates: [], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0), res: Def(Trait, DefId(2:3594 ~ core[1a27]::ops::deref::Deref)), segments: [PathSegment { ident: Deref#0, hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 3 }, res: Def(Trait, DefId(2:3594 ~ core[1a27]::ops::deref::Deref)), args: Some(GenericArgs { args: [], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 2 }, ident: Target#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 1 }, kind: OpaqueDef(ItemId { def_id: DefId(0:12 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}::{opaque#0}) }, [], true), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:41: 10:62 (#0) }) }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:32: 10:62 (#0) }], parenthesized: false, span_ext: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:31: 10:63 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:11 ~ nested_rpitit[3c9c]::Foo::bar::{opaque#0}), local_id: 4 } }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0) }, None)], origin: FnReturn(DefId(0:10 ~ nested_rpitit[3c9c]::Foo::bar)), in_trait: true })",
+    "error_reason": "error: internal compiler error: compiler/rustc_ty_utils/src/assoc.rs:70:5: unexpected parent of trait or impl item or item not found: OpaqueTy(OpaqueTy { generics: Generics { params: [], predicates: [], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0), res: Def(Trait, DefId(2:3594 ~ core[0ec2]::ops::deref::Deref)), segments: [PathSegment { ident: Deref#0, hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 3 }, res: Def(Trait, DefId(2:3594 ~ core[0ec2]::ops::deref::Deref)), args: Some(GenericArgs { args: [], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 2 }, ident: Target#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 1 }, kind: OpaqueDef(ItemId { def_id: DefId(0:12 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}::{opaque#0}) }, [], true), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:41: 10:62 (#0) }) }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:32: 10:62 (#0) }], parenthesized: false, span_ext: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:31: 10:63 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 4 } }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0) }, None)], origin: FnReturn(DefId(0:10 ~ nested_rpitit[380b]::Foo::bar)), in_trait: true })",
+    "ice_msg": "ICE: compiler/rustc_ty_utils/src/assoc.rs:70:5: unexpected parent of trait or impl item or item not found: OpaqueTy(OpaqueTy { generics: Generics { params: [], predicates: [], has_where_clause_predicates: false, where_clause_span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:21: 10:63 (#0) }, bounds: [Trait(PolyTraitRef { bound_generic_params: [], trait_ref: TraitRef { path: Path { span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0), res: Def(Trait, DefId(2:3594 ~ core[0ec2]::ops::deref::Deref)), segments: [PathSegment { ident: Deref#0, hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 3 }, res: Def(Trait, DefId(2:3594 ~ core[0ec2]::ops::deref::Deref)), args: Some(GenericArgs { args: [], bindings: [TypeBinding { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 2 }, ident: Target#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Ty(Ty { hir_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 1 }, kind: OpaqueDef(ItemId { def_id: DefId(0:12 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}::{opaque#0}) }, [], true), span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:41: 10:62 (#0) }) }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:32: 10:62 (#0) }], parenthesized: false, span_ext: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:31: 10:63 (#0) }), infer_args: false }] }, hir_ref_id: HirId { owner: DefId(0:11 ~ nested_rpitit[380b]::Foo::bar::{opaque#0}), local_id: 4 } }, span: ./src/test/ui/impl-trait/in-trait/nested-rpitit.rs:10:26: 10:63 (#0) }, None)], origin: FnReturn(DefId(0:10 ~ nested_rpitit[380b]::Foo::bar)), in_trait: true })",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -539,7 +552,7 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[7978]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[7978]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[956d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[956d]) with no parent",
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1338:48",
     "executable": "Rustc",
     "kind": "Ice"
@@ -634,7 +647,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/95a992a68694d8bf3959bd2c0ac27ce9e9208b59/compiler/rustc_middle/src/ty/subst.rs:371:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/5253b0a0a1f366fad0ebed57597fcf2703b9e893/compiler/rustc_middle/src/ty/subst.rs:371:43",
     "executable": "Rustc",
     "kind": "Ice"
   },
