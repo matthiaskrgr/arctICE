@@ -2,7 +2,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "library/std/src/sys/unix/process/process_unix.rs",
+    "file": "./library/std/src/sys/unix/process/process_unix.rs",
     "args": [],
     "error_reason": "713 |         libc::SIGABRT => \" (SIGABRT)\",",
     "ice_msg": "",
@@ -12,13 +12,13 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/assembly/target-feature-multiple.rs",
+    "file": "./src/test/assembly/target-feature-multiple.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f53e2181340: i32,i32,ch = X86ISD::RDRAND 0x7f53e20ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f04e8181340: i32,i32,ch = X86ISD::RDRAND 0x7f04e80ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -26,7 +26,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/codegen/abi-x86-interrupt.rs",
+    "file": "./src/test/codegen/abi-x86-interrupt.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -40,13 +40,13 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/codegen/intrinsics/prefetch.rs",
+    "file": "./src/test/codegen/intrinsics/prefetch.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fb1b4d8a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fb1b4ce63e8, 0x7fb1b4d8a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f63bb78a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f63bb6e63e8, 0x7f63bb78a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -54,7 +54,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/dropck/dropck_no_diverge_on_nonregular_1.rs",
+    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_1.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -67,7 +67,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/dropck/dropck_no_diverge_on_nonregular_2.rs",
+    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_2.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -80,7 +80,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
+    "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -93,7 +93,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration-too-subtle-2.rs",
+    "file": "./src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration-too-subtle-2.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -106,7 +106,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration.rs",
+    "file": "./src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -119,12 +119,12 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/process/process-panic-after-fork.rs",
+    "file": "./src/test/ui/process/process-panic-after-fork.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "81 |     assert!(signal == libc::SIGABRT || signal == libc::SIGILL || signal == libc::SIGTRAP);",
+    "error_reason": "82 |     assert!(signal == libc::SIGABRT || signal == libc::SIGILL || signal == libc::SIGTRAP);",
     "ice_msg": "",
     "executable": "Clippy",
     "kind": "Ice"
@@ -132,7 +132,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/recursion/issue-38591-non-regular-dropck-recursion.rs",
+    "file": "./src/test/ui/recursion/issue-38591-non-regular-dropck-recursion.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -145,7 +145,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/runtime/out-of-stack.rs",
+    "file": "./src/test/ui/runtime/out-of-stack.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -158,7 +158,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/issue-53398-cyclic-types.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/issue-53398-cyclic-types.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -171,7 +171,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/self-referential-3.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/self-referential-3.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -184,7 +184,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/self-referential-4.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/self-referential-4.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -197,7 +197,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/self-referential.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/self-referential.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -210,7 +210,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -223,7 +223,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error2.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error2.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -236,7 +236,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/cargo/crates/cargo-util/src/lib.rs",
+    "file": "./src/tools/cargo/crates/cargo-util/src/lib.rs",
     "args": [],
     "error_reason": "118 |                 libc::SIGABRT => \", SIGABRT: process abort signal\",",
     "ice_msg": "",
@@ -246,7 +246,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/cargo/crates/cargo-util/src/process_error.rs",
+    "file": "./src/tools/cargo/crates/cargo-util/src/process_error.rs",
     "args": [],
     "error_reason": "118 |                 libc::SIGABRT => \", SIGABRT: process abort signal\",",
     "ice_msg": "",
@@ -256,7 +256,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/process/multi-panic.rs",
+    "file": "./src/test/ui/process/multi-panic.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -269,7 +269,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "src/test/ui/async-await/issue-70594.rs",
+    "file": "./src/test/ui/async-await/issue-70594.rs",
     "args": [
       "-Zsave-analysis",
       "--edition=2018",
@@ -284,7 +284,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "src/test/ui/never_type/issue-52443.rs",
+    "file": "./src/test/ui/never_type/issue-52443.rs",
     "args": [
       "-Zsave-analysis",
       "-ooutputfile",
@@ -298,77 +298,63 @@
   {
     "regresses_on": "Stable",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
     "args": [
       "--edition=2021",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[2dc1]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[2dc1]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[0ecb]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[0ecb]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d4ca]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d4ca]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d4ca]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d4ca]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f6e5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f6e5]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[f6e5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[f6e5]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/ui/symbol-names/const-generics-structural-demangling.rs",
+    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5200]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5200]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5200]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5200]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4c58]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4c58]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4c58]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4c58]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/ui/symbol-names/foreign-types.rs",
+    "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[2e1f]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2e1f]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[2e1f]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[2e1f]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[3894]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[3894]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[3894]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[3894]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/incremental/delayed_span_bug.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "src/test/ui/treat-err-as-bug/delay_span_bug.rs",
+    "file": "./src/test/incremental/delayed_span_bug.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -380,9 +366,23 @@
     "kind": "Ice"
   },
   {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/source/cfg_if/detect/mod.rs",
+    "file": "./src/tools/rustfmt/tests/source/cfg_if/detect/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -395,7 +395,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/source/cfg_if/detect/os/linux/cpuinfo.rs",
+    "file": "./src/tools/rustfmt/tests/source/cfg_if/detect/os/linux/cpuinfo.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -408,7 +408,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/source/cfg_if/detect/os/linux/mod.rs",
+    "file": "./src/tools/rustfmt/tests/source/cfg_if/detect/os/linux/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -421,7 +421,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/tools/rustfmt/tests/source/cfg_if/lib.rs",
+    "file": "./src/tools/rustfmt/tests/source/cfg_if/lib.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -434,7 +434,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/source/cfg_if/mod.rs",
+    "file": "./src/tools/rustfmt/tests/source/cfg_if/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -447,7 +447,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/target/cfg_if/detect/mod.rs",
+    "file": "./src/tools/rustfmt/tests/target/cfg_if/detect/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -460,7 +460,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/target/cfg_if/detect/os/linux/cpuinfo.rs",
+    "file": "./src/tools/rustfmt/tests/target/cfg_if/detect/os/linux/cpuinfo.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -473,7 +473,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/target/cfg_if/detect/os/linux/mod.rs",
+    "file": "./src/tools/rustfmt/tests/target/cfg_if/detect/os/linux/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -486,7 +486,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/tools/rustfmt/tests/target/cfg_if/lib.rs",
+    "file": "./src/tools/rustfmt/tests/target/cfg_if/lib.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -499,7 +499,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rustfmt/tests/target/cfg_if/mod.rs",
+    "file": "./src/tools/rustfmt/tests/target/cfg_if/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -512,7 +512,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/rustdoc/issue-26995.rs",
+    "file": "./src/test/rustdoc/issue-26995.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -525,7 +525,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/associated-consts/assoc-const-eq-missing.rs",
+    "file": "./src/test/ui/associated-consts/assoc-const-eq-missing.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -538,7 +538,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/associated-consts/assoc-const-ty-mismatch.rs",
+    "file": "./src/test/ui/associated-consts/assoc-const-ty-mismatch.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -551,7 +551,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/associated-consts/issue-102335-const.rs",
+    "file": "./src/test/ui/associated-consts/issue-102335-const.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -564,7 +564,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/const-generics/const-arg-type-arg-misordered.rs",
+    "file": "./src/test/ui/const-generics/const-arg-type-arg-misordered.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -577,7 +577,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/transmutability/issue-101739-2.rs",
+    "file": "./src/test/ui/transmutability/issue-101739-2.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -590,7 +590,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/type-alias-impl-trait/not_well_formed.rs",
+    "file": "./src/test/ui/type-alias-impl-trait/not_well_formed.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -603,7 +603,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/tools/rust-analyzer/crates/parser/test_data/parser/inline/ok/0023_placeholder_type.rs",
+    "file": "./src/tools/rust-analyzer/crates/parser/test_data/parser/inline/ok/0023_placeholder_type.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -616,35 +616,35 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/generic-associated-types/bugs/issue-80626.rs",
+    "file": "./src/test/ui/traits/issue-82830.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3384 ~ core[6691]::marker::Sized) for 'LinkedList<A>': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0),Cycle([Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0), Obligation(predicate=Binder(TraitPredicate(<<A as Allocator>::Allocated<LinkedList<A>> as std::marker::Sized>, polarity:Positive), []), depth=1)]))]', /rustc/f83e0266cf7aaa4b41505c49a5fd9c2363166522/compiler/rustc_trait_selection/src/traits/auto_trait.rs:212:17",
+    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3379 ~ core[f28c]::marker::Send) for 'P': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2),Cycle([Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2)]))]', /rustc/01af5040fdada6ef8f1b749cda798d80a8590b2c/compiler/rustc_trait_selection/src/traits/auto_trait.rs:212:17",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/traits/issue-82830.rs",
+    "file": "./src/test/ui/generic-associated-types/bugs/issue-80626.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3391 ~ core[6691]::marker::Sync) for 'P': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2),Cycle([Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2)]))]', /rustc/f83e0266cf7aaa4b41505c49a5fd9c2363166522/compiler/rustc_trait_selection/src/traits/auto_trait.rs:212:17",
+    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3384 ~ core[f28c]::marker::Sized) for 'LinkedList<A>': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0),Cycle([Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0), Obligation(predicate=Binder(TraitPredicate(<<A as Allocator>::Allocated<LinkedList<A>> as std::marker::Sized>, polarity:Positive), []), depth=1)]))]', /rustc/01af5040fdada6ef8f1b749cda798d80a8590b2c/compiler/rustc_trait_selection/src/traits/auto_trait.rs:212:17",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/symbol-names/const-generics-structural-demangling.rs",
+    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5200]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5200]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4c58]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4c58]) with no parent",
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1339:48",
     "executable": "Rustc",
     "kind": "Ice"
@@ -652,7 +652,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "src/test/ui/const-generics/const-generic-default-wont-borrowck.rs",
+    "file": "./src/test/ui/const-generics/const-generic-default-wont-borrowck.rs",
     "args": [
       "-Zsave-analysis",
       "-ooutputfile",
@@ -666,7 +666,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "src/test/ui/const-generics/outer-lifetime-in-const-generic-default.rs",
+    "file": "./src/test/ui/const-generics/outer-lifetime-in-const-generic-default.rs",
     "args": [
       "-Zsave-analysis",
       "-ooutputfile",
@@ -680,7 +680,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/auxiliary/primitive-doc.rs",
+    "file": "./src/test/rustdoc/auxiliary/primitive-doc.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -693,7 +693,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/doc-notable_trait-mut_t_is_not_an_iterator.rs",
+    "file": "./src/test/rustdoc/doc-notable_trait-mut_t_is_not_an_iterator.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -706,7 +706,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/doc-notable_trait-mut_t_is_not_ref_t.rs",
+    "file": "./src/test/rustdoc/doc-notable_trait-mut_t_is_not_ref_t.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -719,7 +719,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/intra-doc/auxiliary/my-core.rs",
+    "file": "./src/test/rustdoc/intra-doc/auxiliary/my-core.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -732,7 +732,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/intra-doc/prim-methods-local.rs",
+    "file": "./src/test/rustdoc/intra-doc/prim-methods-local.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -745,7 +745,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/intra-doc/prim-self.rs",
+    "file": "./src/test/rustdoc/intra-doc/prim-self.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -758,7 +758,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/issue-23511.rs",
+    "file": "./src/test/rustdoc/issue-23511.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -771,7 +771,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/primitive/primitive-generic-impl.rs",
+    "file": "./src/test/rustdoc/primitive/primitive-generic-impl.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -784,7 +784,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/primitive-reference.rs",
+    "file": "./src/test/rustdoc/primitive-reference.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -797,7 +797,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/primitive.rs",
+    "file": "./src/test/rustdoc/primitive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -810,7 +810,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/sidebar-all-page.rs",
+    "file": "./src/test/rustdoc/sidebar-all-page.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -823,7 +823,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/tab_title.rs",
+    "file": "./src/test/rustdoc/tab_title.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -836,7 +836,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/rustdoc/titles.rs",
+    "file": "./src/test/rustdoc/titles.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -849,7 +849,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/ui/enum-discriminant/issue-70509-partial_eq.rs",
+    "file": "./src/test/ui/enum-discriminant/issue-70509-partial_eq.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -863,7 +863,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/rustdoc/feature-gate-doc_primitive.rs",
+    "file": "./src/test/ui/rustdoc/feature-gate-doc_primitive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -876,7 +876,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "src/test/ui/impl-trait/issues/issue-86800.rs",
+    "file": "./src/test/ui/impl-trait/issues/issue-86800.rs",
     "args": [],
     "error_reason": "error: internal compiler error: unexpected panic",
     "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:721:9",
@@ -886,7 +886,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "src/test/ui/pattern/usefulness/slice-pattern-const.rs",
+    "file": "./src/test/ui/pattern/usefulness/slice-pattern-const.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
@@ -900,21 +900,21 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "src/test/ui/mir/ssa-analysis-regression-50041.rs",
+    "file": "./src/test/ui/mir/ssa-analysis-regression-50041.rs",
     "args": [
       "-Z incremental-verify-ich=yes",
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/f83e0266cf7aaa4b41505c49a5fd9c2363166522/compiler/rustc_middle/src/ty/subst.rs:371:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/01af5040fdada6ef8f1b749cda798d80a8590b2c/compiler/rustc_middle/src/ty/subst.rs:371:43",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/librustdoc/clean/mod.rs",
+    "file": "./src/librustdoc/clean/mod.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -927,7 +927,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "src/test/ui/feature-gates/issue-43106-gating-of-proc_macro_derive.rs",
+    "file": "./src/test/ui/feature-gates/issue-43106-gating-of-proc_macro_derive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
