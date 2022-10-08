@@ -18,6 +18,8 @@ jobs:
       # make sure nightly, beta and stable are installed
       - name: install nightly
         run: rustup install nightly
+      - name: make nightly default
+        run: rustup default nightly
       - name: install beta
         run: rustup install beta
       - name: install stable
