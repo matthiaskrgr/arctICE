@@ -18,7 +18,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fe753381340: i32,i32,ch = X86ISD::RDRAND 0x7fe7532ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f7d0d781340: i32,i32,ch = X86ISD::RDRAND 0x7f7d0d6ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -46,7 +46,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f979778a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f97976e63e8, 0x7f979778a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f918f9841a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f918f8e93e8, 0x7f918f9840d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -228,10 +228,12 @@
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/async-await/issue-70594.rs",
     "args": [
+      "-Zsave-analysis",
+      "--edition=2018",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -241,10 +243,11 @@
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/never_type/issue-52443.rs",
     "args": [
+      "-Zsave-analysis",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -258,12 +261,26 @@
     "needs_feature": true,
     "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
     "args": [
+      "--edition=2021",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[26cd]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[26cd]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[9dac]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[9dac]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/explicit_auto_deref.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/sty.rs:1940:18: Ty::fn_sig() called on non-fn type: <() as CallableStr>::T",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/sty.rs:1940:18: Ty::fn_sig() called on non-fn type: <() as CallableStr>::T",
+    "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
@@ -275,8 +292,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fbe8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fbe8]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fbe8]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fbe8]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a13a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a13a]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a13a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a13a]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -289,8 +306,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[61a7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[61a7]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[61a7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[61a7]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[a40f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[a40f]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[a40f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[a40f]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -303,9 +320,35 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[93e0]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[93e0]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[93e0]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[93e0]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[aff1]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[aff1]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[aff1]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[aff1]) with no parent",
     "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/needless_borrow.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_trait_selection/src/traits/query/normalize.rs:257:21: unexpected ambiguity: Canonical { max_universe: U0, variables: [], value: ParamEnvAnd { param_env: ParamEnv { caller_bounds: [Binder(TraitPredicate(<Y as std::convert::AsRef<std::ffi::OsStr>>, polarity:Positive), []), Binder(ProjectionPredicate(ProjectionTy { substs: [X], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(Y)), []), Binder(TraitPredicate(<X as std::iter::IntoIterator>, polarity:Positive), []), Binder(TraitPredicate(<V as std::convert::AsRef<str>>, polarity:Positive), []), Binder(ProjectionPredicate(ProjectionTy { substs: [U], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(V)), []), Binder(TraitPredicate(<U as std::iter::IntoIterator>, polarity:Positive), []), Binder(ProjectionPredicate(ProjectionTy { substs: [T], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(X)), []), Binder(ProjectionPredicate(ProjectionTy { substs: [T], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(U)), []), Binder(TraitPredicate(<T as std::iter::IntoIterator>, polarity:Positive), []), Binder(TraitPredicate(<Y as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<X as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<V as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<U as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<T as std::marker::Sized>, polarity:Positive), [])], reveal: UserFacing, constness: NotConst }, value: ProjectionTy { substs: [Self], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) } } } Canonical { max_universe: U0, variables: [CanonicalVarInfo { kind: Ty(General(U0)) }], value: QueryResponse { var_values: CanonicalVarValues { var_values: [] }, region_constraints: QueryRegionConstraints { outlives: [], member_constraints: [] }, certainty: Ambiguous, opaque_types: [], value: NormalizationResult { normalized_ty: ^0 } } }",
+    "ice_msg": "ICE: compiler/rustc_trait_selection/src/traits/query/normalize.rs:257:21: unexpected ambiguity: Canonical { max_universe: U0, variables: [], value: ParamEnvAnd { param_env: ParamEnv { caller_bounds: [Binder(TraitPredicate(<Y as std::convert::AsRef<std::ffi::OsStr>>, polarity:Positive), []), Binder(ProjectionPredicate(ProjectionTy { substs: [X], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(Y)), []), Binder(TraitPredicate(<X as std::iter::IntoIterator>, polarity:Positive), []), Binder(TraitPredicate(<V as std::convert::AsRef<str>>, polarity:Positive), []), Binder(ProjectionPredicate(ProjectionTy { substs: [U], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(V)), []), Binder(TraitPredicate(<U as std::iter::IntoIterator>, polarity:Positive), []), Binder(ProjectionPredicate(ProjectionTy { substs: [T], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(X)), []), Binder(ProjectionPredicate(ProjectionTy { substs: [T], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) }, Term::Ty(U)), []), Binder(TraitPredicate(<T as std::iter::IntoIterator>, polarity:Positive), []), Binder(TraitPredicate(<Y as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<X as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<V as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<U as std::marker::Sized>, polarity:Positive), []), Binder(TraitPredicate(<T as std::marker::Sized>, polarity:Positive), [])], reveal: UserFacing, constness: NotConst }, value: ProjectionTy { substs: [Self], item_def_id: DefId(2:8565 ~ core[8429]::iter::traits::collect::IntoIterator::Item) } } } Canonical { max_universe: U0, variables: [CanonicalVarInfo { kind: Ty(General(U0)) }], value: QueryResponse { var_values: CanonicalVarValues { var_values: [] }, region_constraints: QueryRegionConstraints { outlives: [], member_constraints: [] }, certainty: Ambiguous, opaque_types: [], value: NormalizationResult { normalized_ty: ^0 } } }",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/type-alias-impl-trait/issue-74244.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_trait_selection/src/traits/query/normalize.rs:257:21: unexpected ambiguity: Canonical { max_universe: U0, variables: [], value: ParamEnvAnd { param_env: ParamEnv { caller_bounds: [], reveal: UserFacing, constness: NotConst }, value: ProjectionTy { substs: [DefaultAllocator], item_def_id: DefId(0:4 ~ issue_74244[cbb8]::Allocator::Buffer) } } } Canonical { max_universe: U0, variables: [], value: QueryResponse { var_values: CanonicalVarValues { var_values: [] }, region_constraints: QueryRegionConstraints { outlives: [], member_constraints: [] }, certainty: Ambiguous, opaque_types: [], value: NormalizationResult { normalized_ty: () } } }",
+    "ice_msg": "ICE: compiler/rustc_trait_selection/src/traits/query/normalize.rs:257:21: unexpected ambiguity: Canonical { max_universe: U0, variables: [], value: ParamEnvAnd { param_env: ParamEnv { caller_bounds: [], reveal: UserFacing, constness: NotConst }, value: ProjectionTy { substs: [DefaultAllocator], item_def_id: DefId(0:4 ~ issue_74244[cbb8]::Allocator::Buffer) } } } Canonical { max_universe: U0, variables: [], value: QueryResponse { var_values: CanonicalVarValues { var_values: [] }, region_constraints: QueryRegionConstraints { outlives: [], member_constraints: [] }, certainty: Ambiguous, opaque_types: [], value: NormalizationResult { normalized_ty: () } } }",
+    "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
@@ -573,26 +616,26 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/generic-associated-types/bugs/issue-80626.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3384 ~ core[98eb]::marker::Sized) for 'LinkedList<A>': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0),Cycle([Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0), Obligation(predicate=Binder(TraitPredicate(<<A as Allocator>::Allocated<LinkedList<A>> as std::marker::Sized>, polarity:Positive), []), depth=1)]))]', /rustc/a688a0305fad9219505a8f2576446510601bafe8/compiler/rustc_trait_selection/src/traits/auto_trait.rs:179:13",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
     "file": "./src/test/ui/traits/issue-82830.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3391 ~ core[98eb]::marker::Sync) for 'P': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2),Cycle([Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2)]))]', /rustc/a688a0305fad9219505a8f2576446510601bafe8/compiler/rustc_trait_selection/src/traits/auto_trait.rs:179:13",
+    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3379 ~ core[8429]::marker::Send) for 'P': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2),Cycle([Obligation(predicate=Binder(TraitPredicate(<P as std::marker::Sized>, polarity:Positive), []), depth=2)]))]', /rustc/f382c2748aec2ada91eff88840c996644ff0f70d/compiler/rustc_trait_selection/src/traits/auto_trait.rs:179:13",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/generic-associated-types/bugs/issue-80626.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: unexpected panic",
+    "ice_msg": "thread 'rustc' panicked at 'Unable to fulfill trait DefId(2:3384 ~ core[8429]::marker::Sized) for 'LinkedList<A>': [FulfillmentError(Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0),Cycle([Obligation(predicate=Binder(TraitPredicate(<LinkedList<A> as std::marker::Sized>, polarity:Positive), []), depth=0), Obligation(predicate=Binder(TraitPredicate(<<A as Allocator>::Allocated<LinkedList<A>> as std::marker::Sized>, polarity:Positive), []), depth=1)]))]', /rustc/f382c2748aec2ada91eff88840c996644ff0f70d/compiler/rustc_trait_selection/src/traits/auto_trait.rs:179:13",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
@@ -601,16 +644,17 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[61a7]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[61a7]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[a40f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[a40f]) with no parent",
     "ice_msg": "thread 'rustc' panicked at '`SaveContext::typeck_results` called outside of body', compiler/rustc_save_analysis/src/dump_visitor.rs:1339:48",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/const-generics/const-generic-default-wont-borrowck.rs",
     "args": [
+      "-Zsave-analysis",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -620,10 +664,11 @@
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./src/test/ui/const-generics/outer-lifetime-in-const-generic-default.rs",
     "args": [
+      "-Zsave-analysis",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -862,7 +907,7 @@
       "-Cdebuginfo=2"
     ],
     "error_reason": "error: internal compiler error: unexpected panic",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/a688a0305fad9219505a8f2576446510601bafe8/compiler/rustc_middle/src/ty/subst.rs:371:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/f382c2748aec2ada91eff88840c996644ff0f70d/compiler/rustc_middle/src/ty/subst.rs:371:43",
     "executable": "Rustc",
     "kind": "Ice"
   },
