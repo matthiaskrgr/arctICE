@@ -18,7 +18,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f5dab181340: i32,i32,ch = X86ISD::RDRAND 0x7f5dab0ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f8352f81340: i32,i32,ch = X86ISD::RDRAND 0x7f8352eea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -46,7 +46,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fd6aa98a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7fd6aa8e63e8, 0x7fd6aa98a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f4dad3841a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f4dad2e93e8, 0x7f4dad3840d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -228,6 +228,19 @@
     "kind": "Ice"
   },
   {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[6410]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[6410]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "executable": "Clippy",
+    "kind": "Ice"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": true,
     "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
@@ -236,22 +249,9 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[3af9]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[3af9]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8841]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8841]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8575]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8575]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -263,8 +263,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[639a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[639a]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[639a]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[639a]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[66a3]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[66a3]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[66a3]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[66a3]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -277,8 +277,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[facd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[facd]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[facd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[facd]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4074]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4074]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4074]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4074]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -291,8 +291,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[64fc]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[64fc]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[64fc]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[64fc]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[8afa]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[8afa]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[8afa]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[8afa]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
