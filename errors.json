@@ -18,7 +18,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7feb4c781340: i32,i32,ch = X86ISD::RDRAND 0x7feb4c6ea3e8, src/test/assembly/target-feature-multiple.rs:41:6",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fb704d813a8: i32,i32,ch = X86ISD::RDSEED 0x7fb704d81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -46,7 +46,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f073cd8a1a0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f073cce63e8, 0x7f073cd8a0d0, Constant:i32<0>, Constant:i32<0>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:41:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f57575890d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7f57574e63e8, 0x7f5757589000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -55,11 +55,14 @@
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/dropck/dropck_no_diverge_on_nonregular_3.rs",
-    "args": [],
-    "error_reason": "HANG",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
     "ice_msg": "",
     "executable": "Rustdoc",
-    "kind": "Hang"
+    "kind": "Ice"
   },
   {
     "regresses_on": "Master",
@@ -193,8 +196,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: /rustc/e9493d63c2a57b91556dccd219e21821432c7445/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "ice_msg": "ICE: /rustc/e9493d63c2a57b91556dccd219e21821432c7445/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
+    "error_reason": "error: internal compiler error: /rustc/83356b78c4ff3e7d84e977aa6143793545967301/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
+    "ice_msg": "ICE: /rustc/83356b78c4ff3e7d84e977aa6143793545967301/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
@@ -246,8 +249,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[0b7d]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[0b7d]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[1cb9]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[1cb9]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -259,8 +262,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[5371]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[5371]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[bf1c]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:185:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[bf1c]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Clippy",
     "kind": "Ice"
   },
@@ -273,8 +276,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[927b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[927b]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[927b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[927b]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[143d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[143d]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[143d]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[143d]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -287,8 +290,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[595c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[595c]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[595c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[595c]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3572]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3572]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[3572]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[3572]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -301,8 +304,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[a019]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a019]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[a019]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a019]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[11be]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[11be]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[11be]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[11be]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -370,6 +373,19 @@
     ],
     "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
     "ice_msg": "thread '<unnamed>' panicked at 'called `Result::unwrap()` on an `Err` value: NoSolution', compiler/rustc_borrowck/src/type_check/liveness/trace.rs:574:88",
+    "executable": "Clippy",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/tools/miri/tests/pass/intrinsics-math.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "ice_msg": "thread '<unnamed>' panicked at 'called `Result::unwrap()` on an `Err` value: ParseFloatError { kind: Invalid }', src/tools/clippy/clippy_lints/src/unused_rounding.rs:38:62",
     "executable": "Clippy",
     "kind": "Ice"
   },
