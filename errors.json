@@ -99,7 +99,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7ff6103813a8: i32,i32,ch = X86ISD::RDSEED 0x7ff610381138:2, src/test/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f5cef5813a8: i32,i32,ch = X86ISD::RDSEED 0x7f5cef581138:2, src/test/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -127,7 +127,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fbb601830d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7fbb600e93e8, 0x7fbb60183000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f1aa15890d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7f1aa14e63e8, 0x7f1aa1589000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -2696,48 +2696,9 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/8681d4cffcd23bbe619984ab62772a91827a40dc/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/8681d4cffcd23bbe619984ab62772a91827a40dc/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-generics/generic_arg_infer/in-signature.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "ice_msg": "ICE: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/typeck/issue-75889.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "ice_msg": "ICE: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/typeck/issue-88643.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "ice_msg": "ICE: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_middle/src/ty/visit.rs:103:17: expect tcx.sess.has_errors return true",
-    "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
@@ -2788,8 +2749,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:189:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8463]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:189:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8463]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:189:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[55cf]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:189:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[55cf]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2809,7 +2770,7 @@
     "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:24 ~ normalize_tait_in_const[d439]::foo::'_), '_)), Region(BrNamed(DefId(0:25 ~ normalize_tait_in_const[d439]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:24 ~ normalize_tait_in_const[d439]::foo::'_), '_) }) Opaque(DefId(0:23 ~ normalize_tait_in_const[d439]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:25 ~ normalize_tait_in_const[d439]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:24 ~ normalize_tait_in_const[f511]::foo::'_), '_)), Region(BrNamed(DefId(0:25 ~ normalize_tait_in_const[f511]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:24 ~ normalize_tait_in_const[f511]::foo::'_), '_) }) Opaque(DefId(0:23 ~ normalize_tait_in_const[f511]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:25 ~ normalize_tait_in_const[f511]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2822,8 +2783,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8119]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8119]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8119]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8119]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c686]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c686]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c686]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c686]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2836,8 +2797,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f9f2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f9f2]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f9f2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f9f2]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[49d5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[49d5]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[49d5]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[49d5]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2850,8 +2811,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[7c3b]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7c3b]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[7c3b]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[7c3b]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[1f88]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[1f88]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[1f88]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[1f88]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2892,7 +2853,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
-    "ice_msg": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1594:13",
+    "ice_msg": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1609:13",
     "executable": "ClippyFix",
     "kind": "Ice"
   },
@@ -3057,8 +3018,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_errors/src/lib.rs:972:33",
+    "error_reason": "error: internal compiler error: /rustc/8681d4cffcd23bbe619984ab62772a91827a40dc/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/8681d4cffcd23bbe619984ab62772a91827a40dc/compiler/rustc_errors/src/lib.rs:972:33",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3071,7 +3032,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
-    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/b3bc6bf31265ac10946a0832092dbcedf9b26805/compiler/rustc_errors/src/lib.rs:972:33",
+    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/8681d4cffcd23bbe619984ab62772a91827a40dc/compiler/rustc_errors/src/lib.rs:972:33",
     "executable": "ClippyFix",
     "kind": "Ice"
   },
@@ -3081,7 +3042,7 @@
     "file": "./src/test/incremental/delayed_span_bug.rs",
     "args": [],
     "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1594:13",
+    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1609:13",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3091,7 +3052,7 @@
     "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
     "args": [],
     "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1594:13",
+    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1609:13",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3104,7 +3065,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1760:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1767:25",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
@@ -3117,7 +3078,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1760:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1767:25",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
@@ -3130,7 +3091,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1760:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1767:25",
     "executable": "Rustdoc",
     "kind": "Ice"
   }
