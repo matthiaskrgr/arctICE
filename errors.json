@@ -99,7 +99,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f723db813a8: i32,i32,ch = X86ISD::RDSEED 0x7f723db81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f57881813a8: i32,i32,ch = X86ISD::RDSEED 0x7f5788181138:2, src/test/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -127,7 +127,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fbfc5d830d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7fbfc5ce93e8, 0x7fbfc5d83000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fc82df890d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7fc82dee63e8, 0x7fc82df89000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -162,6 +162,19 @@
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/mir-opt/inline/issue_76997_inline_scopes_parenting.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/mir-opt/issue_91633.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -474,6 +487,19 @@
     "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/cfg/cfg_stmt_expr.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/cleanup-rvalue-scopes.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1370,6 +1396,19 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
+    "file": "./src/test/ui/macros/macro-with-braces-in-expr-position.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "This likely indicates a bug in either rustc or cargo itself,",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
     "file": "./src/test/ui/mir/mir_codegen_calls_converging_drops_2.rs",
     "args": [
       "-ooutputfile",
@@ -1513,6 +1552,19 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
+    "file": "./src/test/ui/object-lifetime/object-lifetime-default-from-ref-struct.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
     "file": "./src/test/ui/or-patterns/issue-69875-should-have-been-expanded-earlier.rs",
     "args": [
       "-ooutputfile",
@@ -1527,6 +1579,19 @@
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/or-patterns/or-patterns-default-binding-modes.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/packed/issue-46152.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1761,6 +1826,19 @@
     "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/stdlib-unit-tests/raw-fat-ptr.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/threads-sendsync/mpsc_stress.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -2025,7 +2103,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "This likely indicates a bug in either rustc or cargo itself,",
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
     "ice_msg": "",
     "executable": "ClippyFix",
     "kind": "ClippyFix"
@@ -2495,6 +2573,19 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/packed_struct.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
     "file": "./src/tools/miri/tests/pass/pointers.rs",
     "args": [
       "-ooutputfile",
@@ -2605,8 +2696,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: /rustc/bddad597feb997a4e5d2cd174a76c3b07a84e4d6/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/bddad597feb997a4e5d2cd174a76c3b07a84e4d6/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/c97b539e408ea353f4fde2f9251d598291fec421/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/c97b539e408ea353f4fde2f9251d598291fec421/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2658,8 +2749,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[0959]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[0959]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[b6fb]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[b6fb]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2679,7 +2770,7 @@
     "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:24 ~ normalize_tait_in_const[8411]::foo::'_), '_)), Region(BrNamed(DefId(0:25 ~ normalize_tait_in_const[8411]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:24 ~ normalize_tait_in_const[8411]::foo::'_), '_) }) Opaque(DefId(0:23 ~ normalize_tait_in_const[8411]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:25 ~ normalize_tait_in_const[8411]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:24 ~ normalize_tait_in_const[c907]::foo::'_), '_)), Region(BrNamed(DefId(0:25 ~ normalize_tait_in_const[c907]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:24 ~ normalize_tait_in_const[c907]::foo::'_), '_) }) Opaque(DefId(0:23 ~ normalize_tait_in_const[c907]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:25 ~ normalize_tait_in_const[c907]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2692,8 +2783,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[b68f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[b68f]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[b68f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[b68f]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a1b6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a1b6]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[a1b6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[a1b6]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2706,8 +2797,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[6072]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[6072]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[6072]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[6072]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[928b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[928b]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[928b]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[928b]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2720,8 +2811,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[c2df]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c2df]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[c2df]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c2df]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[839e]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[839e]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[839e]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[839e]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2927,8 +3018,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/bddad597feb997a4e5d2cd174a76c3b07a84e4d6/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/bddad597feb997a4e5d2cd174a76c3b07a84e4d6/compiler/rustc_errors/src/lib.rs:972:33",
+    "error_reason": "error: internal compiler error: /rustc/c97b539e408ea353f4fde2f9251d598291fec421/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/c97b539e408ea353f4fde2f9251d598291fec421/compiler/rustc_errors/src/lib.rs:972:33",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2941,7 +3032,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
-    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/bddad597feb997a4e5d2cd174a76c3b07a84e4d6/compiler/rustc_errors/src/lib.rs:972:33",
+    "ice_msg": "thread 'rustc' panicked at 'Box<dyn Any>', /rustc/c97b539e408ea353f4fde2f9251d598291fec421/compiler/rustc_errors/src/lib.rs:972:33",
     "executable": "ClippyFix",
     "kind": "Ice"
   },
