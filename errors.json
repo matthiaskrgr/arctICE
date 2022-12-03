@@ -106,7 +106,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f8100b813a8: i32,i32,ch = X86ISD::RDSEED 0x7f8100b81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fa502f813a8: i32,i32,ch = X86ISD::RDSEED 0x7fa502f81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -134,7 +134,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f7cad9890d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7f7cad8e63e8, 0x7f7cad989000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fac65f830d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7fac65ee93e8, 0x7fac65f83000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -934,20 +934,6 @@
   },
   {
     "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/higher-rank-trait-bounds/normalize-under-binder/issue-76956.rs",
-    "args": [
-      "--force-warn clippy::explicit-auto-deref",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/hygiene/auxiliary/fields.rs",
     "args": [
@@ -1254,20 +1240,6 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-36936.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-cast",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
     "file": "./src/test/ui/issues/issue-39548.rs",
     "args": [
       "--force-warn clippy::bool-comparison",
@@ -1448,37 +1420,9 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/macros/issue-26322.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-call",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
     "file": "./src/test/ui/macros/issue-68058.rs",
     "args": [
       "--force-warn clippy::unused-unit",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/macros/issue-8851.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-cast",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -1642,38 +1586,10 @@
   },
   {
     "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/numbers-arithmetic/issue-8460.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-operation",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/ui/object-lifetime/object-lifetime-default-from-ref-struct.rs",
     "args": [
       "--force-warn explicit-outlives-requirements",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/or-patterns/issue-69875-should-have-been-expanded-earlier.rs",
-    "args": [
-      "--force-warn clippy::unnested-or-patterns",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -1898,20 +1814,6 @@
     "file": "./src/test/ui/self/self_lifetime.rs",
     "args": [
       "--force-warn clippy::use-self",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/simd/intrinsic/generic-comparison-pass.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-call",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -2229,20 +2131,6 @@
     "file": "./src/test/ui/unsized-locals/autoderef.rs",
     "args": [
       "--force-warn clippy::redundant-clone",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui-fulldeps/myriad-closures.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-call",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
@@ -2849,20 +2737,6 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_58/proc_macro/bridge/closure.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
     "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_63/proc_macro/bridge/closure.rs",
     "args": [
       "--force-warn clippy::ptr-as-ptr",
@@ -2879,8 +2753,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/c090c6880c0183ba248bde4a16e29ba29ac4fbba/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/c090c6880c0183ba248bde4a16e29ba29ac4fbba/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/32e613bbaafee1bcabba48a2257b838f8d1c03d3/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/32e613bbaafee1bcabba48a2257b838f8d1c03d3/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2928,13 +2802,12 @@
     "needs_feature": true,
     "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
     "args": [
-      "--edition=2021",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[884e]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[884e]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "executable": "Rustc",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ _issue_96572_unconstrained[232b]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ _issue_96572_unconstrained[232b]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "executable": "ClippyFix",
     "kind": "Ice"
   },
   {
@@ -2942,12 +2815,13 @@
     "needs_feature": true,
     "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
     "args": [
+      "--edition=2021",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:36 ~ _issue_96572_unconstrained[989e]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:36 ~ _issue_96572_unconstrained[989e]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "executable": "ClippyFix",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8cdd]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8cdd]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "executable": "Rustc",
     "kind": "Ice"
   },
   {
@@ -2966,7 +2840,7 @@
     "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:24 ~ normalize_tait_in_const[cd50]::foo::'_), '_)), Region(BrNamed(DefId(0:25 ~ normalize_tait_in_const[cd50]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:24 ~ normalize_tait_in_const[cd50]::foo::'_), '_) }) Opaque(DefId(0:23 ~ normalize_tait_in_const[cd50]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:25 ~ normalize_tait_in_const[cd50]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[e462]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[e462]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[e462]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[e462]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[e462]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2979,8 +2853,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[b544]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[b544]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[b544]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[b544]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc6]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc6]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2993,8 +2867,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[6312]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[6312]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[6312]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[6312]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5e18]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5e18]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5e18]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5e18]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3007,8 +2881,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[54e2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[54e2]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[54e2]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[54e2]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[4260]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4260]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[4260]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4260]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3056,6 +2930,16 @@
     "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
     "ice_msg": "thread '<unnamed>' panicked at 'forcing query with already existing `DepNode`",
     "executable": "ClippyFix",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/tools/cargo/crates/cargo-util/src/lib.rs",
+    "args": [],
+    "error_reason": "118 |                 libc::SIGABRT => \", SIGABRT: process abort signal\",",
+    "ice_msg": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', compiler/rustc_middle/src/hir/map/mod.rs:325:24",
+    "executable": "Rustc",
     "kind": "Ice"
   },
   {
