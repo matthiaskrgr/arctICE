@@ -98,43 +98,31 @@
     "kind": "ClippyFix"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/assembly/target-feature-multiple.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fa502f813a8: i32,i32,ch = X86ISD::RDSEED 0x7fa502f81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
+    "args": [],
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f51fe54d3a8: i32,i32,ch = X86ISD::RDSEED 0x7f51fe54d138:2",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/codegen/abi-x86-interrupt.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
+    "args": [],
     "error_reason": "LLVM ERROR: X86 interrupts may not return any value",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
-    "regresses_on": "Nightly",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/codegen/intrinsics/prefetch.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fac65f830d0: ch = Prefetch<(load (s8) from %ir.9)> 0x7fac65ee93e8, 0x7fac65f83000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
+    "args": [],
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f7eb8b870d0: ch = Prefetch<(load (s8) from %ir.6)> 0x7f7eb8af43e8, 0x7f7eb8b87000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -2141,6 +2129,36 @@
   },
   {
     "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui-fulldeps/myriad-closures.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui-fulldeps/pprust-expr-roundtrip.rs",
     "args": [
@@ -2597,6 +2615,36 @@
   },
   {
     "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/float.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/tools/miri/tests/pass/hashmap.rs",
     "args": [
@@ -2737,6 +2785,20 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_58/proc_macro/bridge/closure.rs",
+    "args": [
+      "--force-warn clippy::ptr-as-ptr",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
+    "ice_msg": "",
+    "executable": "ClippyFix",
+    "kind": "ClippyFix"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
     "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_63/proc_macro/bridge/closure.rs",
     "args": [
       "--force-warn clippy::ptr-as-ptr",
@@ -2753,8 +2815,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/32e613bbaafee1bcabba48a2257b838f8d1c03d3/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/32e613bbaafee1bcabba48a2257b838f8d1c03d3/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2769,35 +2831,6 @@
     "kind": "Ice"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/async-await/issue-70594.rs",
-    "args": [
-      "-Zsave-analysis",
-      "--edition=2018",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/adt.rs:437:18: unexpected res Err in variant_of_res",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/adt.rs:437:18: unexpected res Err in variant_of_res",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/never_type/issue-52443.rs",
-    "args": [
-      "-Zsave-analysis",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/adt.rs:437:18: unexpected res Err in variant_of_res",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/adt.rs:437:18: unexpected res Err in variant_of_res",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": true,
     "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
@@ -2805,8 +2838,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ _issue_96572_unconstrained[232b]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ _issue_96572_unconstrained[232b]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ _issue_96572_unconstrained[fcbf]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ _issue_96572_unconstrained[fcbf]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "ClippyFix",
     "kind": "Ice"
   },
@@ -2819,8 +2852,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8cdd]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[8cdd]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[efbf]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[efbf]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2840,57 +2873,174 @@
     "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[e462]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[e462]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[e462]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[e462]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[e462]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[91c4]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[91c4]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[91c4]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[91c4]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[91c4]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/macro-as-fn-body.rs",
+    "args": [
+      "-Zpolymorphize=on",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:10 ~ macro_as_fn_body[9e74]::Foo::bar), const_param_did: None }, substs: [Self], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "ice_msg": "ICE: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:10 ~ macro_as_fn_body[9e74]::Foo::bar), const_param_did: None }, substs: [Self], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-2091-track-caller/tracked-fn-ptr.rs",
+    "args": [
+      "-Zpolymorphize=on",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:10 ~ tracked_fn_ptr[bc85]::TrackedTrait::trait_tracked_default), const_param_did: None }, substs: [Self], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "ice_msg": "ICE: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:10 ~ tracked_fn_ptr[bc85]::TrackedTrait::trait_tracked_default), const_param_did: None }, substs: [Self], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/rfc-2091-track-caller/tracked-fn-ptr-with-arg.rs",
+    "args": [
+      "-Zpolymorphize=on",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:11 ~ tracked_fn_ptr_with_arg[b5e4]::TrackedTrait::trait_tracked_unit_default), const_param_did: None }, substs: [Self], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "ice_msg": "ICE: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:11 ~ tracked_fn_ptr_with_arg[b5e4]::TrackedTrait::trait_tracked_unit_default), const_param_did: None }, substs: [Self], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-consts/associated-const-type-parameters.rs",
+    "args": [
+      "-Zpolymorphize=on",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:4 ~ associated_const_type_parameters[7bc9]::Foo::X), const_param_did: None }, substs: [Self], promoted: None }, i32)",
+    "ice_msg": "ICE: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:4 ~ associated_const_type_parameters[7bc9]::Foo::X), const_param_did: None }, substs: [Self], promoted: None }, i32)",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-39292.rs",
+    "args": [
+      "-Zpolymorphize=on",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:5 ~ issue_39292[4fc7]::Foo::print), const_param_did: None }, substs: [(), T, ReErased], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
+    "ice_msg": "ICE: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:5 ~ issue_39292[4fc7]::Foo::print), const_param_did: None }, substs: [(), T, ReErased], promoted: Some(promoted[1]) }, &ReErased [&ReErased str; Const { ty: usize, kind: Value(Leaf(0x0000000000000001)) }])",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "file": "./src/test/ui/consts/const-eval/index-out-of-bounds-never-type.rs",
     "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
+      "-Zpolymorphize=on",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc6]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[ffc6]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[ffc6]) with no parent",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5e18]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5e18]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[5e18]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[5e18]) with no parent",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/foreign-types.rs",
-    "args": [
-      "-Z incremental-verify-ich=yes",
-      "-C incremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[4260]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4260]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[4260]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4260]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:9 ~ index_out_of_bounds_never_type[cd46]::{impl#0}::VOID), const_param_did: None }, substs: [T], promoted: None }, !)",
+    "ice_msg": "ICE: compiler/rustc_monomorphize/src/collector.rs:786:54: collection encountered polymorphic constant: Unevaluated(UnevaluatedConst { def: WithOptConstParam { did: DefId(0:9 ~ index_out_of_bounds_never_type[cd46]::{impl#0}::VOID), const_param_did: None }, substs: [T], promoted: None }, !)",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "args": [],
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9e98]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9e98]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9e98]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9e98]) with no parent",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
+    "args": [],
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[489f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[489f]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[489f]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[489f]) with no parent",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/symbol-names/foreign-types.rs",
+    "args": [],
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[d4bf]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[d4bf]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[d4bf]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[d4bf]) with no parent",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./library/portable-simd/crates/core_simd/src/lib.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2018",
+      "-Ztranslate-lang=en_US"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
     "file": "./src/test/incremental/delayed_span_bug.rs",
     "args": [],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/associated-types/issue-67684.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
     "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
@@ -2908,37 +3058,124 @@
   },
   {
     "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/layout/valid_range_oob.rs",
+    "args": [],
+    "error_reason": "thread '<unnamed>' panicked at '257 > 255', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread '<unnamed>' panicked at '257 > 255', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_abi/src/layout.rs:403:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/test/rustdoc-ui/issue-80992.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1609:13",
     "ice_msg": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1609:13",
     "executable": "ClippyFix",
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/incremental/issue-101518.rs",
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/enum-discriminant/issue-70509-partial_eq.rs",
     "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
-    "ice_msg": "thread '<unnamed>' panicked at 'forcing query with already existing `DepNode`",
-    "executable": "ClippyFix",
+    "error_reason": "thread '<unnamed>' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread '<unnamed>' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/impl-trait/issues/issue-86800.rs",
+    "args": [],
+    "error_reason": "thread '<unnamed>' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:710:9",
+    "ice_msg": "thread '<unnamed>' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:710:9",
+    "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/tools/cargo/crates/cargo-util/src/lib.rs",
+    "file": "./src/test/ui/typeck/issue-103899.rs",
     "args": [],
-    "error_reason": "118 |                 libc::SIGABRT => \", SIGABRT: process abort signal\",",
-    "ice_msg": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', compiler/rustc_middle/src/hir/map/mod.rs:325:24",
+    "error_reason": "thread '<unnamed>' panicked at 'called `Result::unwrap()` on an `Err` value: NoSolution', compiler/rustc_borrowck/src/type_check/liveness/trace.rs:574:88",
+    "ice_msg": "thread '<unnamed>' panicked at 'called `Result::unwrap()` on an `Err` value: NoSolution', compiler/rustc_borrowck/src/type_check/liveness/trace.rs:574:88",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/incremental/issue-101518.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'forcing query with already existing `DepNode`",
+    "ice_msg": "thread '<unnamed>' panicked at 'forcing query with already existing `DepNode`",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/pattern/usefulness/slice-pattern-const.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'forcing query with already existing `DepNode`",
+    "ice_msg": "thread '<unnamed>' panicked at 'forcing query with already existing `DepNode`",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/recursion/issue-95134.rs",
+    "args": [],
+    "error_reason": "thread '<unnamed>' panicked at 'index out of bounds: the len is 0 but the index is 0', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10",
+    "ice_msg": "thread '<unnamed>' panicked at 'index out of bounds: the len is 0 but the index is 0', /cargo/registry/src/github.com-1ecc6299db9ec823/ena-0.14.0/src/snapshot_vec.rs:199:10",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/mir/ssa-analysis-regression-50041.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_middle/src/ty/subst.rs:387:43",
+    "ice_msg": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_middle/src/ty/subst.rs:387:43",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/recursion/issue-95134.rs",
+    "args": [
+      "-Z incremental-verify-ich=yes",
+      "-C incremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'type variables should not be hashed: _#0t', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_type_ir/src/lib.rs:679:17",
+    "ice_msg": "thread '<unnamed>' panicked at 'type variables should not be hashed: _#0t', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_type_ir/src/lib.rs:679:17",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2950,7 +3187,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -2963,7 +3200,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -2976,7 +3213,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -2989,7 +3226,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3002,7 +3239,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3015,7 +3252,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3028,7 +3265,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3041,7 +3278,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3054,7 +3291,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3067,7 +3304,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
@@ -3080,9 +3317,45 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace",
+    "error_reason": "thread 'main' panicked at 'path is expected to be under the root', /cargo/registry/src/github.com-1ecc6299db9ec823/ignore-0.4.18/src/gitignore.rs:227:9",
     "ice_msg": "thread 'main' panicked at 'path is expected to be under the root', /cargo/registry/src/github.com-1ecc6299db9ec823/ignore-0.4.18/src/gitignore.rs:227:9",
     "executable": "Rustfmt",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/layout/valid_range_oob.rs",
+    "args": [],
+    "error_reason": "thread '<unnamed>' panicked at '257 > 255', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/fd02567705326884ddb94535d2ab230a9595dc2a/compiler/rustc_abi/src/layout.rs:403:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-consts/assoc-const-eq-missing.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/associated-consts/assoc-const-ty-mismatch.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
@@ -3093,8 +3366,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1754:25",
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
@@ -3106,8 +3379,34 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1754:25",
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/transmutability/issue-101739-2.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/ui/type-alias-impl-trait/not_well_formed.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
@@ -3119,8 +3418,203 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1754:25",
+    "error_reason": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/auxiliary/primitive-doc.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/doc-notable_trait-mut_t_is_not_an_iterator.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/doc-notable_trait-mut_t_is_not_ref_t.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/intra-doc/auxiliary/my-core.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/intra-doc/prim-methods-local.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/intra-doc/prim-self.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/issue-23511.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/primitive/primitive-generic-impl.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/primitive-reference.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/primitive.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/sidebar-all-page.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/tab_title.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./src/test/rustdoc/titles.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/rustdoc/feature-gate-doc_primitive.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: `(left == right)`",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/feature-gates/issue-43106-gating-of-proc_macro_derive.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread 'rustc' panicked at 'proc-macro derives require a name', src/librustdoc/clean/mod.rs:914:25",
+    "ice_msg": "thread 'rustc' panicked at 'proc-macro derives require a name', src/librustdoc/clean/mod.rs:914:25",
     "executable": "Rustdoc",
     "kind": "Ice"
   }
