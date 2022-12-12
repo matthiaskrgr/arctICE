@@ -1,103 +1,5 @@
 [
   {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/return-tuple.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/structs.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./compiler/rustc_codegen_gcc/tests/run/tuple.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./library/proc_macro/src/bridge/closure.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/doc/book/listings/ch11-writing-automated-tests/listing-11-09/src/lib.rs",
-    "args": [
-      "--force-warn clippy::manual-assert",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/doc/book/listings/ch11-writing-automated-tests/no-listing-09-guess-with-panic-msg-bug/src/lib.rs",
-    "args": [
-      "--force-warn clippy::manual-assert",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/assembly/stack-protector/stack-protector-heuristics-effect.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/assembly/target-feature-multiple.rs",
@@ -106,7 +8,7 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f5e709813a8: i32,i32,ch = X86ISD::RDSEED 0x7f5e70981138:2, src/test/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f2f36b813a8: i32,i32,ch = X86ISD::RDSEED 0x7f2f36b81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -134,873 +36,10 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f58e9b980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f58e9ab9e68, 0x7f58e9b98000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f5fb6b980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f5fb6ab9e68, 0x7f5fb6b98000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/mir-opt/dead-store-elimination/provenance_soundness.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/mir-opt/inline/issue_76997_inline_scopes_parenting.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/mir-opt/issue_91633.rs",
-    "args": [
-      "--force-warn clippy::let-and-return",
-      "--force-warn let-underscore-drop",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/mir-opt/lower_intrinsics.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/mir-opt/retag.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/pretty/cast-lt.rs",
-    "args": [
-      "--force-warn unused_must_use",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/pretty/issue-4264.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/pretty/stmt_expr_attributes.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/pretty/yeet-expr.rs",
-    "args": [
-      "--force-warn clippy::needless-return",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/run-make/coverage/unused.rs",
-    "args": [],
-    "error_reason": "HANG",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "Hang"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/run-make/repr128-dwarf/lib.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/run-make/static-pie/test-aslr.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/rustdoc-ui/doc-include-suggestion.rs",
-    "args": [
-      "--force-warn invalid_doc_attributes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/abi/stack-protector.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/array-slice-vec/cast-in-array-size.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/array-slice-vec/check-static-mut-slices.rs",
-    "args": [
-      "--force-warn clippy::redundant-static-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/asm/issue-97490.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/assign-assign.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/associated-types/issue-50301.rs",
-    "args": [
-      "--force-warn clippy::cloned-instead-of-copied",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/binding/if-let.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/binding/nil-pattern.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/binop/binops.rs",
-    "args": [
-      "--force-warn clippy::transmutes-expressible-as-ptr-casts",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/bitwise.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/borrowck/borrow-raw-address-of-deref-mutability-ok.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/borrowck/issue-28934.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-for-method-calls",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/cast/cast-rfc0401.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/cfg/cfg_stmt_expr.rs",
-    "args": [
-      "--force-warn clippy::needless-late-init",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/cleanup-rvalue-scopes.rs",
-    "args": [
-      "--force-warn let-underscore-drop",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/closures/2229_closure_analysis/issue_88118.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-operation",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/closures/deeply-nested_closures.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/coherence/coherence-free-vs-bound-region.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-ptr/allowed_slices.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/consts/const-eval/extern_fat_pointer.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/const-eval/issue-84957-const-str-as-bytes.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/const-vec-of-fns.rs",
-    "args": [
-      "--force-warn clippy::redundant-static-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/consts/const_discriminant.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/control-flow/feature-gate-const-if-match.rs",
-    "args": [
-      "--force-warn clippy::bool-to-int-with-if",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/issue-13902.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/issue-33537.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/consts/issue-69488.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/consts/miri_unleashed/slice_eq.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/offset.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/static-raw-pointer-interning.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/consts/static-raw-pointer-interning2.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/deriving/deriving-meta-multiple.rs",
-    "args": [
-      "--force-warn clippy::redundant-clone",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/deriving/deriving-meta.rs",
-    "args": [
-      "--force-warn clippy::redundant-clone",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/drop/dropck-eyepatch-reorder.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/drop/issue-48962.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-operation",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/dropck/issue-28498-ugeh-with-lifetime-param.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/dynamically-sized-types/dst-raw.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/enum-discriminant/issue-70509-partial_eq.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/enum-discriminant/repr128.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/for-loop-while/loop-break-value.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/generic-associated-types/issue-89352.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/half-open-range-patterns/half-open-range-pats-exhaustive-pass.rs",
-    "args": [
-      "--force-warn clippy::unnested-or-patterns",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/higher-rank-trait-bounds/hrtb-debruijn-object-types-in-closures.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-for-method-calls",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/higher-rank-trait-bounds/normalize-under-binder/issue-62529-6.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/hygiene/auxiliary/fields.rs",
-    "args": [
-      "--force-warn clippy::derive-partial-eq-without-eq",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/hygiene/generic_params.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/impl-trait/equal-hidden-lifetimes.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/example-calendar.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-fold",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/impl-trait/issues/issue-57464-unexpected-regions.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
   },
   {
     "regresses_on": "Master",
@@ -1027,1064 +66,6 @@
     "ice_msg": "",
     "executable": "Rustdoc",
     "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/imports/issue-62767.rs",
-    "args": [
-      "--force-warn clippy::wildcard-imports",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/imports/local-modularized-tricky-pass-1.rs",
-    "args": [
-      "--force-warn clippy::wildcard-imports",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/inference/infer-binary-operand-behind-reference.rs",
-    "args": [
-      "--force-warn clippy::identity-op",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/inline-const/const-match-pat-lifetime-err.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-23311.rs",
-    "args": [
-      "--force-warn clippy::string-lit-as-bytes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-23699.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-24353.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-24779.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-call",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-28936.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-for-method-calls",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-29053.rs",
-    "args": [
-      "--force-warn clippy::borrow-deref-ref",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-29071-2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-30371.rs",
-    "args": [
-      "--force-warn clippy::unused-unit",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/issues/issue-30490.rs",
-    "args": [
-      "--force-warn clippy::manual-assert",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-30615.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-36474.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-39548.rs",
-    "args": [
-      "--force-warn clippy::bool-comparison",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/issues/issue-39827.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-50415.rs",
-    "args": [
-      "--force-warn clippy::range-minus-one",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-53843.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-55376.rs",
-    "args": [
-      "--force-warn clippy::redundant-pub-crate",
-      "--force-warn unreachable-pub",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-56128.rs",
-    "args": [
-      "--force-warn clippy::redundant-pub-crate",
-      "--force-warn unreachable-pub",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-9382.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-operation",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/lint/dead-code/issue-85071-2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/lint/dead-code/issue-85071.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/lint/function-item-references.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/lint/lint-type-overflow2.rs",
-    "args": [
-      "--force-warn clippy::excessive-precision",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/lint/unused/issue-74883-unused-paren-baren-yield.rs",
-    "args": [
-      "--force-warn clippy::redundant-pattern-matching",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/lint/unused/issue-85913.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/lint/unused/must-use-ops.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/lint/unused/unused-supertrait.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/lint/unused_braces.rs",
-    "args": [
-      "--force-warn clippy::blocks-in-if-conditions",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/liveness/liveness-consts.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/liveness/liveness-unused.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/macros/issue-68058.rs",
-    "args": [
-      "--force-warn clippy::unused-unit",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/macros/macro-with-braces-in-expr-position.rs",
-    "args": [
-      "--force-warn let-underscore-drop",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "This likely indicates a bug in either rustc or cargo itself,",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/mir/mir_codegen_calls_converging_drops_2.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/mir/mir_raw_fat_ptr.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/never_type/adjust_never.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/never_type/cast-never.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/never_type/defaulted-never-note.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/never_type/diverging-fallback-control-flow.rs",
-    "args": [
-      "--force-warn clippy::unit-arg",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/never_type/never-assign-dead-code.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/never_type/never_coercions.rs",
-    "args": [
-      "--force-warn clippy::needless-return",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/nll/extra-unused-mut.rs",
-    "args": [
-      "--force-warn clippy::needless-for-each",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/nll/issue-45696-long-live-borrows-in-boxes.rs",
-    "args": [
-      "--force-warn clippy::explicit-auto-deref",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/object-lifetime/object-lifetime-default-from-ref-struct.rs",
-    "args": [
-      "--force-warn explicit-outlives-requirements",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/or-patterns/or-patterns-default-binding-modes.rs",
-    "args": [
-      "--force-warn clippy::unnested-or-patterns",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/packed/issue-46152.rs",
-    "args": [
-      "--force-warn explicit-outlives-requirements",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/parser/if-block-unreachable-expr.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/parser/macro-braces-dot-question.rs",
-    "args": [
-      "--force-warn clippy::nonstandard-macro-braces",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/parser/ranges-precedence.rs",
-    "args": [
-      "--force-warn clippy::range-plus-one",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/privacy/private-in-public-non-principal.rs",
-    "args": [
-      "--force-warn unreachable-pub",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/raw-ref-op/unusual_locations.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/reachable/expr_if.rs",
-    "args": [
-      "--force-warn clippy::blocks-in-if-conditions",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/repeat-expr/infer.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-operation",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/return-nil.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/rfc-2632-const-trait-impl/call-generic-method-dup-bound.rs",
-    "args": [
-      "--force-warn clippy::trait-duplication-in-bounds",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/rfc-2632-const-trait-impl/const-drop.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/rfcs/rfc-2302-self-struct-ctor.rs",
-    "args": [
-      "--force-warn clippy::ref-binding-to-reference",
-      "--force-warn clippy::uninlined-format-args",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/rfcs/rfc-2396-target_feature-11/closures-inherit-target_feature.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/sanitize/memory-passing.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/self/elision/ref-alias.rs",
-    "args": [
-      "--force-warn clippy::use-self",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/self/elision/ref-mut-alias.rs",
-    "args": [
-      "--force-warn clippy::use-self",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/self/self_lifetime.rs",
-    "args": [
-      "--force-warn clippy::use-self",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/simd/issue-32947.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/simd/issue-85915-simd-ptrs.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/stdlib-unit-tests/raw-fat-ptr.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/threads-sendsync/mpsc_stress.rs",
-    "args": [
-      "--force-warn clippy::redundant-clone",
-      "--force-warn let-underscore-drop",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/traits/bound/generic_trait.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/traits/copy-guessing.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-call",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/traits/normalize-supertrait.rs",
-    "args": [
-      "--force-warn clippy::trait-duplication-in-bounds",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/traits/trait-upcasting/lifetime.rs",
-    "args": [
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/try-trait/yeet-for-result.rs",
-    "args": [
-      "--force-warn clippy::needless-return",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/type/issue-100584.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/type/type-alias-bounds.rs",
-    "args": [
-      "--force-warn type_alias_bounds",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/argument-types.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
   },
   {
     "regresses_on": "Master",
@@ -2166,104 +147,6 @@
   },
   {
     "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/unboxed-closures/issue-53448.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/underscore-imports/cycle.rs",
-    "args": [
-      "--force-warn clippy::wildcard-imports",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "rustc exited abnormally: signal: 11, SIGSEGV: invalid memory reference",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/underscore-imports/hygiene-2.rs",
-    "args": [
-      "--force-warn clippy::wildcard-imports",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/unit.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/unsafe/union_destructure.rs",
-    "args": [
-      "--force-warn clippy::unnested-or-patterns",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/unsized-locals/autoderef.rs",
-    "args": [
-      "--force-warn clippy::redundant-clone",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui-fulldeps/pprust-expr-roundtrip.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-for-method-calls",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
     "needs_feature": false,
     "file": "./src/tools/cargo/crates/cargo-util/src/lib.rs",
     "args": [],
@@ -2281,428 +164,6 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/bool_to_int_with_if.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/cast.rs",
-    "args": [
-      "--force-warn clippy::cast-lossless",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/cast_ref_to_mut.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/crashes/ice-1782.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/fallible_impl_from.rs",
-    "args": [
-      "--force-warn clippy::manual-assert",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/format_args_unfixable.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/needless_arbitrary_self_type.rs",
-    "args": [
-      "--force-warn clippy::needless-arbitrary-self-type",
-      "--force-warn single-use-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/needless_borrow.rs",
-    "args": [
-      "--force-warn clippy::trait-duplication-in-bounds",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/clippy/tests/ui/panicking_macros.rs",
-    "args": [
-      "--force-warn unused_variables",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/redundant_else.rs",
-    "args": [
-      "--force-warn clippy::equatable-if-let",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/short_circuit_statement.rs",
-    "args": [
-      "--force-warn clippy::short-circuit-statement",
-      "--force-warn unused_must_use",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/clippy/tests/ui/unnecessary_sort_by.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure-for-method-calls",
-      "--force-warn clippy::unnecessary-sort-by",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/dangling_pointers/maybe_null_pointer_deref_zst.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/dangling_pointers/maybe_null_pointer_write_zst.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/dangling_pointers/null_pointer_deref_zst.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/cast_fn_ptr4.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/function_pointers/deref_fn_ptr.rs",
-    "args": [
-      "--force-warn clippy::transmutes-expressible-as-ptr-casts",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/intrinsics/ptr_offset_from_oob.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/issue-miri-1112.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/never_say_never.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/panic/bad_unwind.rs",
-    "args": [
-      "--force-warn clippy::redundant-closure",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/provenance/provenance_transmute.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/provenance/strict_provenance_cast.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/fail/transmute-pair-uninit.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/validity/transmute_through_ptr.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/fail/zst1.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/atomic.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/cast_fn_ptr.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/const-vec-of-fns.rs",
-    "args": [
-      "--force-warn clippy::redundant-static-lifetimes",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/dst-raw.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
   },
   {
     "regresses_on": "Master",
@@ -2727,7 +188,8 @@
       "-Zverbose",
       "-Zextra-const-ub-checks",
       "--edition=2015",
-      "-Ztranslate-lang=en_US"
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
     ],
     "error_reason": "HANG",
     "ice_msg": "",
@@ -2736,178 +198,11 @@
   },
   {
     "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/hashmap.rs",
-    "args": [
-      "--force-warn clippy::unnecessary-fold",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/intptrcast.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/loop-break-value.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/packed_struct.rs",
-    "args": [
-      "--force-warn explicit-outlives-requirements",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/pointers.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/stacked-borrows/issue-miri-2389.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "This likely indicates a bug in either rustc or cargo itself,",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/stacked-borrows/stacked-borrows.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/tools/miri/tests/pass/transmute_ptr.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/miri/tests/pass/trivial.rs",
-    "args": [
-      "--force-warn clippy::let-unit-value",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/rust-analyzer/crates/parser/test_data/parser/inline/ok/0146_as_precedence.rs",
-    "args": [
-      "--force-warn clippy::borrow-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_58/proc_macro/bridge/closure.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_63/proc_macro/bridge/closure.rs",
-    "args": [
-      "--force-warn clippy::ptr-as-ptr",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "after fixes were automatically applied the compiler reported errors within these files:",
-    "ice_msg": "",
-    "executable": "ClippyFix",
-    "kind": "ClippyFix"
-  },
-  {
-    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_const_eval/src/interpret/operand.rs:393:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2930,22 +225,22 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[c278]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[c278]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[97bb]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[97bb]::upvar::T::{opaque#0}), []) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
-    "regresses_on": "Stable",
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:36 ~ _issue_96572_unconstrained[7b98]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:36 ~ _issue_96572_unconstrained[7b98]::upvar::T::{opaque#0}), []) for `Field` projection",
-    "executable": "ClippyFix",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[9c8a]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Opaque(DefId(0:34 ~ issue_96572_unconstrained[9c8a]::upvar::T::{opaque#0}), []) for `Field` projection",
+    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -2964,7 +259,7 @@
     "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[486b]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[486b]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[486b]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[486b]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[486b]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[b3f4]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[b3f4]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[b3f4]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[b3f4]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[b3f4]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2973,8 +268,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c365]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c365]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[c365]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[c365]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[dbdd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[dbdd]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[dbdd]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[dbdd]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2983,8 +278,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f394]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f394]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[f394]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[f394]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4aea]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4aea]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[4aea]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[4aea]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -2993,8 +288,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[4d98]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4d98]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[4d98]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[4d98]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[019b]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[019b]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[019b]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[019b]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3018,7 +313,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: failed to normalize <Opaque(DefId(0:34 ~ issue_67684[11be]::expr::{opaque#0}), [A]) as Parser>::PartialState",
+    "error_reason": "error: internal compiler error: failed to normalize <Opaque(DefId(0:34 ~ issue_67684[e3a5]::expr::{opaque#0}), [A]) as Parser>::PartialState",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
@@ -3038,8 +333,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/layout/valid_range_oob.rs",
     "args": [],
-    "error_reason": "thread '<unnamed>' panicked at '257 > 255', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_abi/src/layout.rs:403:25",
-    "ice_msg": "thread '<unnamed>' panicked at '257 > 255', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_abi/src/layout.rs:403:25",
+    "error_reason": "thread '<unnamed>' panicked at '257 > 255', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread '<unnamed>' panicked at '257 > 255', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_abi/src/layout.rs:403:25",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3053,7 +348,7 @@
     ],
     "error_reason": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1610:13",
     "ice_msg": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1610:13",
-    "executable": "ClippyFix",
+    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -3127,8 +422,326 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_middle/src/ty/subst.rs:404:43",
-    "ice_msg": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_middle/src/ty/subst.rs:404:43",
+    "error_reason": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_middle/src/ty/subst.rs:404:43",
+    "ice_msg": "thread '<unnamed>' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_middle/src/ty/subst.rs:404:43",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/issues/issue-66695-static-refs.rs",
+    "args": [
+      "--emit=mir",
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 17 > 16 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 17 > 16 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/issues/issue-67611-static-mut-refs.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 17 > 16 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 17 > 16 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/issues/issue-miri-2068.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 17 > 16 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 17 > 16 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generator/size-moved-locals.rs",
+    "args": [
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 2052 > 2051 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 2052 > 2051 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/drop/dynamic-drop-async.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 209 > 208 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 209 > 208 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/async-fn-send-uses-nonsend.rs",
+    "args": [
+      "--crate-type=lib",
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 25 > 24 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 25 > 24 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/macros/format-args-temporaries-async.rs",
+    "args": [
+      "--emit=mir",
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 25 > 24 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 25 > 24 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/clippy/tests/ui/needless_return.rs",
+    "args": [
+      "--emit=mir",
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 3 > 2 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 3 > 2 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/codegen/async-fn-debug-msvc.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/codegen/async-fn-debug.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/run-make/coverage/async.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/conditional-and-guaranteed-initialization.rs",
+    "args": [
+      "--crate-type=lib",
+      "--emit=mir",
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generator/yield-in-box.rs",
+    "args": [
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 33 > 32 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/issue-73137.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 41 > 40 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 41 > 40 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/issues/issue-55809.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 41 > 40 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 41 > 40 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Stable",
+    "needs_feature": true,
+    "file": "./src/test/ui/async-await/in-trait/async-example.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 49 > 48 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 49 > 48 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/tools/clippy/tests/ui/await_holding_refcell_ref.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 57 > 56 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 57 > 56 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": false,
+    "file": "./src/test/ui/async-await/async-fn-size-moved-locals.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 6158 > 6157 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 6158 > 6157 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generator/issue-93161.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 81 > 80 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 81 > 80 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/tools/miri/tests/pass/async-fn.rs",
+    "args": [
+      "--edition=2018",
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 81 > 80 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 81 > 80 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./src/test/ui/generator/overlap-locals.rs",
+    "args": [
+      "-Zprint-type-sizes",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "thread '<unnamed>' panicked at 'max_variant_size 9 > 8 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
+    "ice_msg": "thread '<unnamed>' panicked at 'max_variant_size 9 > 8 overall_size', compiler/rustc_session/src/code_stats.rs:177:25",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3141,8 +754,8 @@
       "-C incremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "thread '<unnamed>' panicked at 'type variables should not be hashed: _#0t', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_type_ir/src/lib.rs:681:17",
-    "ice_msg": "thread '<unnamed>' panicked at 'type variables should not be hashed: _#0t', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_type_ir/src/lib.rs:681:17",
+    "error_reason": "thread '<unnamed>' panicked at 'type variables should not be hashed: _#0t', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_type_ir/src/lib.rs:681:17",
+    "ice_msg": "thread '<unnamed>' panicked at 'type variables should not be hashed: _#0t', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_type_ir/src/lib.rs:681:17",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3294,8 +907,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/layout/valid_range_oob.rs",
     "args": [],
-    "error_reason": "thread '<unnamed>' panicked at '257 > 255', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_abi/src/layout.rs:403:25",
-    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/0d5573e6daf99a5b98ace3dfcc4be2eb64867169/compiler/rustc_abi/src/layout.rs:403:25",
+    "error_reason": "thread '<unnamed>' panicked at '257 > 255', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/37d7de337903a558dbeb1e82c844fe915ab8ff25/compiler/rustc_abi/src/layout.rs:403:25",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -3333,7 +946,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[4553]::T::A) }, local_id: 3 }, ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[4553]::T::A) }, local_id: 1 }, def_id: DefId(0:5 ~ issue_102335_const[4553]::T::A::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[4553]::T::A) }, local_id: 2 } } }) }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[4c11]::T::A) }, local_id: 3 }, ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[4c11]::T::A) }, local_id: 1 }, def_id: DefId(0:5 ~ issue_102335_const[4c11]::T::A::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[4c11]::T::A) }, local_id: 2 } } }) }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
     "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
     "executable": "Rustdoc",
     "kind": "Ice"
@@ -3346,7 +959,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[5281]::foo) }, local_id: 12 }, kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[5281]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[5281]::foo) }, local_id: 17 }, res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[5281]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[5281]::foo) }, local_id: 13 }, def_id: DefId(0:10 ~ const_arg_type_arg_misordered[5281]::foo::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[5281]::foo) }, local_id: 15 } } }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[5281]::foo) }, local_id: 16 }, kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[25d0]::foo) }, local_id: 12 }, kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[25d0]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[25d0]::foo) }, local_id: 17 }, res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[25d0]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[25d0]::foo) }, local_id: 13 }, def_id: DefId(0:10 ~ const_arg_type_arg_misordered[25d0]::foo::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[25d0]::foo) }, local_id: 15 } } }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[25d0]::foo) }, local_id: 16 }, kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
     "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1812:25",
     "executable": "Rustdoc",
     "kind": "Ice"
