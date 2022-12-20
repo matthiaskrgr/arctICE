@@ -1,5 +1,77 @@
 [
   {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./library/alloc/src/lib.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2021",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./library/stdarch/crates/core_arch/src/arm_shared/neon/generated.rs",
+    "args": [],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustfmt",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./library/stdarch/crates/stdarch-gen/src/main.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./src/test/assembly/target-feature-multiple.rs",
@@ -9,7 +81,7 @@
       "-Cdebuginfo=2",
       "--edition=2021"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f5784b813a8: i32,i32,ch = X86ISD::RDSEED 0x7f5784b81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fe74fb813a8: i32,i32,ch = X86ISD::RDSEED 0x7fe74fb81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -39,7 +111,7 @@
       "-Cdebuginfo=2",
       "--edition=2021"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fa87f9980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7fa87f8b9e68, 0x7fa87f998000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f598b1980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f598b0b9e68, 0x7f598b198000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -69,6 +141,68 @@
     "ice_msg": "",
     "executable": "Rustdoc",
     "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/issues/issue-22638.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/test/ui/recursion/issue-86784.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
   },
   {
     "regresses_on": "Master",
@@ -214,11 +348,73 @@
   },
   {
     "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_58/proc_macro/mod.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2021",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./src/tools/rust-analyzer/crates/proc-macro-srv/src/abis/abi_1_63/proc_macro/mod.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2021",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Hang"
+  },
+  {
+    "regresses_on": "Master",
     "needs_feature": true,
     "file": "./src/test/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -248,7 +444,7 @@
     "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[5126]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[5126]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[5126]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[5126]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[5126]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[1598]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[1598]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[1598]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[1598]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[1598]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -261,8 +457,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_mir_build/src/build/expr/as_place.rs:438:18: couldn't create field type, unexpected base type: Opaque(DefId(0:34 ~ issue_96572_unconstrained[0075]::upvar::T::{opaque#0}), [])",
-    "ice_msg": "ICE: compiler/rustc_mir_build/src/build/expr/as_place.rs:438:18: couldn't create field type, unexpected base type: Opaque(DefId(0:34 ~ issue_96572_unconstrained[0075]::upvar::T::{opaque#0}), [])",
+    "error_reason": "error: internal compiler error: compiler/rustc_mir_build/src/build/expr/as_place.rs:438:18: couldn't create field type, unexpected base type: Opaque(DefId(0:34 ~ issue_96572_unconstrained[33ca]::upvar::T::{opaque#0}), [])",
+    "ice_msg": "ICE: compiler/rustc_mir_build/src/build/expr/as_place.rs:438:18: couldn't create field type, unexpected base type: Opaque(DefId(0:34 ~ issue_96572_unconstrained[33ca]::upvar::T::{opaque#0}), [])",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -286,8 +482,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d15e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d15e]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[d15e]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[d15e]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9f14]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9f14]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9f14]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9f14]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -296,8 +492,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[83e2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[83e2]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[83e2]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[83e2]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[b183]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[b183]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[b183]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[b183]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -306,8 +502,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/symbol-names/foreign-types.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[a98a]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a98a]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[a98a]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[a98a]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[b53f]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[b53f]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[b53f]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[b53f]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -331,7 +527,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: failed to normalize <Opaque(DefId(0:34 ~ issue_67684[08f8]::expr::{opaque#0}), [A]) as Parser>::PartialState",
+    "error_reason": "error: internal compiler error: failed to normalize <Opaque(DefId(0:34 ~ issue_67684[56b2]::expr::{opaque#0}), [A]) as Parser>::PartialState",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
@@ -507,8 +703,8 @@
     "needs_feature": true,
     "file": "./src/test/ui/layout/valid_range_oob.rs",
     "args": [],
-    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_abi/src/layout.rs:403:25",
-    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_abi/src/layout.rs:403:25",
+    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_abi/src/layout.rs:403:25",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -546,7 +742,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[68f4]::T::A) }, local_id: 3 }, ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[68f4]::T::A) }, local_id: 1 }, def_id: DefId(0:5 ~ issue_102335_const[68f4]::T::A::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[68f4]::T::A) }, local_id: 2 } } }) }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[67f4]::T::A) }, local_id: 3 }, ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[67f4]::T::A) }, local_id: 1 }, def_id: DefId(0:5 ~ issue_102335_const[67f4]::T::A::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:4 ~ issue_102335_const[67f4]::T::A) }, local_id: 2 } } }) }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
     "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1856:25",
     "executable": "Rustdoc",
     "kind": "Ice"
@@ -559,7 +755,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[50e9]::foo) }, local_id: 12 }, kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[50e9]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[50e9]::foo) }, local_id: 17 }, res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[50e9]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[50e9]::foo) }, local_id: 13 }, def_id: DefId(0:10 ~ const_arg_type_arg_misordered[50e9]::foo::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[50e9]::foo) }, local_id: 14 } } }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[50e9]::foo) }, local_id: 16 }, kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[c601]::foo) }, local_id: 12 }, kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[c601]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[c601]::foo) }, local_id: 17 }, res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[c601]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[c601]::foo) }, local_id: 13 }, def_id: DefId(0:10 ~ const_arg_type_arg_misordered[c601]::foo::{constant#0}), body: BodyId { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[c601]::foo) }, local_id: 14 } } }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId { owner: OwnerId { def_id: DefId(0:7 ~ const_arg_type_arg_misordered[c601]::foo) }, local_id: 16 }, kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
     "ice_msg": "thread 'rustc' panicked at 'Error', src/librustdoc/clean/mod.rs:1856:25",
     "executable": "Rustdoc",
     "kind": "Ice"
@@ -860,8 +1056,8 @@
       "-Cdebuginfo=2",
       "--edition=2021"
     ],
-    "error_reason": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_middle/src/ty/subst.rs:404:43",
-    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_middle/src/ty/subst.rs:404:43",
+    "error_reason": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_middle/src/ty/subst.rs:404:43",
+    "ice_msg": "thread 'rustc' panicked at 'index out of bounds: the len is 1 but the index is 1', /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_middle/src/ty/subst.rs:404:43",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -888,8 +1084,8 @@
       "-Cdebuginfo=2",
       "--edition=2021"
     ],
-    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_type_ir/src/lib.rs:681:17",
-    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/d0dc9efff14ac0a1eeceffd1e605e37eeb8362a0/compiler/rustc_type_ir/src/lib.rs:681:17",
+    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_type_ir/src/lib.rs:681:17",
+    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/935dc07218b4bf6e20231e44eb9263b612fd649b/compiler/rustc_type_ir/src/lib.rs:681:17",
     "executable": "Rustc",
     "kind": "Ice"
   }
