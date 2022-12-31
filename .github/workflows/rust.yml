@@ -51,7 +51,7 @@ jobs:
         run: cargo build --release --features ci
         working-directory: icemaker
       - name: run icemaker on rustc
-        run: ../icemaker/target/release/icemaker -s
+        run: ../icemaker/target/release/icemaker -j1
         working-directory: rust
       - name: copy logs into repo root
         run: cp -f rust/errors.json errors.json
