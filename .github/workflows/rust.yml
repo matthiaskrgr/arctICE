@@ -44,6 +44,9 @@ jobs:
         working-directory: rust
       - name: clone icemaker
         run: git clone https://github.com/matthiaskrgr/icemaker icemaker
+      - name: checkout icemaker
+        run: git checkout 2b3dd6774f63c4e3de07445d397fa29a58791ecb
+        working-directory: icemaker
       - name: icemaker version
         run: git log -1
         working-directory: icemaker
