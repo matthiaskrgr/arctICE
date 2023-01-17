@@ -32,9 +32,6 @@ jobs:
       # clone rustc to run icemaker in
       - name: clone rustc
         run: git clone https://github.com/rust-lang/rust rust
-      - name: checkout rustc
-        run: git checkout 270c94e484e19764a2832ef918c95224eb3f17c7
-        working-directory: rust
       - name: rust git version
         run: git log -1
         working-directory: rust
