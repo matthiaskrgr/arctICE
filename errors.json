@@ -21,22 +21,16 @@
       "-Zdrop-tracking",
       "-Zverbose",
       "-Zextra-const-ub-checks",
-      "--edition=2021",
+      "--edition=2018",
       "-Ztranslate-lang=en_US",
       "-Zprint-type-sizes",
-      "-Zmaximal-hir-to-mir-coverage",
-      "-Zcrate-attr=feature(generator_clone)",
-      "-Zcrate-attr=feature(impl_trait_in_fn_trait_return)",
-      "-Zcrate-attr=feature(const_cmp)",
-      "-Zcrate-attr=feature(generic_const_exprs)",
-      "-Zcrate-attr=feature(const_closures)",
-      "-Zcrate-attr=feature(const_trait_impl)"
+      "-Zmaximal-hir-to-mir-coverage"
     ],
     "error_reason": "HANG",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 31
+      "Hang": 36
     }
   },
   {
@@ -70,286 +64,8 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 61
+      "Hang": 75
     }
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/assembly/target-feature-multiple.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Cincremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fdf5db813a8: i32,i32,ch = X86ISD::RDSEED 0x7fdf5db81138:2, src/test/assembly/target-feature-multiple.rs:41:29",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/codegen/abi-x86-interrupt.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Cincremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "LLVM ERROR: X86 interrupts may not return any value",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./src/test/codegen/intrinsics/prefetch.rs",
-    "args": [
-      "-Zincremental-verify-ich=yes",
-      "-Cincremental=<dir>",
-      "-Cdebuginfo=2"
-    ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f9cb17980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f9cb16b9e68, 0x7f9cb1798000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, src/test/codegen/intrinsics/prefetch.rs:47:9",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration-too-subtle-2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/recursive-type-alias-impl-trait-declaration.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-22638.rs",
-    "args": [
-      "-Zunstable-options",
-      "-Zvalidate-mir",
-      "-Zverify-llvm-ir=yes",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=0",
-      "-Zmir-opt-level=1",
-      "-Zmir-opt-level=2",
-      "-Zmir-opt-level=3",
-      "-Zmir-opt-level=5",
-      "-Zdump-mir=all",
-      "--emit=mir",
-      "-Zprint-mono-items=eager",
-      "-Zpolymorphize=on",
-      "-Zalways-encode-mir",
-      "-Zdrop-tracking",
-      "-Zverbose",
-      "-Zextra-const-ub-checks",
-      "--edition=2015",
-      "-Ztranslate-lang=en_US",
-      "-Zprint-type-sizes",
-      "-Zmaximal-hir-to-mir-coverage"
-    ],
-    "error_reason": "HANG",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": {
-      "Hang": 31
-    }
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/issues/issue-72933-match-stack-overflow.rs",
-    "args": [
-      "-Zunstable-options",
-      "-Zvalidate-mir",
-      "-Zverify-llvm-ir=yes",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=0",
-      "-Zmir-opt-level=1",
-      "-Zmir-opt-level=2",
-      "-Zmir-opt-level=3",
-      "-Zmir-opt-level=5",
-      "-Zdump-mir=all",
-      "--emit=mir",
-      "-Zprint-mono-items=eager",
-      "-Zpolymorphize=on",
-      "-Zalways-encode-mir",
-      "-Zdrop-tracking",
-      "-Zverbose",
-      "-Zextra-const-ub-checks",
-      "--edition=2015",
-      "-Ztranslate-lang=en_US",
-      "-Zprint-type-sizes",
-      "-Zmaximal-hir-to-mir-coverage"
-    ],
-    "error_reason": "HANG",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": {
-      "Hang": 41
-    }
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/recursion/issue-86784.rs",
-    "args": [
-      "-Zunstable-options",
-      "-Zvalidate-mir",
-      "-Zverify-llvm-ir=yes",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=0",
-      "-Zmir-opt-level=1",
-      "-Zmir-opt-level=2",
-      "-Zmir-opt-level=3",
-      "-Zmir-opt-level=5",
-      "-Zdump-mir=all",
-      "--emit=mir",
-      "-Zprint-mono-items=eager",
-      "-Zpolymorphize=on",
-      "-Zalways-encode-mir",
-      "-Zdrop-tracking",
-      "-Zverbose",
-      "-Zextra-const-ub-checks",
-      "--edition=2015",
-      "-Ztranslate-lang=en_US",
-      "-Zprint-type-sizes",
-      "-Zmaximal-hir-to-mir-coverage"
-    ],
-    "error_reason": "HANG",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": {
-      "Hang": 95
-    }
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/issue-53092-2.rs",
-    "args": [],
-    "error_reason": "  = note: target type: `Bug<u8, ()>` (size can vary because of [type error])",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/issue-53398-cyclic-types.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/no_inferrable_concrete_type.rs",
-    "args": [],
-    "error_reason": "   = note: target type: `Foo` (size can vary because of [type error])",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/self-referential-3.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/self-referential-4.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/self-referential.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error2.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "fatal runtime error: stack overflow",
-    "ice_msg": "",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/unboxed-closures/unboxed-closure-sugar-wrong-number-number-type-parameters-3.rs",
-    "args": [],
-    "error_reason": "error[E0220]: associated type `Output` not found for `Three<(), [type error], [type error]>`",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": "Ice"
   },
   {
     "regresses_on": "Master",
@@ -441,7 +157,7 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 42
+      "Hang": 51
     }
   },
   {
@@ -481,13 +197,305 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 41
+      "Hang": 51
+    }
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./tests/assembly/target-feature-multiple.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Cincremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f49bb9813a8: i32,i32,ch = X86ISD::RDSEED 0x7f49bb981138:2, tests/assembly/target-feature-multiple.rs:41:29",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./tests/codegen/abi-x86-interrupt.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Cincremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "LLVM ERROR: X86 interrupts may not return any value",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./tests/codegen/intrinsics/prefetch.rs",
+    "args": [
+      "-Zincremental-verify-ich=yes",
+      "-Cincremental=<dir>",
+      "-Cdebuginfo=2"
+    ],
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f09227980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f09226b9e68, 0x7f0922798000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/impl-trait/recursive-type-alias-impl-trait-declaration-too-subtle-2.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/impl-trait/recursive-type-alias-impl-trait-declaration.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/issues/issue-22638.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes",
+      "-Zmaximal-hir-to-mir-coverage"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": {
+      "Hang": 38
     }
   },
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/associated-types/issue-67684.rs",
+    "file": "./tests/ui/issues/issue-72933-match-stack-overflow.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes",
+      "-Zmaximal-hir-to-mir-coverage"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": {
+      "Hang": 51
+    }
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/numbers-arithmetic/num-wrapping.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes",
+      "-Zmaximal-hir-to-mir-coverage"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": {
+      "Hang": 34
+    }
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/recursion/issue-86784.rs",
+    "args": [
+      "-Zunstable-options",
+      "-Zvalidate-mir",
+      "-Zverify-llvm-ir=yes",
+      "-Zincremental-verify-ich=yes",
+      "-Zmir-opt-level=0",
+      "-Zmir-opt-level=1",
+      "-Zmir-opt-level=2",
+      "-Zmir-opt-level=3",
+      "-Zmir-opt-level=5",
+      "-Zdump-mir=all",
+      "--emit=mir",
+      "-Zprint-mono-items=eager",
+      "-Zpolymorphize=on",
+      "-Zalways-encode-mir",
+      "-Zdrop-tracking",
+      "-Zverbose",
+      "-Zextra-const-ub-checks",
+      "--edition=2015",
+      "-Ztranslate-lang=en_US",
+      "-Zprint-type-sizes",
+      "-Zmaximal-hir-to-mir-coverage"
+    ],
+    "error_reason": "HANG",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": {
+      "Hang": 111
+    }
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/issue-53398-cyclic-types.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/self-referential-3.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/self-referential-4.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/self-referential.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/type-alias-impl-trait-with-cycle-error2.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "fatal runtime error: stack overflow",
+    "ice_msg": "",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/unboxed-closures/unboxed-closure-sugar-wrong-number-number-type-parameters-3.rs",
+    "args": [],
+    "error_reason": "error[E0220]: associated type `Output` not found for `Three<(), [type error], [type error]>`",
+    "ice_msg": "",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/associated-types/issue-67684.rs",
     "args": [
       "-Zunstable-options",
       "-Zvalidate-mir",
@@ -527,17 +535,17 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/dyn-star/align.rs",
+    "file": "./tests/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/f34cc658eb477958e2b73e05586e7af66faefad9/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/f34cc658eb477958e2b73e05586e7af66faefad9/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/1f72129ffe5e8c495113f9a2d4e1730f7fad3209/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/1f72129ffe5e8c495113f9a2d4e1730f7fad3209/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/track-diagnostics/track.rs",
+    "file": "./tests/ui/track-diagnostics/track.rs",
     "args": [],
     "error_reason": "error: internal compiler error: It looks like you're trying to break rust; would you like some ICE?",
     "ice_msg": "ICE: It looks like you're trying to break rust; would you like some ICE?",
@@ -545,36 +553,36 @@
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[cb9c]::upvar::T::{opaque#0}), _use_mk_alias_ty_instead: () }) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[cb9c]::upvar::T::{opaque#0}), _use_mk_alias_ty_instead: () }) for `Field` projection",
-    "executable": "Clippy",
-    "kind": "Ice"
-  },
-  {
     "regresses_on": "Stable",
     "needs_feature": true,
-    "file": "./src/test/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
+    "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
     "args": [
       "--edition=2021",
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[f140]::upvar::T::{opaque#0}), _use_mk_alias_ty_instead: () }) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[f140]::upvar::T::{opaque#0}), _use_mk_alias_ty_instead: () }) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[83cc]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[83cc]::upvar::T::{opaque#0}) }) for `Field` projection",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
+    "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[9df7]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[9df7]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "executable": "Clippy",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
@@ -584,147 +592,60 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/normalize-tait-in-const.rs",
+    "file": "./tests/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[176d]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[176d]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[176d]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[176d]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[176d]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[336d]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[336d]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[336d]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[336d]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[336d]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/async-await/in-trait/nested-rpit.rs",
+    "file": "./tests/ui/async-await/in-trait/nested-rpit.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[64e6]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[64e6]::Lockable::lock_all_entries::'_), '_))])",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[64e6]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[64e6]::Lockable::lock_all_entries::'_), '_))])",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[9d95]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[9d95]::Lockable::lock_all_entries::'_), '_))])",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[8fdd]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[8fdd]::Lockable::lock_all_entries::'_), '_))])",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/async-await/in-trait/nested-rpit.rs",
+    "file": "./tests/ui/async-await/in-trait/nested-rpit.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[64e6]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[64e6]::Lockable::lock_all_entries::'_), '_))])",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[7907]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[7907]::Lockable::lock_all_entries::'_), '_))])",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[9d95]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[9d95]::Lockable::lock_all_entries::'_), '_))])",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:794:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[9d95]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[9d95]::Lockable::lock_all_entries::'_), '_))])",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-str-demangling.rs",
+    "file": "./tests/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fe48]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fe48]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[fe48]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[fe48]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9fe1]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9fe1]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[9fe1]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[9fe1]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/const-generics-structural-demangling.rs",
+    "file": "./tests/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[48e4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[48e4]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[48e4]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[48e4]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[9a93]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[9a93]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[9a93]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[9a93]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/symbol-names/foreign-types.rs",
+    "file": "./tests/ui/symbol-names/foreign-types.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[85b7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[85b7]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[85b7]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[85b7]) with no parent",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/incremental/delayed_span_bug.rs",
-    "args": [],
-    "error_reason": "error: internal compiler error: delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/associated-consts/issue-102335-const.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId(DefId(0:4 ~ issue_102335_const[eacb]::T::A).3), ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId(DefId(0:4 ~ issue_102335_const[eacb]::T::A).1), def_id: DefId(0:5 ~ issue_102335_const[eacb]::T::A::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:4 ~ issue_102335_const[eacb]::T::A).2) } }) }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Nightly",
-    "needs_feature": false,
-    "file": "./src/test/ui/associated-types/issue-67684.rs",
-    "args": [
-      "-Zmir-opt-level=3",
-      "--emit=mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: failed to normalize <Opaque(DefId(0:34 ~ issue_67684[c11f]::expr::{opaque#0}), [A]) as Parser>::PartialState",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/const-generics/const-arg-type-arg-misordered.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[4ba5]::foo).12), kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[4ba5]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[4ba5]::foo).17), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[4ba5]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[4ba5]::foo).13), def_id: DefId(0:10 ~ const_arg_type_arg_misordered[4ba5]::foo::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[4ba5]::foo).14) } }, span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[4ba5]::foo).16), kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/src/test/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/const-generics/generic_const_exprs/issue-102768.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./src/test/ui/generic-associated-types/parse/trait-path-type-error-once-implemented.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustdoc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./src/test/ui/treat-err-as-bug/delay_span_bug.rs",
-    "args": [],
-    "error_reason": "error: internal compiler error: delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[131c]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[131c]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[131c]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[131c]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -743,8 +664,95 @@
   },
   {
     "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/incremental/delayed_span_bug.rs",
+    "args": [],
+    "error_reason": "error: internal compiler error: delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/associated-consts/issue-102335-const.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId(DefId(0:4 ~ issue_102335_const[4b33]::T::A).3), ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId(DefId(0:4 ~ issue_102335_const[4b33]::T::A).1), def_id: DefId(0:5 ~ issue_102335_const[4b33]::T::A::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:4 ~ issue_102335_const[4b33]::T::A).2) } }) }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/rustdoc-ui/issue-80992.rs",
+    "file": "./tests/ui/associated-types/issue-67684.rs",
+    "args": [
+      "-Zmir-opt-level=3",
+      "--emit=mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: failed to normalize <Opaque(DefId(0:34 ~ issue_67684[b545]::expr::{opaque#0}), [A]) as Parser>::PartialState",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/const-generics/const-arg-type-arg-misordered.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[d59b]::foo).12), kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[d59b]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[d59b]::foo).17), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[d59b]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[d59b]::foo).13), def_id: DefId(0:10 ~ const_arg_type_arg_misordered[d59b]::foo::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[d59b]::foo).14) } }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[d59b]::foo).16), kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/const-generics/generic_const_exprs/issue-102768.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/generic-associated-types/parse/trait-path-type-error-once-implemented.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: no errors encountered even though `delay_span_bug` issued",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustdoc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/treat-err-as-bug/delay_span_bug.rs",
+    "args": [],
+    "error_reason": "error: internal compiler error: delayed span bug triggered by #[rustc_error(delay_span_bug_from_inside_query)]",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/rustdoc-ui/issue-80992.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -887,7 +895,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/rustdoc/issue-26995.rs",
+    "file": "./tests/rustdoc/issue-26995.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -900,17 +908,17 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/layout/valid_range_oob.rs",
+    "file": "./tests/ui/layout/valid_range_oob.rs",
     "args": [],
-    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/f34cc658eb477958e2b73e05586e7af66faefad9/compiler/rustc_abi/src/layout.rs:403:25",
-    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/f34cc658eb477958e2b73e05586e7af66faefad9/compiler/rustc_abi/src/layout.rs:403:25",
+    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/1f72129ffe5e8c495113f9a2d4e1730f7fad3209/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/1f72129ffe5e8c495113f9a2d4e1730f7fad3209/compiler/rustc_abi/src/layout.rs:403:25",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/const-generics/issues/issue-89320.rs",
+    "file": "./tests/ui/const-generics/issues/issue-89320.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -923,7 +931,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/auxiliary/primitive-doc.rs",
+    "file": "./tests/rustdoc/auxiliary/primitive-doc.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -936,7 +944,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/doc-notable_trait-mut_t_is_not_an_iterator.rs",
+    "file": "./tests/rustdoc/doc-notable_trait-mut_t_is_not_an_iterator.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -949,7 +957,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/doc-notable_trait-mut_t_is_not_ref_t.rs",
+    "file": "./tests/rustdoc/doc-notable_trait-mut_t_is_not_ref_t.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -962,7 +970,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/intra-doc/auxiliary/my-core.rs",
+    "file": "./tests/rustdoc/intra-doc/auxiliary/my-core.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -975,7 +983,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/intra-doc/prim-methods-local.rs",
+    "file": "./tests/rustdoc/intra-doc/prim-methods-local.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -988,7 +996,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/intra-doc/prim-self.rs",
+    "file": "./tests/rustdoc/intra-doc/prim-self.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1001,7 +1009,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/issue-23511.rs",
+    "file": "./tests/rustdoc/issue-23511.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1014,7 +1022,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/primitive/primitive-generic-impl.rs",
+    "file": "./tests/rustdoc/primitive/primitive-generic-impl.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1027,7 +1035,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/primitive-reference.rs",
+    "file": "./tests/rustdoc/primitive-reference.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1040,7 +1048,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/primitive.rs",
+    "file": "./tests/rustdoc/primitive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1053,7 +1061,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/sidebar-all-page.rs",
+    "file": "./tests/rustdoc/sidebar-all-page.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1066,7 +1074,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/tab_title.rs",
+    "file": "./tests/rustdoc/tab_title.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1079,7 +1087,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc/titles.rs",
+    "file": "./tests/rustdoc/titles.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1092,7 +1100,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/rustdoc-json/primitives/use_primitive.rs",
+    "file": "./tests/rustdoc-json/primitives/use_primitive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1105,7 +1113,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./src/test/ui/enum-discriminant/issue-70509-partial_eq.rs",
+    "file": "./tests/ui/enum-discriminant/issue-70509-partial_eq.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
       "-Cincremental=<dir>",
@@ -1119,7 +1127,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/rustdoc/feature-gate-doc_primitive.rs",
+    "file": "./tests/ui/rustdoc/feature-gate-doc_primitive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1132,17 +1140,17 @@
   {
     "regresses_on": "Master",
     "needs_feature": true,
-    "file": "./src/test/ui/impl-trait/issues/issue-86800.rs",
+    "file": "./tests/ui/impl-trait/issues/issue-86800.rs",
     "args": [],
-    "error_reason": "thread 'rustc' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:710:9",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:710:9",
+    "error_reason": "thread 'rustc' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:718:9",
+    "ice_msg": "thread 'rustc' panicked at 'assertion failed: self.scc_universes[scc] == ty::UniverseIndex::ROOT', compiler/rustc_borrowck/src/region_infer/mod.rs:718:9",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/typeck/issue-103899.rs",
+    "file": "./tests/ui/typeck/issue-103899.rs",
     "args": [],
     "error_reason": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: NoSolution', compiler/rustc_borrowck/src/type_check/liveness/trace.rs:574:88",
     "ice_msg": "thread 'rustc' panicked at 'called `Result::unwrap()` on an `Err` value: NoSolution', compiler/rustc_borrowck/src/type_check/liveness/trace.rs:574:88",
@@ -1152,7 +1160,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/incremental/issue-101518.rs",
+    "file": "./tests/incremental/issue-101518.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
       "-Cincremental=<dir>",
@@ -1166,7 +1174,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/ui/pattern/usefulness/slice-pattern-const.rs",
+    "file": "./tests/ui/pattern/usefulness/slice-pattern-const.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
       "-Cincremental=<dir>",
@@ -1180,7 +1188,7 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": true,
-    "file": "./src/test/ui/mir/ssa-analysis-regression-50041.rs",
+    "file": "./tests/ui/mir/ssa-analysis-regression-50041.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
       "-Cincremental=<dir>",
@@ -1194,7 +1202,7 @@
   {
     "regresses_on": "Master",
     "needs_feature": false,
-    "file": "./src/test/ui/feature-gates/issue-43106-gating-of-proc_macro_derive.rs",
+    "file": "./tests/ui/feature-gates/issue-43106-gating-of-proc_macro_derive.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
@@ -1207,14 +1215,14 @@
   {
     "regresses_on": "Nightly",
     "needs_feature": false,
-    "file": "./src/test/ui/recursion/issue-95134.rs",
+    "file": "./tests/ui/recursion/issue-95134.rs",
     "args": [
       "-Zincremental-verify-ich=yes",
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/f34cc658eb477958e2b73e05586e7af66faefad9/compiler/rustc_type_ir/src/lib.rs:688:17",
-    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/f34cc658eb477958e2b73e05586e7af66faefad9/compiler/rustc_type_ir/src/lib.rs:688:17",
+    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/1f72129ffe5e8c495113f9a2d4e1730f7fad3209/compiler/rustc_type_ir/src/lib.rs:688:17",
+    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/1f72129ffe5e8c495113f9a2d4e1730f7fad3209/compiler/rustc_type_ir/src/lib.rs:688:17",
     "executable": "Rustc",
     "kind": "Ice"
   }
