@@ -30,7 +30,7 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 40
+      "Hang": 37
     }
   },
   {
@@ -95,7 +95,7 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f92fb5813a8: i32,i32,ch = X86ISD::RDSEED 0x7f92fb581138:2, tests/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f6d339813a8: i32,i32,ch = X86ISD::RDSEED 0x7f6d33981138:2, tests/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -123,7 +123,7 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f5e63d980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f5e63cb9e68, 0x7f5e63d98000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f45da9980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f45da8b9e68, 0x7f45da998000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -185,7 +185,7 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 37
+      "Hang": 33
     }
   },
   {
