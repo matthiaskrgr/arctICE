@@ -61,7 +61,7 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f70ffd813a8: i32,i32,ch = X86ISD::RDSEED 0x7f70ffd81138:2, tests/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f22fff813a8: i32,i32,ch = X86ISD::RDSEED 0x7f22fff81138:2, tests/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -89,7 +89,7 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7f5351d980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f5351cb9e68, 0x7f5351d98000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7fbf6ad980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7fbf6acb9e68, 0x7fbf6ad98000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -213,8 +213,8 @@
     "needs_feature": true,
     "file": "./tests/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/001a77fac33f6560ff361ff38f661ff5f1c6bf85/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/001a77fac33f6560ff361ff38f661ff5f1c6bf85/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/dc1d9d50fba2f6a1ccab8748a0050cde38253f60/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/dc1d9d50fba2f6a1ccab8748a0050cde38253f60/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -385,6 +385,19 @@
     "kind": "Ice"
   },
   {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[897a]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[897a]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "executable": "Clippy",
+    "kind": "Ice"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": true,
     "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
@@ -393,22 +406,9 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[4605]::upvar::T::{opaque#0}) }) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[4605]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[c803]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[c803]::upvar::T::{opaque#0}) }) for `Field` projection",
     "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[7d91]::upvar::T::{opaque#0}) }) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[7d91]::upvar::T::{opaque#0}) }) for `Field` projection",
-    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -427,7 +427,7 @@
     "file": "./tests/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[69d6]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[69d6]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[69d6]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[69d6]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[69d6]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[963d]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[963d]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[963d]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[963d]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[963d]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -436,8 +436,8 @@
     "needs_feature": true,
     "file": "./tests/ui/async-await/in-trait/nested-rpit.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[1a1c]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[1a1c]::Lockable::lock_all_entries::'_), '_))])",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[1a1c]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[1a1c]::Lockable::lock_all_entries::'_), '_))])",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[8cb7]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[8cb7]::Lockable::lock_all_entries::'_), '_))])",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[8cb7]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[8cb7]::Lockable::lock_all_entries::'_), '_))])",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -446,8 +446,8 @@
     "needs_feature": true,
     "file": "./tests/ui/async-await/in-trait/nested-rpit.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[1a1c]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[1a1c]::Lockable::lock_all_entries::'_), '_))])",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[c3cf]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[c3cf]::Lockable::lock_all_entries::'_), '_))])",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[8cb7]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[8cb7]::Lockable::lock_all_entries::'_), '_))])",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[96f4]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[96f4]::Lockable::lock_all_entries::'_), '_))])",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -456,8 +456,8 @@
     "needs_feature": true,
     "file": "./tests/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[7294]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[7294]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[7294]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[7294]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4a61]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4a61]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[4a61]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[4a61]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -466,8 +466,8 @@
     "needs_feature": true,
     "file": "./tests/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[55bb]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[55bb]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[55bb]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[55bb]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[8909]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[8909]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[8909]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[8909]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -476,8 +476,8 @@
     "needs_feature": true,
     "file": "./tests/ui/symbol-names/foreign-types.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[c326]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c326]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[c326]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[c326]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[1ea5]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[1ea5]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[1ea5]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[1ea5]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -514,7 +514,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ issue_43869[3f20]::test_44731_1), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb2[1]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ issue_43869[37d9]::test_44731_1), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb2[1]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
@@ -527,7 +527,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId(DefId(0:4 ~ issue_102335_const[1af2]::T::A).3), ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId(DefId(0:4 ~ issue_102335_const[1af2]::T::A).1), def_id: DefId(0:5 ~ issue_102335_const[1af2]::T::A::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:4 ~ issue_102335_const[1af2]::T::A).2) } }) }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId(DefId(0:4 ~ issue_102335_const[8b1e]::T::A).3), ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId(DefId(0:4 ~ issue_102335_const[8b1e]::T::A).1), def_id: DefId(0:5 ~ issue_102335_const[8b1e]::T::A::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:4 ~ issue_102335_const[8b1e]::T::A).2) } }) }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustdoc",
     "kind": "Ice"
@@ -540,26 +540,12 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[e664]::foo).12), kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[e664]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[e664]::foo).17), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[e664]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[e664]::foo).13), def_id: DefId(0:10 ~ const_arg_type_arg_misordered[e664]::foo::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[e664]::foo).14) } }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[e664]::foo).16), kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[88a1]::foo).12), kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[88a1]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[88a1]::foo).17), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[88a1]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[88a1]::foo).13), def_id: DefId(0:10 ~ const_arg_type_arg_misordered[88a1]::foo::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[88a1]::foo).14) } }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[88a1]::foo).16), kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
-    "regresses_on": "Nightly",
-    "needs_feature": true,
-    "file": "./tests/ui/impl-trait/nested-return-type2-tait.rs",
-    "args": [
-      "-Zvalidate-mir",
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[4545]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
     "regresses_on": "Master",
     "needs_feature": true,
     "file": "./tests/ui/impl-trait/nested-return-type2-tait.rs",
@@ -567,13 +553,27 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[c42f]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[2845]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Clippy",
     "kind": "Ice"
   },
   {
     "regresses_on": "Nightly",
+    "needs_feature": true,
+    "file": "./tests/ui/impl-trait/nested-return-type2-tait.rs",
+    "args": [
+      "-Zvalidate-mir",
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[c95c]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Nightly",
     "needs_feature": false,
     "file": "./tests/ui/impl-trait/nested-return-type2.rs",
     "args": [
@@ -581,7 +581,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[7349]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[0b45]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
@@ -594,7 +594,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[9de6]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[3f67]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Clippy",
     "kind": "Ice"
@@ -607,7 +607,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[a58f]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[136d]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Clippy",
     "kind": "Ice"
@@ -621,7 +621,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[b676]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[bea6]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
@@ -634,7 +634,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ must_use_trait[d781]::get_critical_tuple), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb3[2]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ must_use_trait[6254]::get_critical_tuple), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb3[2]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Clippy",
     "kind": "Ice"
@@ -658,7 +658,7 @@
       "-Zdump-mir-dir=dir"
     ],
     "error_reason": "thread 'rustc' panicked at 'thread::spawn failed: Any { .. }', src/tools/clippy/clippy_lints/src/doc.rs:783:10",
-    "ice_msg": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1646:13",
+    "ice_msg": "thread '<unnamed>' panicked at 'Box<dyn Any>', compiler/rustc_errors/src/lib.rs:1680:13",
     "executable": "Clippy",
     "kind": "Ice"
   },
@@ -810,22 +810,9 @@
     "needs_feature": true,
     "file": "./tests/ui/layout/valid_range_oob.rs",
     "args": [],
-    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/001a77fac33f6560ff361ff38f661ff5f1c6bf85/compiler/rustc_abi/src/layout.rs:403:25",
-    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/001a77fac33f6560ff361ff38f661ff5f1c6bf85/compiler/rustc_abi/src/layout.rs:403:25",
+    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/dc1d9d50fba2f6a1ccab8748a0050cde38253f60/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/dc1d9d50fba2f6a1ccab8748a0050cde38253f60/compiler/rustc_abi/src/layout.rs:403:25",
     "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./tests/ui/const-generics/issues/issue-89320.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "thread 'rustc' panicked at 'assertion failed: !infcx.is_in_snapshot() || self.usable_in_snapshot', compiler/rustc_trait_selection/src/traits/fulfill.rs:129:9",
-    "ice_msg": "thread 'rustc' panicked at 'assertion failed: !infcx.is_in_snapshot() || self.usable_in_snapshot', compiler/rustc_trait_selection/src/traits/fulfill.rs:129:9",
-    "executable": "Rustdoc",
     "kind": "Ice"
   },
   {
@@ -1131,8 +1118,8 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/001a77fac33f6560ff361ff38f661ff5f1c6bf85/compiler/rustc_type_ir/src/lib.rs:691:17",
-    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/001a77fac33f6560ff361ff38f661ff5f1c6bf85/compiler/rustc_type_ir/src/lib.rs:691:17",
+    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/dc1d9d50fba2f6a1ccab8748a0050cde38253f60/compiler/rustc_type_ir/src/lib.rs:691:17",
+    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/dc1d9d50fba2f6a1ccab8748a0050cde38253f60/compiler/rustc_type_ir/src/lib.rs:691:17",
     "executable": "Rustc",
     "kind": "Ice"
   }
