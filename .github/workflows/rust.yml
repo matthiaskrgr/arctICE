@@ -14,8 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install prlimit
-        run: sudo apt-get install -y util-linux
       - uses: actions/checkout@v2
       # make sure nightly, beta and stable are installed
       - name: install nightly
@@ -50,7 +48,7 @@ jobs:
         run: git log -1
         working-directory: icemaker
       - name: build icemaker
-        run: cargo build --release
+        run: cargo build --release --features ci
         working-directory: icemaker
       - name: run icemaker on rustc
         run: ../icemaker/target/release/icemaker -s
