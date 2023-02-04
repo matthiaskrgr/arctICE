@@ -31,7 +31,7 @@
     "ice_msg": "",
     "executable": "Rustc",
     "kind": {
-      "Hang": 47
+      "Hang": 31
     }
   },
   {
@@ -76,7 +76,7 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7fa95f5813a8: i32,i32,ch = X86ISD::RDSEED 0x7fa95f581138:2, tests/assembly/target-feature-multiple.rs:41:29",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f684b3813a8: i32,i32,ch = X86ISD::RDSEED 0x7f684b381138:2, tests/assembly/target-feature-multiple.rs:41:29",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -104,7 +104,7 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "LLVM ERROR: Cannot select: 0x7feb6d1980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7feb6d0b9e68, 0x7feb6d198000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
+    "error_reason": "LLVM ERROR: Cannot select: 0x7f8d8f1980d0: ch = Prefetch<(load (s8) from %ir.0)> 0x7f8d8f0b9e68, 0x7f8d8f198000, Constant:i32<0>, Constant:i32<3>, Constant:i32<0>, tests/codegen/intrinsics/prefetch.rs:47:9",
     "ice_msg": "",
     "executable": "Rustc",
     "kind": "Ice"
@@ -134,41 +134,6 @@
     "ice_msg": "",
     "executable": "Rustdoc",
     "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./tests/ui/numbers-arithmetic/num-wrapping.rs",
-    "args": [
-      "-Zunstable-options",
-      "-Zvalidate-mir",
-      "-Zverify-llvm-ir=yes",
-      "-Zincremental-verify-ich=yes",
-      "-Zmir-opt-level=0",
-      "-Zmir-opt-level=1",
-      "-Zmir-opt-level=2",
-      "-Zmir-opt-level=3",
-      "-Zmir-opt-level=5",
-      "-Zunsound-mir-opts",
-      "-Zdump-mir=all",
-      "--emit=mir",
-      "-Zprint-mono-items=eager",
-      "-Zpolymorphize=on",
-      "-Zalways-encode-mir",
-      "-Zdrop-tracking",
-      "-Zdrop-tracking-mir=yes",
-      "-Zverbose",
-      "-Zextra-const-ub-checks",
-      "--edition=2015",
-      "-Zprint-type-sizes",
-      "-Zmaximal-hir-to-mir-coverage"
-    ],
-    "error_reason": "HANG",
-    "ice_msg": "",
-    "executable": "Rustc",
-    "kind": {
-      "Hang": 40
-    }
   },
   {
     "regresses_on": "Master",
@@ -253,8 +218,8 @@
     "needs_feature": true,
     "file": "./tests/ui/dyn-star/align.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: /rustc/6c991b07403a3234dd1ec0ac973b8ef97055e605/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
-    "ice_msg": "ICE: /rustc/6c991b07403a3234dd1ec0ac973b8ef97055e605/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "error_reason": "error: internal compiler error: /rustc/658fad6c5506f41c35b64fb1a22ceb0992697ff3/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
+    "ice_msg": "ICE: /rustc/658fad6c5506f41c35b64fb1a22ceb0992697ff3/compiler/rustc_const_eval/src/interpret/operand.rs:390:13: primitive read not possible for type: AlignedUsize",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -425,6 +390,19 @@
     "kind": "Ice"
   },
   {
+    "regresses_on": "Master",
+    "needs_feature": true,
+    "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[0ac4]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[0ac4]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "executable": "Clippy",
+    "kind": "Ice"
+  },
+  {
     "regresses_on": "Stable",
     "needs_feature": true,
     "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
@@ -433,22 +411,9 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[05d8]::upvar::T::{opaque#0}) }) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[05d8]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[eaa6]::upvar::T::{opaque#0}) }) for `Field` projection",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[eaa6]::upvar::T::{opaque#0}) }) for `Field` projection",
     "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./tests/ui/type-alias-impl-trait/issue-96572-unconstrained.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[6dec]::upvar::T::{opaque#0}) }) for `Field` projection",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/closure.rs:172:25: Unexpected type Alias(Opaque, AliasTy { substs: [], def_id: DefId(0:34 ~ issue_96572_unconstrained[6dec]::upvar::T::{opaque#0}) }) for `Field` projection",
-    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -467,7 +432,7 @@
     "file": "./tests/ui/impl-trait/normalize-tait-in-const.rs",
     "args": [],
     "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<'a, 'b> fn(&'a Alias<'b>) {foo} as std::ops::FnOnce<(&&S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[a65d]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[a65d]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[a65d]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[a65d]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[a65d]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/normalize_erasing_regions.rs:198:90: Failed to normalize <for<Region(BrNamed(DefId(0:22 ~ normalize_tait_in_const[4c1e]::foo::'_), '_)), Region(BrNamed(DefId(0:23 ~ normalize_tait_in_const[4c1e]::foo::'_#1), '_))> fn(&ReLateBound(DebruijnIndex(0), BoundRegion { var: 0, kind: BrNamed(DefId(0:22 ~ normalize_tait_in_const[4c1e]::foo::'_), '_) }) Opaque(DefId(0:21 ~ normalize_tait_in_const[4c1e]::Alias::{opaque#0}), [ReLateBound(DebruijnIndex(0), BoundRegion { var: 1, kind: BrNamed(DefId(0:23 ~ normalize_tait_in_const[4c1e]::foo::'_#1), '_) })])) {foo} as std::ops::FnOnce<(&ReErased &ReErased S,)>>::Output, maybe try to call `try_normalize_erasing_regions` instead",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -476,8 +441,8 @@
     "needs_feature": true,
     "file": "./tests/ui/async-await/in-trait/nested-rpit.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[48f2]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[48f2]::Lockable::lock_all_entries::'_), '_))])",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[20f5]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[20f5]::Lockable::lock_all_entries::'_), '_))])",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[af92]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[af92]::Lockable::lock_all_entries::'_), '_))])",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[af92]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[af92]::Lockable::lock_all_entries::'_), '_))])",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -486,8 +451,8 @@
     "needs_feature": true,
     "file": "./tests/ui/async-await/in-trait/nested-rpit.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[48f2]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[48f2]::Lockable::lock_all_entries::'_), '_))])",
-    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[48f2]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[48f2]::Lockable::lock_all_entries::'_), '_))])",
+    "error_reason": "error: internal compiler error: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[af92]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[af92]::Lockable::lock_all_entries::'_), '_))])",
+    "ice_msg": "ICE: compiler/rustc_middle/src/ty/subst.rs:799:13: Region parameter out of range when substituting in region '_ (index=4, substs = [Self, K, V, ReFree(DefId(0:8 ~ nested_rpit[c35f]::Lockable::lock_all_entries), BrNamed(DefId(0:14 ~ nested_rpit[c35f]::Lockable::lock_all_entries::'_), '_))])",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -496,8 +461,8 @@
     "needs_feature": true,
     "file": "./tests/ui/symbol-names/const-generics-str-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[3346]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[3346]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[3346]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[3346]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8529]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8529]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_str_demangling[8529]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_str_demangling[8529]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -506,8 +471,8 @@
     "needs_feature": true,
     "file": "./tests/ui/symbol-names/const-generics-structural-demangling.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[fd8c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[fd8c]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[fd8c]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[fd8c]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ae10]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ae10]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:6 ~ const_generics_structural_demangling[ae10]::{impl#0}), encountered def-id DefId(0:0 ~ const_generics_structural_demangling[ae10]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -516,8 +481,8 @@
     "needs_feature": true,
     "file": "./tests/ui/symbol-names/foreign-types.rs",
     "args": [],
-    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[23c0]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[23c0]) with no parent",
-    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[23c0]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[23c0]) with no parent",
+    "error_reason": "error: internal compiler error: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[98af]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[98af]) with no parent",
+    "ice_msg": "ICE: compiler/rustc_symbol_mangling/src/legacy.rs:38:21: finding type for DefId(0:9 ~ foreign_types[98af]::{impl#0}), encountered def-id DefId(0:0 ~ foreign_types[98af]) with no parent",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -554,7 +519,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ issue_43869[5cd6]::test_44731_1), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb2[1]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ issue_43869[3ee0]::test_44731_1), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb2[1]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
@@ -567,7 +532,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId(DefId(0:4 ~ issue_102335_const[80b1]::T::A).3), ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId(DefId(0:4 ~ issue_102335_const[80b1]::T::A).1), def_id: DefId(0:5 ~ issue_102335_const[80b1]::T::A::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:4 ~ issue_102335_const[80b1]::T::A).2) } }) }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): TypeBinding(TypeBinding { hir_id: HirId(DefId(0:4 ~ issue_102335_const[32a4]::T::A).3), ident: X#0, gen_args: GenericArgs { args: [], bindings: [], parenthesized: false, span_ext: no-location (#0) }, kind: Equality { term: Const(AnonConst { hir_id: HirId(DefId(0:4 ~ issue_102335_const[32a4]::T::A).1), def_id: DefId(0:5 ~ issue_102335_const[32a4]::T::A::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:4 ~ issue_102335_const[32a4]::T::A).2) } }) }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/associated-consts/issue-102335-const.rs:4:17: 4:25 (#0) })",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustdoc",
     "kind": "Ice"
@@ -580,7 +545,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[c197]::foo).12), kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[c197]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[c197]::foo).17), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[c197]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[c197]::foo).13), def_id: DefId(0:10 ~ const_arg_type_arg_misordered[c197]::foo::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[c197]::foo).14) } }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[c197]::foo).16), kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
+    "error_reason": "error: internal compiler error: unexpected const parent in type_of(): Ty(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[ae81]::foo).12), kind: Path(Resolved(None, Path { span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[ae81]::Array)), segments: [PathSegment { ident: Array#0, hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[ae81]::foo).17), res: Def(TyAlias, DefId(0:3 ~ const_arg_type_arg_misordered[ae81]::Array)), args: Some(GenericArgs { args: [Const(ConstArg { value: AnonConst { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[ae81]::foo).13), def_id: DefId(0:10 ~ const_arg_type_arg_misordered[ae81]::foo::{constant#0}), body: BodyId { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[ae81]::foo).14) } }, span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:35: 3:36 (#0) }), Type(Ty { hir_id: HirId(DefId(0:7 ~ const_arg_type_arg_misordered[ae81]::foo).16), kind: Tup([]), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:38: 3:40 (#0) })], bindings: [], parenthesized: false, span_ext: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:34: 3:41 (#0) }), infer_args: false }] })), span: /home/runner/work/arctICE/arctICE/rust/tests/ui/const-generics/const-arg-type-arg-misordered.rs:3:29: 3:41 (#0) })",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustdoc",
     "kind": "Ice"
@@ -612,19 +577,6 @@
     "kind": "Ice"
   },
   {
-    "regresses_on": "Master",
-    "needs_feature": true,
-    "file": "./tests/ui/impl-trait/nested-return-type2-tait.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[5666]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Clippy",
-    "kind": "Ice"
-  },
-  {
     "regresses_on": "Nightly",
     "needs_feature": true,
     "file": "./tests/ui/impl-trait/nested-return-type2-tait.rs",
@@ -633,20 +585,20 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[69c7]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[0020]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
     "kind": "Ice"
   },
   {
     "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./tests/ui/impl-trait/nested-return-type2.rs",
+    "needs_feature": true,
+    "file": "./tests/ui/impl-trait/nested-return-type2-tait.rs",
     "args": [
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[4c17]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:12 ~ nested_return_type2_tait[5364]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Clippy",
     "kind": "Ice"
@@ -660,9 +612,35 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[4e91]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[04ec]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/impl-trait/nested-return-type2.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ nested_return_type2[d45d]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Clippy",
+    "kind": "Ice"
+  },
+  {
+    "regresses_on": "Master",
+    "needs_feature": false,
+    "file": "./tests/ui/lint/issue-102705.rs",
+    "args": [
+      "-ooutputfile",
+      "-Zdump-mir-dir=dir"
+    ],
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[bf32]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
+    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
+    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -674,22 +652,9 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[eb66]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[d59d]::foo), const_param_did: None }) (before pass SimplifyCfg-promote-consts) at bb0[0]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Rustc",
-    "kind": "Ice"
-  },
-  {
-    "regresses_on": "Master",
-    "needs_feature": false,
-    "file": "./tests/ui/lint/issue-102705.rs",
-    "args": [
-      "-ooutputfile",
-      "-Zdump-mir-dir=dir"
-    ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:11 ~ issue_102705[f1f6]::foo), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb0[0]:",
-    "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
-    "executable": "Clippy",
     "kind": "Ice"
   },
   {
@@ -700,7 +665,7 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ must_use_trait[9e66]::get_critical_tuple), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb3[2]:",
+    "error_reason": "error: internal compiler error: broken MIR in Item(WithOptConstParam { did: DefId(0:14 ~ must_use_trait[efb3]::get_critical_tuple), const_param_did: None }) (after phase change to analysis-post-cleanup) at bb3[2]:",
     "ice_msg": "ICE: no errors encountered even though `delay_span_bug` issued",
     "executable": "Clippy",
     "kind": "Ice"
@@ -736,8 +701,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -749,8 +714,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -762,8 +727,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -775,8 +740,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -788,8 +753,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -801,8 +766,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -814,8 +779,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -827,8 +792,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -840,8 +805,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -853,8 +818,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
-    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/github.com-1ecc6299db9ec823/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "error_reason": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
+    "ice_msg": "thread 'main' panicked at 'SourceAnnotation range `(100, 114)` is bigger than source length `111`', /cargo/registry/src/index.crates.io-6f17d22bba15001f/annotate-snippets-0.9.1/src/display_list/from_snippet.rs:286:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -866,8 +831,8 @@
       "-ooutputfile",
       "-Zdump-mir-dir=dir"
     ],
-    "error_reason": "thread 'main' panicked at 'path is expected to be under the root', /cargo/registry/src/github.com-1ecc6299db9ec823/ignore-0.4.18/src/gitignore.rs:227:9",
-    "ice_msg": "thread 'main' panicked at 'path is expected to be under the root', /cargo/registry/src/github.com-1ecc6299db9ec823/ignore-0.4.18/src/gitignore.rs:227:9",
+    "error_reason": "thread 'main' panicked at 'path is expected to be under the root', /cargo/registry/src/index.crates.io-6f17d22bba15001f/ignore-0.4.18/src/gitignore.rs:227:9",
+    "ice_msg": "thread 'main' panicked at 'path is expected to be under the root', /cargo/registry/src/index.crates.io-6f17d22bba15001f/ignore-0.4.18/src/gitignore.rs:227:9",
     "executable": "Rustfmt",
     "kind": "Ice"
   },
@@ -876,8 +841,8 @@
     "needs_feature": true,
     "file": "./tests/ui/layout/valid_range_oob.rs",
     "args": [],
-    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/6c991b07403a3234dd1ec0ac973b8ef97055e605/compiler/rustc_abi/src/layout.rs:403:25",
-    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/6c991b07403a3234dd1ec0ac973b8ef97055e605/compiler/rustc_abi/src/layout.rs:403:25",
+    "error_reason": "thread 'rustc' panicked at '257 > 255', /rustc/658fad6c5506f41c35b64fb1a22ceb0992697ff3/compiler/rustc_abi/src/layout.rs:403:25",
+    "ice_msg": "thread 'rustc' panicked at '257 > 255', /rustc/658fad6c5506f41c35b64fb1a22ceb0992697ff3/compiler/rustc_abi/src/layout.rs:403:25",
     "executable": "Rustc",
     "kind": "Ice"
   },
@@ -1184,8 +1149,8 @@
       "-Cincremental=<dir>",
       "-Cdebuginfo=2"
     ],
-    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/6c991b07403a3234dd1ec0ac973b8ef97055e605/compiler/rustc_type_ir/src/lib.rs:691:17",
-    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/6c991b07403a3234dd1ec0ac973b8ef97055e605/compiler/rustc_type_ir/src/lib.rs:691:17",
+    "error_reason": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/658fad6c5506f41c35b64fb1a22ceb0992697ff3/compiler/rustc_type_ir/src/lib.rs:691:17",
+    "ice_msg": "thread 'rustc' panicked at 'type variables should not be hashed: _#0t', /rustc/658fad6c5506f41c35b64fb1a22ceb0992697ff3/compiler/rustc_type_ir/src/lib.rs:691:17",
     "executable": "Rustc",
     "kind": "Ice"
   }
